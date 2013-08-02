@@ -15,5 +15,6 @@ $dblink = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
 // start session
 session_start(); 
+$_SESSION['DESpath'] = '/Descartes/'; 
 
 ?>
