@@ -8,18 +8,20 @@ class Image {
 	private $project; 
 	
 	public function __construct($dblink) {
-		$this->$dblink = $dblink; 
+		$this->dblink = $dblink; 
 		$this->clear(); 
 	} 
 	
-	// @pre: id is clean
 	public function instantiate($id) {
+		$id = clean($id); 
 		$result = mysqli_query($this->dblink,"SELECT * FROM images WHERE id='$id'");
 		if(mysqli_num_rows($result)==1) {
-			$this->id 		= $row['id']; 
-			$this->name		= $row['imgurl']; 
-			$this->datetime = $row['datetime']; 
-			$this->project 	= $row['project']; 
+			while($row=mysqli_fetch_array($result)) {
+				$this->id 		= $row['id']; 
+				$this->name		= $row['imgurl']; 
+				$this->datetime = $row['datetime']; 
+				$this->project 	= $row['project'];
+			} 
 			return true; 
 		} 
 		return false; 
@@ -36,25 +38,41 @@ class Image {
 		$proj = $this->project; 
 		 
 		if($id==0) {
-			mysqli_query($this->dblink,"INSERT INTO images (imgurl,datetime,project) VALUES ('$name','$date','$proj)"); 
+			try {
+				mysqli_query($this->dblink,"INSERT INTO images (imgurl,datetime,project) VALUES ('$name','$date','$proj')");
+			} catch(mysqli_sql_exception $e) {
+				return false; 
+			}
+			$result = mysqli_query($this->dblink,"SELECT * FROM images WHERE imgurl='$name' AND datetime='$date' AND project='$proj'"); 
+			while($row=mysqli_fetch_array($result)) {
+				$this->instantiate($row['id']); 
+			}
 		} else {
-			mysqli_query($this->dblink,"UPDATE images SET imgurl='$name', datetime='$date', project='$proj' WHERE id='$id'"); 
+			try {
+				mysqli_query($this->dblink,"UPDATE images SET imgurl='$name', datetime='$date', project='$proj' WHERE id='$id'");
+			} catch(mysqli_sql_exception $e) {
+				return false; 
+			} 
 		}
 		
-		return !mysqli_error();  
+		return true;  
 	}
 	
 	public function delete() {
 		$id = $this->id; 
 		
 		if($id!=0) {
-			mysqli_query($this->dblink,"DELETE FROM images WHERE id='$id'"); 
-			unlink($_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name); 
-			
-			if(!mysqli_error() && !is_file($_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name)) {
-				return true;
-				$this->clear();   
+			try {
+				mysqli_query($this->dblink,"DELETE FROM images WHERE id='$id'");
+			} catch(mysqli_sql_exception $e) {
+				return false; 
 			}
+			  
+			if(is_file($_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name)) {
+				unlink($_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name);
+			}
+			$this->clear();
+			return true;  
 		}
 		
 		return false; 
@@ -68,9 +86,12 @@ class Image {
 	}
 	
 	public function show() {
-		return '<img src="'.$this->name.'" id="img'.$this->id.'">';  
+		return '<img src="'.$_SESSION['DESpath'].'_views/_imgs/_upload'.$this->name.'" id="img'.$this->id.'">';  
 	}
 	
+	public function sysout() {
+		return $this->id.', '.$this->name.', '.$this->datetime.', '.$this->project; 
+	}
 	
 }
 

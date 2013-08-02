@@ -15,8 +15,8 @@
  
  // Apply settings to site
  require_once('_controllers/settings.php'); 
- require_once('_views/_incs/fs.php'); 
- 
+ require_once('_views/_incs/fs.php');   
+
  // Select a view 
  $view = (isset($_GET['view'])) ? cleanView($_GET['view']) : 'home'; 
  switch($view) {
