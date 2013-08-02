@@ -27,9 +27,14 @@ class Image {
 		return false; 
 	}
 	
+	public function getId() { return $this->id; }
+	public function getName() { return $this->name; }
+	public function getDate() { return $this->datetime; }
+	public function getProject() { return $this->project; }
+	
 	public function setUrl($file) { $this->name = $file; }
 	public function setDate($date) { $this->datetime = $date; }
-	public function setProject($project) { $this->project = $project; }
+	public function setProject($project) { $this->project = $project.''; }
 	
 	public function save() {
 		$id = $this->id;
@@ -68,8 +73,8 @@ class Image {
 				return false; 
 			}
 			  
-			if(is_file($_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name)) {
-				unlink($_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name);
+			if(is_file($_SESSION['DESpath'].'_views/_imgs/_uploads/'.$this->name)) {
+				unlink($_SESSION['DESpath'].'_views/_imgs/_uploads/'.$this->name);
 			}
 			$this->clear();
 			return true;  
@@ -86,11 +91,11 @@ class Image {
 	}
 	
 	public function show() {
-		return '<img src="'.$_SESSION['DESpath'].'_views/_imgs/_upload'.$this->name.'" id="img'.$this->id.'">';  
+		return '<img src="'.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$this->name.'" id="img'.$this->id.'">';  
 	}
 	
 	public function sysout() {
-		return $this->id.', '.$this->name.', '.$this->datetime.', '.$this->project; 
+		error_log($this->id.', '.$this->name.', '.$this->datetime.', '.$this->project); 
 	}
 	
 }
