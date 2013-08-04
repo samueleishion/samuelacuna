@@ -25,6 +25,14 @@ function HTMLnav($page) {
 
 function HTMLfoot($page) {
 	?>
+<section id="footer">
+ <content>
+  &copy; Descartes Framework. <br>
+  <a href="http://github.com/samueleishion/Descartes">github.com/samueleishion/Descartes</a> 
+  <a href="http://benova.net">benova.net</a>
+  <a href="http://sam.benova.net">Samuel Acu&ntilde;a</a> 
+ </content>
+</section>
 </body></html>
 	<?
 }

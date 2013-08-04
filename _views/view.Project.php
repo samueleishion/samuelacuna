@@ -4,9 +4,9 @@ if(empty($headers) || !$headers) {
 	HTMLnav($view);
 } 
 ?>
-<section id="contact">
+<section id="projects">
  <content>
-  Contact
+  Projects
  </content>
 </section>
 <? 

@@ -1,13 +1,16 @@
 <?
-HTMLhead($view); 
-HTMLnav($view); 
+if(empty($headers) || !$headers) {
+	HTMLhead($view); 
+	HTMLnav($view);
+} 
 ?>
-<section>
+<section id="about">
  <content>
   About
  </content>
 </section>
 <? 
-
-HTMLfoot($view); 
+if(empty($headers) || !$headers) {
+	HTMLfoot($view);
+} 
 ?>

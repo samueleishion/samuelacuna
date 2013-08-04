@@ -30,6 +30,9 @@
 	case 'contact':
 		require_once('_views/view.Contact.php');
 		break; 
+	case 'project':
+		require_once('_views/view.Project.php'); 
+		break; 
  	default:
 		require_once('_views/view.Home.php'); 
 		break; 

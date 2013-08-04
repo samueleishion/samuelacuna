@@ -7,6 +7,10 @@ body { font-family:Helvetica;
 	font-size:9pt; 
 	line-height:30px; }
 
+a { color:#6bf; 
+	text-decoration:none; }
+a:hover { color:#09f; }
+
 input { border:1px solid #ddd; 
 	background-color:#fff; 
 	padding:10px; 
@@ -19,17 +23,27 @@ input.button { background-color:#f4f4f4;
 input.button:hover { background-color:#f7f7f7; 
 	color:#555; }
 
+/* Navigation */
 nav, section { display:block; 
 	padding:20px; }
 
-nav { background-color:#eee; 
+nav { background-color:#333; 
 	line-height:14px; }
 	nav a { padding:20px; 
 		text-decoration:none; 
-		color:#bbb; }
-	nav a:hover { background-color:#ddd; 
-		color:#333; }
+		color:#999; }
+	nav a:hover { background-color:#111; 
+		color:#ddd; }
 
+/* Sections */
+section { height:400px; }
+section:nth-child(2n+1) { background-color:#eee; }
+section#footer { background-color:#333; 
+	color:#fff; 
+	height:120px; }
+	section#footer a { display:block; }
+
+/* Content bars */
 content { display:block;
 	position:relative; 
 	top:0px; 
