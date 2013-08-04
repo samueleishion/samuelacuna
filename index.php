@@ -15,6 +15,7 @@
  
  // Apply settings to site
  require_once('_controllers/settings.php'); 
+ require_once('_views/_incs/html.php'); 
  require_once('_views/_incs/fs.php');   
 
  // Select a view 
@@ -23,8 +24,14 @@
  	case 'admin':
 		echo 'Admin'; 
 		break;  
+	case 'about':
+		require_once('_views/view.About.php');
+		break; 
+	case 'contact':
+		require_once('_views/view.Contact.php');
+		break; 
  	default:
-		echo 'Home'; 
+		require_once('_views/view.Home.php'); 
 		break; 
  }
 

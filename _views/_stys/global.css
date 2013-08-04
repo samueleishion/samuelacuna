@@ -1,0 +1,44 @@
+@font-face { font-family:icons; src:url('_fonts/descartes_icons.ttf'),
+									url('_fonts/descartes_icons.eot'); } 
+
+* { margin:0px; padding:0px; }
+
+body { font-family:Helvetica; 
+	font-size:9pt; 
+	line-height:30px; }
+
+input { border:1px solid #ddd; 
+	background-color:#fff; 
+	padding:10px; 
+	margin:5px; 
+	outline:none; }
+input:focus { border:1px solid #09f; }
+input.button { background-color:#f4f4f4; 
+	color:#777; 
+	cursor:pointer; }
+input.button:hover { background-color:#f7f7f7; 
+	color:#555; }
+
+nav, section { display:block; 
+	padding:20px; }
+
+nav { background-color:#eee; 
+	line-height:14px; }
+	nav a { padding:20px; 
+		text-decoration:none; 
+		color:#bbb; }
+	nav a:hover { background-color:#ddd; 
+		color:#333; }
+
+content { display:block;
+	position:relative; 
+	top:0px; 
+	left:50%; 
+	margin-left:-500px;  
+	width:1000px; } 
+
+.gallery img { max-width:400px; 
+	max-height:200px; 
+	margin:10px; 
+	border:5px solid #fff; 
+	box-shadow:1px 1px 5px rgba(0,0,0,.2); }
