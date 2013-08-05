@@ -19,9 +19,9 @@ function HTMLnav($page) {
 <nav>
  <content>
   <a <? echo $href; ?>"home">Home</a>
+  <a <? echo $href; ?>"projects">Projects</a>
   <a <? echo $href; ?>"about">About</a>
   <a <? echo $href; ?>"contact">Contact</a>
-  <a <? echo $href; ?>"projects">Projects</a>
   <!-- <a <? echo $href; ?>"projects">Projects</a> -->
  </content>
 </nav>
