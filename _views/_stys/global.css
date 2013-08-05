@@ -39,8 +39,7 @@ nav { position:fixed;
 		color:#ddd; }
 
 /* Sections */
-section { height:400px; 
-	padding-top:60px; 
+section { padding-top:60px; 
 	padding-bottom:60px; }
 section:nth-child(2n+1) { background-color:#eee; }
 section#footer { background-color:#333; 

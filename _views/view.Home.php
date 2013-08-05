@@ -3,11 +3,7 @@ $headers = true;
 HTMLhead($view); 
 HTMLnav($view); 
 ?>
-<section id="home">
- <content>
-  Home
- </content>
-</section>
+<section id="home"></section>
 <? 
 require_once('view.Project.php');  
 require_once('view.About.php'); 
