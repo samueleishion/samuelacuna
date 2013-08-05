@@ -27,8 +27,11 @@ input.button:hover { background-color:#f7f7f7;
 nav, section { display:block; 
 	padding:20px; }
 
-nav { background-color:#333; 
-	line-height:14px; }
+nav { position:fixed; 
+	width:100%; 
+	background-color:#333; 
+	line-height:14px; 
+	z-index:999; }
 	nav a { padding:20px; 
 		text-decoration:none; 
 		color:#999; }
@@ -36,11 +39,14 @@ nav { background-color:#333;
 		color:#ddd; }
 
 /* Sections */
-section { height:400px; }
+section { height:400px; 
+	padding-top:60px; 
+	padding-bottom:60px; }
 section:nth-child(2n+1) { background-color:#eee; }
 section#footer { background-color:#333; 
 	color:#fff; 
-	height:120px; }
+	height:120px; 
+	padding:20px; }
 	section#footer a { display:block; }
 
 /* Content bars */
