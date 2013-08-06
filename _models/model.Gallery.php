@@ -6,10 +6,11 @@ class Gallery {
 	
 	public function __construct($dblink) {
 		$this->dblink = $dblink; 
-		$this->projects = array(); 
+		$this->instantiate(); 
 	} 
 	
 	public function instantiate() {
+		$this->projects = array(); 
 		require_once("model.Project.php"); 
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects"); 
 		while($row = mysqli_fetch_array($result)) {
