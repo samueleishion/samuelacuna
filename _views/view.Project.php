@@ -9,8 +9,9 @@ if(empty($headers) || !$headers) {
 <section id="projects">
  <content>
   <h1>Our Projects</h1>
-  Projects
-  <? echo $gallery->show(); ?>
+  <div class="gallery">
+   <? echo $gallery->show(); ?>
+  </div>
  </content>
 </section>
 <? 

@@ -157,8 +157,9 @@ class Project {
 	public function showCover() {
 		include_once("model.Image.php"); 
 		$i = new Image($this->dblink); 
-		$i->instantiate($this->cover); 
-		return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
+		$i->instantiate($this->cover);
+		return '<div class="cover" style="background-image:url(\'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></div>';  
+		// return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
 	}
 	
 	public function show() {

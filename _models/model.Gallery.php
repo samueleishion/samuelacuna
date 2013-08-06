@@ -14,7 +14,7 @@ class Gallery {
 		require_once("model.Project.php"); 
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects"); 
 		while($row = mysqli_fetch_array($result)) {
-			$p = new Project(); 
+			$p = new Project($this->dblink); 
 			$p->instantiate($row['id']); 
 			array_push($this->projects,$p); 
 		}
