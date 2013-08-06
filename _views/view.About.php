@@ -6,6 +6,7 @@ if(empty($headers) || !$headers) {
 ?>
 <section id="about">
  <content>
+  <h1>We are Company</h1>
   About
  </content>
 </section>
