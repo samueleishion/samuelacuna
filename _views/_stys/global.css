@@ -87,3 +87,17 @@ content { display:block;
 	text-shadow:0px 0px 5px rgba(0,0,0,.8); }
 
 .gallery .cover:hover .covertext { visibility:visible; }
+
+.thisproject { display:block; 
+	border-bottom:1px solid #ddd; 
+	text-align:center; 
+	padding-bottom:30px; 
+	margin-bottom:30px; }
+	
+	.thisproject h2 { float:left; 
+		padding-bottom:20px; }
+
+	.thisproject img { display:block; 
+		min-width:1000px; 
+		max-width:1000px; 
+		margin-bottom:10px; }

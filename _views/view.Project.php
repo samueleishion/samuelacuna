@@ -6,7 +6,7 @@ $thisproject = '';
 if(isset($v)) {
 	$isthere = $project->instantiateByName($v); 
 	if($isthere) {
-		$thisproject = '<div class="gallery">'; 
+		$thisproject = '<div class="thisproject">'; 
 		$thisproject .= $project->show(); 
 		$thisproject .= '</div>'; 
 	}

@@ -175,7 +175,7 @@ class Project {
 	}
 	
 	public function show() {
-		$show = $this->name;  
+		$show = "<h2>".ucfirst($this->name)."</h2><br>";  
 		$imgs = $this->getProjectImages();
 		foreach($imgs as $i) {
 			$show .= $i->show(); 
