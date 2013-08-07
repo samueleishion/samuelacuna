@@ -11,6 +11,10 @@ a { color:#6bf;
 	text-decoration:none; }
 a:hover { color:#09f; }
 
+h1 { color:#333; 
+	font-size:20pt; 
+	line-height:70px; }
+
 input { border:1px solid #ddd; 
 	background-color:#fff; 
 	padding:10px; 
