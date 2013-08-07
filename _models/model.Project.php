@@ -158,7 +158,7 @@ class Project {
 		include_once("model.Image.php"); 
 		$i = new Image($this->dblink); 
 		$i->instantiate($this->cover);
-		return '<div class="cover" style="background-image:url(\'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></div>';  
+		return '<a href="project?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></a>';  
 		// return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
 	}
 	
