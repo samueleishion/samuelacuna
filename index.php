@@ -30,7 +30,11 @@
 	case 'contact':
 		require_once('_views/view.Contact.php');
 		break; 
+	case 'projects':
+		require_once('_views/view.Project.php'); 
+		break; 
 	case 'project':
+		$v = (isset($_GET['v'])) ? cleanView($_GET['v']) : '';  
 		require_once('_views/view.Project.php'); 
 		break; 
  	default:
