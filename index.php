@@ -22,7 +22,8 @@
  $view = (isset($_GET['view'])) ? cleanView($_GET['view']) : 'home'; 
  switch($view) {
  	case 'admin':
-		echo 'Admin'; 
+		// echo 'Admin'; 
+		require_once('_views/view.Admin.php'); 
 		break;  
 	case 'about':
 		require_once('_views/view.About.php');

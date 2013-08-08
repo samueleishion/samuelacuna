@@ -7,6 +7,7 @@ function HTMLhead($page) {
  <title>Descartes : <? echo $page; ?></title>
  <link rel="stylesheet" type="text/css" href="_views/_stys/global.css">
  <? if($page=='home') { ?><link rel="stylesheet" type="text/css" href="_views/_stys/home.css"><? } ?>
+ <? if($page=='admin') { ?><link rel="stylesheet" type="text/css" href="_views/_stys/admin.css"><? } ?>
  <script src="_views/_scrs/jquery.min.js"></script>
  <script src="_views/_scrs/main.js"></script>
 </head><body>
@@ -23,7 +24,7 @@ function HTMLnav($page) {
   <a <? echo $href; ?>"projects">Projects</a>
   <a <? echo $href; ?>"about">About</a>
   <a <? echo $href; ?>"contact">Contact</a>
-  <!-- <a <? echo $href; ?>"projects">Projects</a> -->
+  <? if($_SESSION['DESlogged']==1) { ?> <a href="admin" id="admin">Admin</a> <? } ?>
  </content>
 </nav>
 	<?
