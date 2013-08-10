@@ -6,10 +6,11 @@ function HTMLhead($page) {
 <html><head>
  <title>Descartes : <? echo $page; ?></title>
  <link rel="stylesheet" type="text/css" href="_views/_stys/global.css">
- <? if($page=='home') { ?><link rel="stylesheet" type="text/css" href="_views/_stys/home.css"><? } ?>
- <? if($page=='admin') { ?><link rel="stylesheet" type="text/css" href="_views/_stys/admin.css"><? } ?>
  <script src="_views/_scrs/jquery.min.js"></script>
  <script src="_views/_scrs/main.js"></script>
+ <? if($page=='home') { ?><link rel="stylesheet" type="text/css" href="_views/_stys/home.css"><? } ?>
+ <? if($page=='admin') { ?><link rel="stylesheet" type="text/css" href="_views/_stys/admin.css">
+ <script src="_views/_scrs/admin.js"></script><? } ?>
 </head><body>
 	<?
 }
