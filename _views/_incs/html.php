@@ -25,7 +25,7 @@ function HTMLnav($page) {
   <a <? echo $href; ?>"projects">Projects</a>
   <a <? echo $href; ?>"about">About</a>
   <a <? echo $href; ?>"contact">Contact</a>
-  <? if($_SESSION['DESlogged']==1) { ?> <a href="admin" id="admin">Admin</a> <? } ?>
+  <? if($_SESSION['DESlogged']==1) { ?> <a href="admin">Admin</a> <? } ?>
  </content>
 </nav>
 	<?
