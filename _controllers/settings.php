@@ -23,9 +23,9 @@ $dbname = 'Descartes'; 	// The database name
 // No need to edit beyond this point. 
 
 $prefix = projectPrefix($sitename); 
-$thispath 	= $prefix.'path';  
-$thislogged	= $prefix.'logged'; 
-$thisuid 	= $prefix.'uid'; 
+$DESpath 	= $prefix.'path';  
+$DESlogged	= $prefix.'logged'; 
+$DESuid 	= $prefix.'uid'; 
 
 // Connect to database
 header("Access-Control-Allow-Origin: ".$siteurl); 
@@ -37,6 +37,6 @@ try {
 
 // Start session
 session_start(); 
-$_SESSION[$thispath] 	= '/'.$sitename.'/';  
+$_SESSION[$DESpath] 	= '/'.$sitename.'/';  
 
 ?>
