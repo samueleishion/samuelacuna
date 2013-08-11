@@ -31,7 +31,7 @@ class Image {
 		if(mysqli_num_rows($result)==1) {
 			while($row=mysqli_fetch_array($result)) {
 				$this->setId($row['id']); 
-				$this->setName($row['igmurl']);
+				$this->setName($row['imgurl']);
 				$this->setProject($row['project']); 
 				$this->setDate($row['datetime']);  
 			}
