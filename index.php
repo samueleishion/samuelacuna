@@ -13,4 +13,9 @@
  * 
  */
 
+include_once('_controllers/_libs/functions.php'); 
+require_once('_controllers/settings.php'); 
+
+
+
 ?>
