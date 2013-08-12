@@ -27,8 +27,12 @@ class User {
 	} 
 	
 	public function instantiate($uname,$pword) {
-		$this->uname = $uname; 
-		$this->pword = clean($pword); 
+		$this->setUnae($uname); 
+		$this->setPassword($pword);  
+	}
+	
+	public function instantiateById($id) {
+		$this->setId($id); 
 	}
 	
 	public function getId() { return $this->id; } 
