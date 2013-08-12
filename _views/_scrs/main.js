@@ -30,4 +30,24 @@ $(document).ready(function() {
 			}
 		})
 	}); 
+	
+	// Admin project menu
+	$('ul#menu li').on('click',function() {
+		var id = $(this).attr('id').substring(3); 
+		if(id=='add') {
+			
+		} else {
+			$.ajax({
+				type:'post', 
+				url:'_controllers/operator.php', 
+				data: {
+					action:'loadproject', 
+					project: id
+				}, 
+				success: function(data) {
+					$('.gallery').html(data); 
+				}
+			}); 
+		}
+	}); 
 }); 

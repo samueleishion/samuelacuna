@@ -1,4 +1,6 @@
 <?
+require_once('_models/model.Admin.php'); 
+$admin = new Admin($dblink); 
 $page = 'admin'; 
 HTMLhead($page); 
 ?>
@@ -12,9 +14,21 @@ HTMLhead($page);
   <input type="submit" class="submit" id="login" value="Log in">
  </form>
 </section>
-<? } else { ?>
+<? } else {
+	$admin->instantiateById($_SESSION['DESuid']);  
+	?>
 <section>
- <input type="button" class="submit" id="logout" value="Log out">
+ <input type="button" class="submit" id="logout" value="Log out"> <br>
+ <ul id="menu">
+  <?
+	echo $admin->getMenu(); 
+  ?>
+ </ul>
+ <div class="gallery">
+  <?
+	echo $admin->getProjectToEdit(0); 
+  ?>
+ </div>
 </section>
 <? } ?>
 <?
