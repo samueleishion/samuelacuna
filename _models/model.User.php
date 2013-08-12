@@ -94,7 +94,7 @@ class User {
 	
 	public function logout() {
 		session_unset(); 
-		session_destroy(); 
+		session_destroy();  
 		$this->clear(); 
 	}
 	
@@ -104,6 +104,10 @@ class User {
 		$this->setPassword(''); 
 		$this->setType(0); 
 		$this->logged = (isset($_SESSION['DESlogged'])) ? $_SESSION['DESlogged'] : false; 
+	}
+	
+	protected function getLink() {
+		return $this->dblink; 
 	}
 	
 	public function __toString() {

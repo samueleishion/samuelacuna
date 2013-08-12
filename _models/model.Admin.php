@@ -14,6 +14,13 @@
 
 class Admin extends User {
 	
+	private $dblink; 
+	
+	public function __construct($dblink) {
+		parent::__construct($dblink);  
+		$this->dblink = parent::getLink(); 
+	}
+	
 	public function getMenu() {
 		$menu = '<li id="catadd">Add a category</li>'; 
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects"); 

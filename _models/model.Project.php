@@ -173,7 +173,7 @@ class Project {
 		return $show;  
 	}
 	
-	protected function getProjectImages() {
+	public function getProjectImages() {
 		include_once("model.Image.php"); 
 		$list = array(); 
 		$proj = $this->id; 

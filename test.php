@@ -76,9 +76,28 @@ echo $pro.PHP_EOL.PHP_EOL;
  * USER 
  * ===================
  */
-echo "USER".PHP_EOL; 
-echo "====".PHP_EOL; 
-$user = new User($dblink);  
+// echo "USER".PHP_EOL; 
+// echo "====".PHP_EOL; 
+// $user = new User($dblink);  
+// echo $user.PHP_EOL; 
+// 
+// $user->instantiate('admin','admin');
+// echo $user.PHP_EOL; 
+// 
+// $user->login(); 
+// echo $user.PHP_EOL; 
+// 
+// $user->logout(); 
+// echo $user.PHP_EOL.PHP_EOL; 
+
+/* 
+ * ===================
+ * ADMIN 
+ * ===================
+ */
+echo "ADMIN (ext. User)".PHP_EOL; 
+echo "=================".PHP_EOL; 
+$user = new Admin($dblink);  
 echo $user.PHP_EOL; 
 
 $user->instantiate('admin','admin');
@@ -86,6 +105,9 @@ echo $user.PHP_EOL;
 
 $user->login(); 
 echo $user.PHP_EOL; 
+
+echo $user->getMenu().PHP_EOL; 
+echo $user->getProjectToEdit(1).PHP_EOL; 
 
 $user->logout(); 
 echo $user.PHP_EOL; 
