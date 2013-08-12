@@ -27,7 +27,7 @@ class User {
 	} 
 	
 	public function instantiate($uname,$pword) {
-		$this->setUnae($uname); 
+		$this->setUname($uname); 
 		$this->setPassword($pword);  
 	}
 	
