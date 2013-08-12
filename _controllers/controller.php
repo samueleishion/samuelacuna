@@ -16,7 +16,8 @@ switch($view) {
 	case 'admin':
 		require_once('_views/view.Admin.php'); 
 		break; 
-	case 'projects':
+	case 'project':
+		$show = (isset($_GET['v'])) ? cleanView($_GET['v']) : 'all';  
 		require_once('_views/view.Project.php');
 		break; 
 	default:

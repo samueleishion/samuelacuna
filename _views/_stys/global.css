@@ -9,3 +9,8 @@ input { border:1px solid #ddd;
 		border:1px solid rgba(0,144,255,0.6); }
 
 section { display:block; }
+
+.cover { display:inline-block; 
+	width:300px; height:150px; 
+	background-size:cover; 
+	background-position:center center; }
