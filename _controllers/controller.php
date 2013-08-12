@@ -11,16 +11,16 @@
  * 
  */
 
-$view = (isset($_GET['view'])) ? cleanView($_GET['view']) :'home'; 
+$view = (isset($_GET['view'])) ? cleanView($_GET['view']) : 'home'; 
 switch($view) {
 	case 'admin':
-		echo 'Admin'; 
+		require_once('_views/view.Admin.php'); 
 		break; 
-	case 'project':
-		echo 'Project'; 
+	case 'projects':
+		require_once('_views/view.Project.php');
 		break; 
 	default:
-		echo 'Welcome!'; 
+		require_once('_views/view.Home.php');  
 		break; 
 }
 
