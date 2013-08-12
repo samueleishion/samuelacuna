@@ -45,10 +45,10 @@ class Image {
 	public function getProject() { return $this->project; }
 	public function getDate() { return $this->datetime; }
 	
-	private function setId($int) { $this->id = $int; }
-	public function setName($str) { $this->name = $str; } 
-	public function setProject($int) { $this->project = $int; }
-	public function setDate($date) { $this->datetime = $date; } 
+	private function setId($int) { $this->id = clean($int); }
+	public function setName($str) { $this->name = clean($str); } 
+	public function setProject($int) { $this->project = clean($int); }
+	public function setDate($date) { $this->datetime = clean($date); } 
 	
 	public function save() {
 		$id = $this->id; 

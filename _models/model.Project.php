@@ -51,12 +51,12 @@ class Project {
 	public function getCover() { return $this->cover; }
 	public function getDate() { return $this->datetime; }
 	
-	private function setId($int) { $this->id=$int; }
-	public function setName($str) { strtolower($this->name=$str); }
-	public function setDescription($str) { $this->desc=$str; }
-	public function setTypes($str) { $this->types=$str; }
-	public function setCover($str) { $this->cover=$str; }
-	public function setDate($date) { $this->datetime=$date; }
+	private function setId($int) { $this->id = clean($int); }
+	public function setName($str) { $this->name = strtolower(clean($str)); }
+	public function setDescription($str) { $this->desc = clean($str); }
+	public function setTypes($str) { $this->types = clean($str); }
+	public function setCover($str) { $this->cover = clean($str); }
+	public function setDate($date) { $this->datetime = clean($date); }
 	
 	public function addType($type) {
 		$type = ''.$type;  
