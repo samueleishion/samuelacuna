@@ -160,7 +160,7 @@ class Project {
 		include_once("model.Image.php"); 
 		$i = new Image($this->dblink); 
 		$i->instantiate($this->cover);
-		return '<a href="project?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></a>';  
+		return '<a href="project?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></a>';  
 		// return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
 	}
 	
@@ -173,7 +173,7 @@ class Project {
 		return $show;  
 	}
 	
-	private function getProjectImages() {
+	protected function getProjectImages() {
 		include_once("model.Image.php"); 
 		$list = array(); 
 		$proj = $this->id; 

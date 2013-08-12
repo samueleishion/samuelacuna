@@ -81,7 +81,7 @@ class Image {
 				mysqli_query($this->dblink,"DELETE FROM images WHERE id='$id'"); 
 			} catch(mysqli_sql_exception $e) { return false; }
 			
-			$imgfile = $_SESSION[$DESpath].'_views/_imgs/_uploads'.$this->name; 
+			$imgfile = $_SESSION['DESpath'].'_views/_imgs/_uploads'.$this->name; 
 			if(is_file($imgfile)) {
 				unlink($imgfile); 
 			}
@@ -99,7 +99,7 @@ class Image {
 	} 
 	
 	public function show() {
-		return '<img src="'.$_SESSION[$DESpath].'_views/_imgs/_uploads/'.$this->name.'" id="img'.$this->id.'">'; 
+		return '<img src="'.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$this->name.'" id="img'.$this->id.'">'; 
 	}
 	
 	public function __toString() {

@@ -19,29 +19,23 @@ class User {
 	private $uname;
 	private $pword;  
 	private $type; 
+	private $logged; 
 	
 	public function __construct($dblink) {
 		$this->dblink = $dblink; 
 		$this->clear(); 
-	}
+	} 
 	
-	public function instantiate($id) {
-		$id = clean($id); 
-		$result = mysqli_query($this->dblink,"SELECT * FROM users WHERE id='$id'"); 
-		if(mysqli_num_rows($result)==1) {
-			while($row=mysqli_fetch_array($result)) {
-				$this->setId($row['id']); 
-				$this->setName($row['uname']); 
-				$this->setType($row['type']); 
-			}
-		}
+	public function instantiate($uname,$pword) {
+		$this->uname = $uname; 
+		$this->pword = clean($pword); 
 	}
 	
 	public function getId() { return $this->id; } 
 	public function getUname() { return $this->uname; } 
 	public function getType() { return $this->type; } 
 	
-	private function setId($int) { $this->id = clean($id); }
+	private function setId($int) { $this->id = clean($int); }
 	public function setUname($str) { $this->uname = clean($str); } 
 	public function setPassword($str) { $this->pword = encode(clean($str)); }  
 	public function setType($str) { $this->type = clean($str); }  
@@ -73,24 +67,30 @@ class User {
 		return true; 
 	} 
 	
-	public function login($uname,$pword) {
-		$pword = encode(clean($pword)); 
-		$uname = clean($uname);  
-		try {
-			$result = mysqli_query($this->dblink,"SELECT * FROM users");  
-			while($row = mysqli_fetch_array($result)) {
-				if($uname==$row['uname'] && $pword==$row['pword']) {
-					$this->instantiate($row['id;']); 
-					$_SESSION[$DESlogged] = true; 
-					$_SESSION[$DESuid] = $row['id'];  
-				}
-			}
-		} catch(mysqli_sql_exception $e) {
-			return false; 
+	public function login() {
+		if(!isset($this->logged) || !$this->logged) {
+			if(isset($this->id) && $this->id!=0) {
+				$id = $this->id; 
+				$result = mysqli_query($this->dblink, "SELECT * FROM users WHERE id='$id'");
+			} elseif(isset($this->uname) && isset($this->pword)) {
+				$uname = $this->uname; 
+				$pword = encode($this->pword); 
+				$result = mysqli_query($this->dblink, "SELECT * FROM users WHERE uname='$uname' AND pword='$pword'");
+			} else return false;  
+			 
+			if(mysqli_num_rows($result) == 1) {
+				while($row = mysqli_fetch_array($result)) {
+					$this->setId($row['id']); 
+					$this->setUname($row['uname']); 
+					$this->setType($row['type']);  
+				} 
+				$_SESSION['DESlogged'] = true; 
+				$_SESSION['DESuid'] = $this->id; 
+				$this->logged = true; 
+				return true;
+			} else return false; 
 		}
-		
-		return true; 
-	} 
+	}
 	
 	public function logout() {
 		session_unset(); 
@@ -101,8 +101,13 @@ class User {
 	public function clear() {
 		$this->setId(0);   
 		$this->setUname(''); 
-		$this->setPword(''); 
+		$this->setPassword(''); 
 		$this->setType(0); 
+		$this->logged = (isset($_SESSION['DESlogged'])) ? $_SESSION['DESlogged'] : false; 
+	}
+	
+	public function __toString() {
+		return $this->getId().':'.$this->getUname().', '.$this->getType().', '.$this->logged; 
 	}
 }
 

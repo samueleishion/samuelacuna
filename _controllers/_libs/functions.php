@@ -10,6 +10,8 @@
  * Library containing standard functions.   
  * 
  */
+ 
+$test = 'scope'; 
 
 function clean($str) { return htmlentities(stripslashes($str)); }
 function cleanView($str) { return strtolower(clean($str)); }
