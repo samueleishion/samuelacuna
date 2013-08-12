@@ -1,16 +1,33 @@
 $(document).ready(function() {
-	// Navigation Bar
-	$('nav a').on('click',function(e) {
-		var id = $(this).attr('id'); 
-		if(id!=null) e.preventDefault(); 
-		scrollTo(id); 
+	// Log in and out
+	$('input#login').on('click',function(e) {
+		e.preventDefault(); 
+		var uname = $('input#uname').val(); 
+		var pword = $('input#pword').val(); 
+		$.ajax({
+			type:'post',
+			url:'_controllers/operator.php', 
+			data: {
+				action:'login', 
+				uname:uname, 
+				pword:pword
+			}, 
+			success: function(data) {
+				location.reload(); 
+			}
+		})
+	}); 
+	
+	$('input#logout').on('click',function(e) {
+		$.ajax({
+			type:'post',
+			url:'_controllers/operator.php', 
+			data: {
+				action:'logout'
+			}, 
+			success: function(data) {
+				location.reload(); 
+			}
+		})
 	}); 
 }); 
-
-	
-function scrollTo(id) {
-	var qty = $('section#'+id).offset().top;   
-	$('html,body').animate({
-		scrollTop: qty
-	},1000); 
-}

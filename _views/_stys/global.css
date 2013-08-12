@@ -3,4 +3,9 @@
 body { font-family:Helvetica; 
 	font-size:10pt; } 
 
-input { border:1px solid #ddd; }
+input { border:1px solid #ddd; 
+	outline:none; }
+	input:focus { box-shadow:0px 0px 5px rgba(0,144,255,0.5); 
+		border:1px solid rgba(0,144,255,0.6); }
+
+section { display:block; }

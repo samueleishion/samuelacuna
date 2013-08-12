@@ -78,9 +78,9 @@ class User {
 				$result = mysqli_query($this->dblink, "SELECT * FROM users WHERE id='$id'");
 			} elseif(isset($this->uname) && isset($this->pword)) {
 				$uname = $this->uname; 
-				$pword = encode($this->pword); 
+				$pword = $this->pword; 
 				$result = mysqli_query($this->dblink, "SELECT * FROM users WHERE uname='$uname' AND pword='$pword'");
-			} else return false;  
+			} else return false; 
 			 
 			if(mysqli_num_rows($result) == 1) {
 				while($row = mysqli_fetch_array($result)) {
