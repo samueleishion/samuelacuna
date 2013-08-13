@@ -28,7 +28,7 @@ class Admin extends User {
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects"); 
 		while($row = mysqli_fetch_array($result)) {
 			$menu .= '
-  <li id="cat'.$row['id'].'">"'.$row['projname'].'</li>'; 
+  <li id="cat'.$row['id'].'">'.$row['projname'].'</li>'; 
 		}
 		return $menu;  
 	}

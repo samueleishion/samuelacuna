@@ -44,6 +44,18 @@ class Project {
 		return false; 
 	}
 	
+	public function instantiateByName($name) {
+		$name = clean($name); 
+		$result = mysqli_query($this->dblink,"SELECT id FROM projects WHERE projname='$name'"); 
+		if(mysqli_num_rows($result)==1) {
+			while($row=mysqli_fetch_array($result)) {
+				$id = $row['id']; 
+			}
+			return $this->instantiate($id); 
+		}
+		return false; 
+	}
+	
 	public function getId() { return $this->id; }
 	public function getName() { return $this->name; }
 	public function getDescription() { return $this->desc; }

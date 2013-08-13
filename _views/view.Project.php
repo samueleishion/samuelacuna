@@ -1,10 +1,14 @@
 <?
+require_once('_models/model.Project.php'); 
+$project = new Project($dblink); 
+$project->instantiateByName($show); 
 $page = 'projects'; 
 HTMLhead($page); 
 ?>
 
 <? echo $page; ?><br>
-<? echo $show; ?>
+<? echo $show; ?><br>
+<? echo $project->show(); ?>
 
 <?
 HTMLfoot($page); 
