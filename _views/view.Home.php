@@ -6,6 +6,7 @@ $projectlist = getAllProjects($dblink,$image);
 $project = new Project($dblink); 
 $page = 'home';  
 HTMLhead($page); 
+HTMLnav($page); 
 ?>
 
 <? echo $page; ?>

@@ -1,14 +1,35 @@
+/*
+ * HTML defaults
+ */ 
+
 * { margin:0px; padding:10px; }
 
 body { font-family:Helvetica; 
 	font-size:10pt; } 
 
+a { color:#555; 
+	text-decoration:none; }
+a:hover { color:#000; 
+	background-color:rgba(0,0,0,.1); }
+
 input { border:1px solid #ddd; 
 	outline:none; }
 	input:focus { box-shadow:0px 0px 5px rgba(0,144,255,0.5); 
 		border:1px solid rgba(0,144,255,0.6); }
+	
+/*
+ * HTML secions and modules
+ */
+
+nav { display:block;
+	position:fixed; 
+	top:0px; left:0px; 
+	width:100%;  
+	background-color:#ddd; 
+	color:#444; }
 
 section { display:block; }
+	section:first-child { padding-top:100px; }
 
 .cover { display:inline-block; 
 	width:300px; height:150px; 

@@ -12,6 +12,17 @@ function HTMLhead($page) {
 	<?
 }
 
+function HTMLnav($page) {
+	$des = $_SESSION['DESpath'];
+	?>
+<nav>
+ <a href="<? echo $des; ?>">Home</a>
+ <a href="<? echo $des; ?>project?v=all">Projects</a>
+ <a href="<? echo $des; ?>admin">Admin</a>
+</nav>
+	<?
+}
+
 function HTMLfoot($page) {
 	?>
 </body></html>

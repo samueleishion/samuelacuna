@@ -3,6 +3,7 @@ require_once('_models/model.Admin.php');
 $admin = new Admin($dblink); 
 $page = 'admin'; 
 HTMLhead($page); 
+HTMLnav($page); 
 ?>
 
 <? echo $page; ?>
