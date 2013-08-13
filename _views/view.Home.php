@@ -9,6 +9,9 @@ HTMLnav($page);
 
 <? echo $page; ?>
 <section>
+ Welcome! 
+</section>
+<section>
  <?
  	foreach($projectlist as $key => $p) {
  		$project->instantiate($p); 

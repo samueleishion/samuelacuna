@@ -19,6 +19,7 @@ function HTMLnav($page) {
  <a href="<? echo $des; ?>">Home</a>
  <a href="<? echo $des; ?>project?v=all">Projects</a>
  <a href="<? echo $des; ?>admin">Admin</a>
+ <? if(isset($_SESSION['DESlogged']) && $_SESSION['DESlogged']==1) { ?><a href="#" id="logout">Log out</a><? } ?>
 </nav>
 	<?
 }

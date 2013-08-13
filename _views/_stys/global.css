@@ -4,8 +4,11 @@
 
 * { margin:0px; padding:10px; }
 
+html { padding:0px; }
 body { font-family:Helvetica; 
-	font-size:10pt; } 
+	font-size:10pt; 
+	padding:0px; 
+	padding-top:40px; } 
 
 a { color:#777; 
 	text-decoration:none; }
@@ -30,12 +33,20 @@ nav { display:block;
 
 section { display:block; }
 	section:first-child { padding-top:100px; }
+	section:nth-child(2n+1) { background-color:#ecf7ff; }
 
 .cover { display:inline-block; 
 	width:300px; height:150px; 
 	background-size:cover; 
 	background-position:center center; }
 	
+/*
+ * Admin stuff
+ */
+#logout { position:fixed;
+	top:0px;  
+	right:0px; }
+
 ul#menu li { color:#777; 
 	cursor:pointer; }
 ul#menu li:hover { color:#000; }

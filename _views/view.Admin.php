@@ -19,7 +19,6 @@ HTMLnav($page);
 	$admin->instantiateById($_SESSION['DESuid']);  
 	?>
 <section>
- <input type="button" class="submit" id="logout" value="Log out"> <br>
  <ul id="menu">
   <?
 	echo $admin->getMenu(); 

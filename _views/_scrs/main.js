@@ -18,7 +18,8 @@ $(document).ready(function() {
 		})
 	}); 
 	
-	$('input#logout').on('click',function(e) {
+	$('#logout').on('click',function(e) {
+		e.preventDefault(); 
 		$.ajax({
 			type:'post',
 			url:'_controllers/operator.php', 
