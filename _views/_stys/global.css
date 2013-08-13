@@ -7,7 +7,7 @@
 body { font-family:Helvetica; 
 	font-size:10pt; } 
 
-a { color:#555; 
+a { color:#777; 
 	text-decoration:none; }
 a:hover { color:#000; 
 	background-color:rgba(0,0,0,.1); }
@@ -35,3 +35,7 @@ section { display:block; }
 	width:300px; height:150px; 
 	background-size:cover; 
 	background-position:center center; }
+	
+ul#menu li { color:#777; 
+	cursor:pointer; }
+ul#menu li:hover { color:#000; }

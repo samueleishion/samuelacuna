@@ -1,8 +1,6 @@
 <?
-require_once('_models/model.Image.php'); 
 require_once('_models/model.Project.php'); 
-$image = new Image($dblink); 
-$projectlist = getAllProjects($dblink,$image); 
+$projectlist = getAllProjects($dblink); 
 $project = new Project($dblink); 
 $page = 'home';  
 HTMLhead($page); 

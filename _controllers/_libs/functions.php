@@ -19,13 +19,11 @@ function encode($str) { return hash('ripemd160',$str); }
 function now() { return date('Y\/m\/d H\:i\:s'); }
 function projectPrefix($str) { return substr(strtoupper($str),0,3); }
 
-function getAllProjects($dblink,$image) {
+function getAllProjects($dblink) {
 	$list = array(); 
 	$result = mysqli_query($dblink,"SELECT id FROM projects"); 
 	while($row=mysqli_fetch_array($result)) {
-		$image->instantiate($row['id']); 
-		array_push($list,$image->getId()); 
-		$image->clear(); 
+		array_push($list,$row['id']); 
 	}
 	return $list; 
 }

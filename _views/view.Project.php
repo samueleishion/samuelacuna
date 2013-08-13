@@ -1,15 +1,26 @@
 <?
 require_once('_models/model.Project.php'); 
 $project = new Project($dblink); 
-$project->instantiateByName($show); 
 $page = 'projects'; 
 HTMLhead($page); 
 HTMLnav($page); 
 ?>
 
-<? echo $page; ?><br>
-<? echo $show; ?><br>
-<? echo $project->show(); ?>
+<? echo $page; ?>
+<section>
+<? 
+if($project->instantiateByName($show)) {
+	echo $project->show(); 
+} else { 
+	$projectlist = getAllProjects($dblink); 
+	foreach($projectlist as $key => $p) {
+		$project->instantiate($p); 
+		echo $project->showCover(); 
+		$project->clear(); 
+	}
+}
+?>
+</section>
 
 <?
 HTMLfoot($page); 
