@@ -40,7 +40,7 @@ function encodequotes($str) {
 	for($i = 0; $i < strlen($str); $i++) {
 		if($str[$i]==chr(34)) 
 			$result .= '&34;'; 
-		elseif($text[$i]==chr(39))
+		elseif($str[$i]==chr(39))
 			$result .= '&39;'; 
 		else $result .= $str[$i]; 
 	}
