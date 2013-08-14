@@ -62,6 +62,34 @@ $(document).ready(function() {
 	// Submit stuff
 	activateSubmit(); 
 	
+	// Upload images 
+	$('body').on('change','input#images',function() {
+		$('input#proj').attr("value",$('input#project').val()); 
+		var form = new FormData($('#uploadform')[0]); 
+		$.ajax({ 
+			url: '_controllers/operator.php',
+			type: 'POST', 
+			xhr: function() {
+				var myxhr = $.ajaxSettings.xhr(); 
+				if(myxhr.upload) {
+					myxhr.upload.addEventListener('progress', progress, false); 
+				}
+				return myxhr; 
+			}, 
+			success: function(data) {
+				location.reload(); 
+			}, 
+			error: function(data) {
+				console.log("ERROR on upload"); 
+				console.log(data); 
+			}, 
+			data: form, 
+			cache: false, 
+			contentType: false, 
+			processData: false
+		}); 
+	}); 
+	
 }).ajaxComplete(function() {
 	
 	// Submit loaded stuff
@@ -87,14 +115,17 @@ function showCurtains() {
 function activateSubmit() {
 	// Submit stuff
 	$('.submit').on('click', function(e) {
-		e.preventDefault(); 
-		onSubmit($(this)); 
+		e.preventDefault();
+		// var id = $(this).attr('id').toLowerCase();
+		// console.log('out '+id);  
+		onSubmit($(this));   
 	});  
 }
 
 function onSubmit(button) {
 	console.log('click'); 
 	var id = button.attr('id').toLowerCase();  
+	console.log(id); 
 	switch(id) {
 		case 'addproject': 
 			var name = $('#newProjectName').val(); 
@@ -125,12 +156,23 @@ function onSubmit(button) {
 			 		location.reload(); 
 			 	}
 			 }); 
-			 break; 
+			 break;
+		case 'addimages':
+			console.log('about to add images'); 
+			$('input#images').trigger('click'); 
+			break;  
 		default: 
 			data = null; 
 			break;
 	}
 }
+
+function progress(e) {
+	if(e.lengthComputable) {
+		$('progress').attr({value:e.loaded,max:e.total}); 
+	}
+}
+
 // Function for ajaxRequests
 function ajaxRequest(data) {
 	$.ajax({

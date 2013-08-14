@@ -51,6 +51,37 @@ if(isset($_POST) || isset($_REQUEST)) {
 			if($proj->delete()) echo 'deleted';
 			else echo 'still active';  
 			break; 
+		case 'upload': 
+			require_once('../_models/model.Image.php'); 
+			$succeed = 0; 
+			$error = 0; 
+			$result = 0; 
+			foreach($_FILES['file']['error'] as $key => $val) {
+				if($val==UPLOAD_ERR_OK) {
+					$img = new Image($dblink);
+					$rand = encode(rand(0,1000000));  
+					$name = $rand.clean($_FILES['file']['name'][$key]); 
+					$img->setName($name); 
+					$img->setDate(now()); 
+					$img->setProject(clean($_REQUEST['project']));
+					copy($_FILES['file']['tmp_name'][$key],'../_views/_imgs/_uploads/'.$name); 
+					$img->save(); 
+					$size = filesize($_FILES['file']['tmp_name'][$key]); 
+					$result .= '<br>File '.$succeed.' - '.$name;
+					$succeed++;  
+				} else {
+					$result .= '<br>Image #'.$key.' failed to upload.'; 
+					$error++; 
+				}
+			}
+			
+			echo '<br>'.$succeed.' files were uploaded successfully!'; 
+			if($error>0) {
+				// $plural = ; 
+				echo '<br>Unfortunately, '.$error.' file'.($error>1) ? 's ' : ' '.'were not uploaded. =('; 
+			} 
+			echo $result; 
+			break; 
 		default:
 			break; 
 	} 

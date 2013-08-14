@@ -44,7 +44,7 @@ class Admin extends User {
 			$out = '<input type="text" value="'.ucfirst($proj->getName()).'"><br>
  <textarea>'.$proj->getDescription().'</textarea><br>
  <input type="hidden" id="project" value="'.$proj->getId().'">
- <input type="button" class="submit" id="addimgs" value="Add Images">
+ <input type="button" class="submit" id="addimages" value="Add Images">
  <input type="button" class="submit" id="delproject" value="Delete Project"><br>'; 
 		}  
 		

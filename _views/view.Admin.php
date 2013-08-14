@@ -19,6 +19,11 @@ HTMLnav($page);
 	$admin->instantiateById($_SESSION['DESuid']);  
 	?>
 <section>
+ <form enctype="multipart/form-data" id="uploadform">
+  <input type="file" multiple name="file[]" id="images" accept="image/*">
+  <input type="hidden" name="action" value="upload">
+  <input type="hidden" name="project" id="proj" value="">
+ </form><progress></progress>
  <ul id="menu">
   <?
 	echo $admin->getMenu(); 
