@@ -38,7 +38,7 @@ if(isset($_POST) || isset($_REQUEST)) {
 				$proj->setName($name); 
 				$proj->setDescription($desc); 
 				$proj->setDate($time);
-				$proj->setCover(0); 
+				$proj->setCover(1); 
 				if($proj->save()) echo 'success';
 				else echo 'failure';
 			} else echo 'get a new name';  
