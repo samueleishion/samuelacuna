@@ -58,14 +58,14 @@ class Project {
 	
 	public function getId() { return $this->id; }
 	public function getName() { return $this->name; }
-	public function getDescription() { return $this->desc; }
+	public function getDescription() { return decodequotes($this->desc); }
 	public function getTypes() { return $this->types; }
 	public function getCover() { return $this->cover; }
 	public function getDate() { return $this->datetime; }
 	
 	private function setId($int) { $this->id = clean($int); }
 	public function setName($str) { $this->name = strtolower(clean($str)); }
-	public function setDescription($str) { $this->desc = clean($str); }
+	public function setDescription($str) { $this->desc = encodequotes($str); }
 	public function setTypes($str) { $this->types = clean($str); }
 	public function setCover($str) { $this->cover = clean($str); }
 	public function setDate($date) { $this->datetime = clean($date); }
@@ -179,6 +179,7 @@ class Project {
 	
 	public function show() {
 		$show = "<h2>".ucfirst($this->name)."</h2><br>";  
+		$show .= decodequotes($this->desc).'<br>'; 
 		$imgs = $this->getProjectImages();
 		foreach($imgs as $i) {
 			$show .= $i->show(); 

@@ -41,9 +41,10 @@ class Admin extends User {
 		$out = ''; 
 		 
 		if($proj->isInstance()) { 
-			$out = '<input type="text" value="'.ucfirst($proj->getName()).'"><br>
- <textarea>'.$proj->getDescription().'</textarea><br>
+			$out = '<input type="text" id="newname" value="'.ucfirst($proj->getName()).'"><br>
+ <textarea id="newdesc">'.$proj->getDescription().'</textarea><br>
  <input type="hidden" id="project" value="'.$proj->getId().'">
+ <input type="button" class="submit" id="editproject" value="Save changes">
  <input type="button" class="submit" id="addimages" value="Add Images">
  <input type="button" class="submit" id="delproject" value="Delete Project"><br>'; 
 		}  

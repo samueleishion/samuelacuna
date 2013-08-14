@@ -157,6 +157,24 @@ function onSubmit(button) {
 			 	}
 			 }); 
 			 break;
+		case 'editproject':
+			var newname = $('input#newname').val(); 
+			var newdesc = $('textarea#newdesc').val(); 
+			var proj = $('input#project').val(); 
+			$.ajax({
+				type:'post',
+				url:'_controllers/operator.php', 
+				data: {
+					action: id, 
+					project: proj, 
+					newname: newname, 
+					newdesc: newdesc
+				}, 
+				success: function(data) {
+					location.reload(); 
+				}
+			}); 
+			break; 
 		case 'addimages':
 			console.log('about to add images'); 
 			$('input#images').trigger('click'); 

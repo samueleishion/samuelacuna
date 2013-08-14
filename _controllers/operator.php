@@ -33,7 +33,7 @@ if(isset($_POST) || isset($_REQUEST)) {
 			$proj = new Project($dblink); 
 			$name = strtolower(clean($_POST['name'])); 
 			if(!projectNameRepeat($dblink,$name)) {
-				$desc = clean($_POST['desc']); 
+				$desc = encodequotes($_POST['desc']); 
 				$time = now(); 
 				$proj->setName($name); 
 				$proj->setDescription($desc); 
@@ -50,6 +50,18 @@ if(isset($_POST) || isset($_REQUEST)) {
 			$proj->instantiate($id); 
 			if($proj->delete()) echo 'deleted';
 			else echo 'still active';  
+			break; 
+		case 'editproject':
+			require_once('../_models/model.Project.php'); 
+			$proj = new Project($dblink); 
+			$id = clean($_POST['project']); 
+			$newname = clean($_POST['newname']); 
+			$newdesc = encodequotes($_POST['newdesc']); 
+			$proj->instantiate($id); 
+			$proj->setName($newname); 
+			$proj->setDescription($newdesc); 
+			if($proj->save()) echo 'changed successfully'; 
+			else echo 'failure';  
 			break; 
 		case 'upload': 
 			require_once('../_models/model.Image.php'); 
