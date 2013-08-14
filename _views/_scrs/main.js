@@ -1,4 +1,4 @@
-var ajaxLoadedSubmit; 
+var ajaxLoadedSubmit;
 
 $(document).ready(function() {
 	ajaxLoadedSubmit = false; 
@@ -176,9 +176,24 @@ function onSubmit(button) {
 			}); 
 			break; 
 		case 'addimages':
-			console.log('about to add images'); 
 			$('input#images').trigger('click'); 
 			break;  
+		case 'imgcover':
+			var img = button.attr('image'); 
+			var proj = $('#project').val(); 
+			$.ajax({
+				type:'post',
+				url:'_controllers/operator.php', 
+				data: { 
+					action:id, 
+					project:proj, 
+					image:img
+				}, 
+				success: function(data) {
+					location.reload(); 
+				}
+			}); 
+			break; 
 		default: 
 			data = null; 
 			break;

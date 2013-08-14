@@ -50,7 +50,7 @@ class Admin extends User {
 		}  
 		
 		foreach($images as $key => $val) {
-			$out .= '<img src="'.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$images[$key]->getName().'"> edit | delete'; 
+			$out .= '<img src="'.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$images[$key]->getName().'"> <span class="submit" id="imgcover" image="'.$images[$key]->getId().'">cover</span> | <span class="submit" id="delimg" image="'.$images[$key]->getId().'">delete</span>'; 
 		}  
 		return $out; 
 	}

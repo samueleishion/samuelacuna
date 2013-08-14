@@ -94,6 +94,16 @@ if(isset($_POST) || isset($_REQUEST)) {
 			} 
 			echo $result; 
 			break; 
+		case 'imgcover':
+			require_once('../_models/model.Project.php'); 
+			$id = clean($_POST['project']); 
+			$img = clean($_POST['image']); 
+			$proj = new Project($dblink); 
+			$proj->instantiate($id); 
+			$proj->setCover($img); 
+			if($proj->save()) echo 'cover changed';
+			else echo 'failure';   
+			break;  
 		default:
 			break; 
 	} 
