@@ -15,11 +15,12 @@ a { color:#777;
 a:hover { color:#000; 
 	background-color:rgba(0,0,0,.1); }
 
-input { border:1px solid #ddd; 
-	outline:none; }
-	input:focus { box-shadow:0px 0px 5px rgba(0,144,255,0.5); 
+input, textarea { border:1px solid #ddd; 
+	outline:none; 
+	resize:none; } 
+	input:focus, textarea:focus { box-shadow:0px 0px 5px rgba(0,144,255,0.5); 
 		border:1px solid rgba(0,144,255,0.6); }
-	
+
 /*
  * HTML secions and modules
  */
@@ -50,3 +51,20 @@ section { display:block; }
 ul#menu li { color:#777; 
 	cursor:pointer; }
 ul#menu li:hover { color:#000; }
+
+.curtain { display:none; 
+	position:fixed; 
+	top:0px; left:0px;  
+	width:100%; 
+	height:100%; 
+	background-color:rgba(0,0,0,.2); }
+	.curtain .box { display:block; 
+		position:fixed; 
+		top:50%; left:50%; 
+		width:400px; 
+		height:150px; 
+		margin-left:-200px; 
+		margin-top:-75px; 
+		background-color:#fff; }
+
+.submit { cursor:pointer; }

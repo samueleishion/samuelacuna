@@ -30,6 +30,17 @@ HTMLnav($page);
   ?>
  </div>
 </section>
+
+<div class="curtain" id="addProject">
+ <div class="box">
+  Add a project
+  <input type="text" id="newProjectName" placeholder="Project Name"><br>
+  <textarea id="newProjectDescription" placeholder="Description"></textarea>
+  <input type="button" class="submit" id="addproject" value="Save">
+  <a class="curtainClose" id="addProject">X</a>
+ </div>
+</div>
+
 <? } ?>
 <?
 HTMLfoot($page); 

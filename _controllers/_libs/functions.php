@@ -21,11 +21,17 @@ function projectPrefix($str) { return substr(strtoupper($str),0,3); }
 
 function getAllProjects($dblink) {
 	$list = array(); 
-	$result = mysqli_query($dblink,"SELECT id FROM projects"); 
+	$result = mysqli_query($dblink,"SELECT id FROM projects ORDER BY id DESC"); 
 	while($row=mysqli_fetch_array($result)) {
 		array_push($list,$row['id']); 
 	}
 	return $list; 
+}
+
+function projectNameRepeat($dblink,$name) {
+	$result = mysqli_query($dblink,"SELECT id FROM projects WHERE projname='$name'"); 
+	if(mysqli_num_rows($result)>0) return true; 
+	return false; 
 }
 
 ?>

@@ -34,7 +34,7 @@ class Project {
 			while($row=mysqli_fetch_array($result)) {
 				$this->setId($row['id']); 
 				$this->setName($row['projname']); 
-				$this->setDescription($row['desc']); 
+				$this->setDescription($row['projdesc']); 
 				$this->setDate($row['datetime']); 
 				$this->setCover($row['cover']); 
 				$this->setTypes($row['type']); 
@@ -114,13 +114,14 @@ class Project {
 	public function save() {
 		$id = $this->id; 
 		$name = $this->name; 
+		$desc = $this->desc; 
 		$date = now(); 
 		$cover = $this->cover; 
 		$type = $this->type; 
 		
 		if($id==0) {
 			try {
-				mysqli_query($this->dblink,"INSERT INTO projects (projname,datetime,cover,type) VALUES ('$name','$date','$cover','$type')"); 
+				mysqli_query($this->dblink,"INSERT INTO projects (projname,projdesc,datetime,cover,type) VALUES ('$name','$desc','$date','$cover','$type')"); 
 			} catch(mysqli_sql_exception $e) {
 				return false; 
 			}
@@ -130,7 +131,7 @@ class Project {
 			}
 		} else {
 			try {
-				mysqli_query($this->dblink,"UPDATE projects SET projname='$name', datetime='$date', cover='$cover', type='$type' WHERE id='$id'"); 
+				mysqli_query($this->dblink,"UPDATE projects SET projname='$name', projdesc='$desc', datetime='$date', cover='$cover', type='$type' WHERE id='$id'"); 
 			} catch(mysqli_sql_exception $e) {
 				return false; 
 			}
@@ -190,7 +191,7 @@ class Project {
 		$list = array(); 
 		$proj = $this->id; 
 		if($proj!=0) {
-			$result = mysqli_query($this->dblink,"SELECT * FROM images WHERE project='$proj'");
+			$result = mysqli_query($this->dblink,"SELECT * FROM images WHERE project='$proj' ORDER BY id DESC");
 			while ($row=mysqli_fetch_array($result)) {
 				$img = new Image($this->dblink); 
 				$img->instantiate($row['id']); 
@@ -202,6 +203,10 @@ class Project {
 	
 	public function __toString() {
 		return $this->id.':'.$this->name.', '.$this->desc.' ('.$this->datetime.')'; 
+	}
+	
+	public function isInstance() {
+		return $this->id!=0; 
 	}
 }
 
