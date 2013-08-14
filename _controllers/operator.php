@@ -104,6 +104,23 @@ if(isset($_POST) || isset($_REQUEST)) {
 			if($proj->save()) echo 'cover changed';
 			else echo 'failure';   
 			break;  
+		case 'delimg':
+			require_once('../_models/model.Image.php'); 
+			require_once('../_models/model.Project.php'); 
+			$projectid = clean($_POST['project']); 
+			$imageid = clean($_POST['image']); 
+			$proj = new Project($dblink); 
+			$proj->instantiate($projectid); 
+			if($proj->getCover()==$imageid) {
+				$proj->setCover(1); 
+				$proj->save(); 
+			} 
+			$proj->clear(); 
+			$image = new Image($dblink); 
+			$image->instantiate($imageid); 
+			if($image->delete()) echo 'image deleted successfully'; 
+			else echo 'failure';   
+			break; 
 		default:
 			break; 
 	} 
