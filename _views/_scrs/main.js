@@ -55,6 +55,7 @@ $(document).ready(function() {
 			}); 
 		}
 	}); 
+	$('ul#menu li.curtainOpen').next().click(); 
 	
 	// Show curtains
 	showCurtains(); 
