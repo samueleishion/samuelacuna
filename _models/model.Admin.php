@@ -42,7 +42,15 @@ class Admin extends User {
 		 
 		if($proj->isInstance()) { 
 			$out = '<input type="text" id="newname" value="'.ucfirst($proj->getName()).'"><br>
- <textarea id="newdesc">'.$proj->getDescription().'</textarea><br>
+ <textarea id="newdesc">'.$proj->getDescription().'</textarea>
+ <div class="types">';
+ 			$result = mysqli_query($this->dblink,"SELECT * FROM types"); 
+			while($row=mysqli_fetch_array($result)) {
+				$checked = (stringContains($proj->getTypes(),$row['id'])) ? ' checked="checked"' : ' '; 
+				$out .= '<input type="checkbox" name="types[]" value="'.$row['id'].'"'.$checked.'><label for="types[]">'.$row['tagname'].'</label>'; 
+			}
+ 			$out .= '
+ </div><br>	
  <input type="hidden" id="project" value="'.$proj->getId().'">
  <input type="button" class="submit" id="editproject" value="Save changes">
  <input type="button" class="submit" id="addimages" value="Add Images">

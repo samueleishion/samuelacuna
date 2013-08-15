@@ -80,4 +80,8 @@ function decodequotes($str) {
 	return html_entity_decode($result); 
 }
 
+function stringContains($haystack,$needle) {
+	return (strpos($haystack,$needle)===false) ? false : true; 
+}
+
 ?>

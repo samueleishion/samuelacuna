@@ -124,8 +124,6 @@ class Project {
 		$type = $this->type; 
 		$status = $this->status; 
 		
-		error_log("updating status: ".$status); 
-		
 		if($id==0) {
 			try {
 				mysqli_query($this->dblink,"INSERT INTO projects (projname,projdesc,datetime,cover,type,status) VALUES ('$name','$desc','$date','$cover','$type','$status')"); 

@@ -172,6 +172,10 @@ function onSubmit(button) {
 			var newname = $('input#newname').val(); 
 			var newdesc = $('textarea#newdesc').val(); 
 			var proj = $('input#project').val(); 
+			var types = []; 
+			$("input[name='types[]']:checked").each(function(){
+				types.push($(this).val()); 
+			}); 
 			$.ajax({
 				type:'post',
 				url:'_controllers/operator.php', 
@@ -179,7 +183,8 @@ function onSubmit(button) {
 					action: id, 
 					project: proj, 
 					newname: newname, 
-					newdesc: newdesc
+					newdesc: newdesc, 
+					types: types
 				}, 
 				success: function(data) {
 					location.reload(); 
@@ -272,7 +277,6 @@ function slideKnob() {
 		}, 
 		success: function(data) {
 			status.val((value==1) ? 0 : 1);  
-			console.log(status.val()); 
 		}
 	}); 
 	

@@ -39,6 +39,7 @@ if(isset($_POST) || isset($_REQUEST)) {
 				$proj->setDescription($desc); 
 				$proj->setDate($time);
 				$proj->setCover(1); 
+				$proj->setStatus(0); 
 				if($proj->save()) echo 'success';
 				else echo 'failure';
 			} else echo 'get a new name';  
@@ -57,6 +58,11 @@ if(isset($_POST) || isset($_REQUEST)) {
 			$id = clean($_POST['project']); 
 			$newname = clean($_POST['newname']); 
 			$newdesc = encodequotes($_POST['newdesc']); 
+			$types = $_POST['types']; 
+			foreach($types as $t) {
+				$t = clean($t); 
+				$proj->addType($t); 
+			}
 			$proj->instantiate($id); 
 			$proj->setName($newname); 
 			$proj->setDescription($newdesc); 
