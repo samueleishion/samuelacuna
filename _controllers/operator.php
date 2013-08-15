@@ -121,6 +121,16 @@ if(isset($_POST) || isset($_REQUEST)) {
 			if($image->delete()) echo 'image deleted successfully'; 
 			else echo 'failure';   
 			break; 
+		case 'projectstatus':
+			require_once('../_models/model.Project.php'); 
+			$id = clean($_POST['project']); 
+			$status = clean($_POST['status']); 
+			$proj = new Project($dblink); 
+			$proj->instantiate($id); 
+			$proj->setStatus($status); 
+			if($proj->save()) error_log('successfully changed status'); 
+			else error_log('failure'); 
+			break; 
 		default:
 			break; 
 	} 

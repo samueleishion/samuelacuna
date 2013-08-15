@@ -21,7 +21,7 @@ function projectPrefix($str) { return substr(strtoupper($str),0,3); }
 
 function getAllProjects($dblink) {
 	$list = array(); 
-	$result = mysqli_query($dblink,"SELECT id FROM projects ORDER BY id DESC"); 
+	$result = mysqli_query($dblink,"SELECT id FROM projects WHERE status='1' ORDER BY id DESC"); 
 	while($row=mysqli_fetch_array($result)) {
 		array_push($list,$row['id']); 
 	}

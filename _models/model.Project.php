@@ -21,6 +21,7 @@ class Project {
 	private $types; 
 	private $cover; 
 	private $datetime; 
+	private $status; 
 	
 	public function __construct($dblink) {
 		$this->dblink = $dblink; 
@@ -38,6 +39,7 @@ class Project {
 				$this->setDate($row['datetime']); 
 				$this->setCover($row['cover']); 
 				$this->setTypes($row['type']); 
+				$this->setStatus($row['status']); 
 			}
 			return true; 
 		}
@@ -62,6 +64,7 @@ class Project {
 	public function getTypes() { return $this->types; }
 	public function getCover() { return $this->cover; }
 	public function getDate() { return $this->datetime; }
+	public function getStatus() { return $this->status; } 
 	
 	private function setId($int) { $this->id = clean($int); }
 	public function setName($str) { $this->name = strtolower(clean($str)); }
@@ -69,6 +72,7 @@ class Project {
 	public function setTypes($str) { $this->types = clean($str); }
 	public function setCover($str) { $this->cover = clean($str); }
 	public function setDate($date) { $this->datetime = clean($date); }
+	public function setStatus($int) { $this->status = clean($int); }
 	
 	public function addType($type) {
 		$type = ''.$type;  
@@ -118,20 +122,23 @@ class Project {
 		$date = now(); 
 		$cover = $this->cover; 
 		$type = $this->type; 
+		$status = $this->status; 
+		
+		error_log("updating status: ".$status); 
 		
 		if($id==0) {
 			try {
-				mysqli_query($this->dblink,"INSERT INTO projects (projname,projdesc,datetime,cover,type) VALUES ('$name','$desc','$date','$cover','$type')"); 
+				mysqli_query($this->dblink,"INSERT INTO projects (projname,projdesc,datetime,cover,type,status) VALUES ('$name','$desc','$date','$cover','$type','$status')"); 
 			} catch(mysqli_sql_exception $e) {
 				return false; 
 			}
-			$result = mysqli_query($this->dblink,"SELECT * FROM projects WHERE projname='$name' AND datetime='$date' AND cover='$cover' AND type='$type'"); 
+			$result = mysqli_query($this->dblink,"SELECT * FROM projects WHERE projname='$name' AND datetime='$date' AND cover='$cover' AND type='$type' AND status='$status'"); 
 			while($row=mysqli_fetch_array($result)) {
 				$this->instantiate($row['id']); 
 			}
 		} else {
 			try {
-				mysqli_query($this->dblink,"UPDATE projects SET projname='$name', projdesc='$desc', datetime='$date', cover='$cover', type='$type' WHERE id='$id'"); 
+				mysqli_query($this->dblink,"UPDATE projects SET projname='$name', projdesc='$desc', datetime='$date', cover='$cover', type='$type', status='$status' WHERE id='$id'"); 
 			} catch(mysqli_sql_exception $e) {
 				return false; 
 			}

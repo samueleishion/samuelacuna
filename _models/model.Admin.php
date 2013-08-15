@@ -46,7 +46,14 @@ class Admin extends User {
  <input type="hidden" id="project" value="'.$proj->getId().'">
  <input type="button" class="submit" id="editproject" value="Save changes">
  <input type="button" class="submit" id="addimages" value="Add Images">
- <input type="button" class="submit" id="delproject" value="Delete Project"><br>'; 
+ <input type="button" class="submit" id="delproject" value="Delete Project">
+ <div class="status">
+  <input type="hidden" id="status" value="'.$proj->getStatus().'">
+  <div class="button" id="slide">
+   <div class="submit" id="knob"></div>
+  </div>
+  <div class="label">private</div>
+ </div><br>'; 
 		}  
 		
 		foreach($images as $key => $val) {

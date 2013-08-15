@@ -51,6 +51,16 @@ $(document).ready(function() {
 				}, 
 				success: function(data) {
 					$('.gallery').html(data); 
+					// Determine whether project is public or private
+					if($('input#status').val()==1) {
+						$('.status .submit#knob').css({
+							'left':'20px'
+						}); 
+						$('.status .button#slide').css({
+							'background-color':'#33d8a7'
+						}); 
+						$('.status .label').html('public');
+					}  
 				}
 			}); 
 		}
@@ -97,7 +107,7 @@ $(document).ready(function() {
 	if(!ajaxLoadedSubmit) {
 		$('.submit').off('click',function() {return 0;}); 
 		activateSubmit();
-	} 
+	}
 }); 
 
 // Show curtains
@@ -124,9 +134,9 @@ function activateSubmit() {
 }
 
 function onSubmit(button) {
-	console.log('click'); 
+	// console.log('click'); 
 	var id = button.attr('id').toLowerCase();  
-	console.log(id); 
+	// console.log(id); 
 	switch(id) {
 		case 'addproject': 
 			var name = $('#newProjectName').val(); 
@@ -210,6 +220,9 @@ function onSubmit(button) {
 				}
 			}); 
 			break; 
+		case 'knob':
+			slideKnob(); 
+			break; 
 		default: 
 			data = null; 
 			break;
@@ -222,14 +235,46 @@ function progress(e) {
 	}
 }
 
-// Function for ajaxRequests
-function ajaxRequest(data) {
+// move status slider knob
+function slideKnob() {
+	var status = $('input#status'); 
+	var value = status.val(); 
+	// console.log('prev val: '+value);
+	
+	if(value==1) {
+		$('.status .submit#knob').animate({
+			'left':'-11px'
+		},100); 
+		$('.status .button#slide').css({
+			'background-color':'#f3f3f3'
+		});
+		$('.status .label').html('private'); 
+	} else {
+		$('.status .submit#knob').animate({
+			'left':'20px'
+		},100); 
+		$('.status .button#slide').css({
+			'background-color':'#33d8a7'
+		}); 
+		$('.status .label').html('public'); 
+	}
+	
+	var a = 'projectstatus'; 
+	var project = $('input#project').val(); 
+	var update = (value==1) ? 0 : 1; 
 	$.ajax({
 		type:'post',
 		url:'_controllers/operator.php', 
-		data: data, 
+		data: {
+			action:a, 
+			project:project, 
+			status:update
+		}, 
 		success: function(data) {
-			console.log(data); 
+			status.val((value==1) ? 0 : 1);  
+			console.log(status.val()); 
 		}
-	})
+	}); 
+	
+	// console.log('curr val: '+value); 
 }
