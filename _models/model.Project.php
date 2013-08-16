@@ -40,7 +40,7 @@ class Project {
 				$this->setCover($row['cover']); 
 				$this->setTypes($row['type']); 
 				$this->setStatus($row['status']); 
-			}
+			} 
 			return true; 
 		}
 		return false; 
@@ -76,10 +76,9 @@ class Project {
 	
 	public function addType($type) {
 		$type = ''.$type;  
-		$thistemp = explode(',',$this->type);
+		$thistemp = explode(',',$this->types);
 		$typetemp = explode(',',$type);
 		$added = false; 
-		
 		for($n = 0; $n < count($typetemp); $n++) {
 			$isthere = false; 
 			for($i = 0; $i < count($thistemp); $i++) {
@@ -87,19 +86,18 @@ class Project {
 			}
 			
 			if(!$isthere) {
-				if(strlen($this->type)==0) $this->type = $typetemp[$n]; 
-				else $this->type .= ','.$typetemp[$n]; 
+				if(strlen($this->types)==0) $this->types = $typetemp[$n]; 
+				else $this->types .= ','.$typetemp[$n]; 
 				$added = $added || true; 
 			}
-			$thistemp = explode(',',$this->type);
+			$thistemp = explode(',',$this->types);
 		}
-		
 		return $added; 
 	}
 	
 	public function removeType($type) {
 		$type = ''.$type; 
-		$thistemp = explode(',',$this->type); 
+		$thistemp = explode(',',$this->types); 
 		$typetemp = explode(',',$type);
 		$remoded = false; 
 		
@@ -112,7 +110,7 @@ class Project {
 			}
 		}
 		
-		$this->type = implode(',',$thistemp); 
+		$this->types = implode(',',$thistemp); 
 	}
 	
 	public function save() {
@@ -121,8 +119,8 @@ class Project {
 		$desc = $this->desc; 
 		$date = now(); 
 		$cover = $this->cover; 
-		$type = $this->type; 
-		$status = $this->status; 
+		$type = $this->types; 
+		$status = $this->status;
 		
 		if($id==0) {
 			try {
@@ -171,7 +169,7 @@ class Project {
 		$this->name = ''; 
 		$this->datetime = now(); 
 		$this->cover = ''; 
-		$this->type = '';  
+		$this->types = '';  
 	}
 	
 	public function showCover() {

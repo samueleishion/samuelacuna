@@ -6,7 +6,6 @@ HTMLhead($page);
 HTMLnav($page); 
 ?>
 
-<? echo $page; ?>
 <section>
 <? 
 if($project->instantiateByName($show)) {

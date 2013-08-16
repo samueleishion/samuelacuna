@@ -26,6 +26,14 @@ img { max-width:400px;
 	margin:10px; }
 
 #Grid .mix { opacity:0; display:none; }
+li.filter { list-style-type:none; 
+	display:inline-block; 
+	padding:10px; 
+	margin:1px; 
+	border:1px solid #bbb;
+	background-color:#fff;  
+	cursor:pointer; }
+	li.filter:hover { background-color:#eee; } 
 
 /*
  * HTML secions and modules
@@ -86,6 +94,8 @@ ul#menu { display:inline;
 		background-color:#fff; }
 
 .submit { cursor:pointer; }
+
+progress { display:none; }
 
 .status { display:block;
 		position:relative; 

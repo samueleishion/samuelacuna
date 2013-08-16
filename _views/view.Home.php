@@ -7,7 +7,6 @@ HTMLhead($page);
 HTMLnav($page); 
 ?>
 
-<? echo $page; ?>
 <section>
  Welcome! 
 </section>

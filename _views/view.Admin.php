@@ -6,7 +6,6 @@ HTMLhead($page);
 HTMLnav($page); 
 ?>
 
-<? echo $page; ?>
 <? if(!isset($_SESSION['DESlogged']) || $_SESSION['DESlogged']!=1) { ?>
 <section>
  <form method="post">

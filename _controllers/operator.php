@@ -59,13 +59,14 @@ if(isset($_POST) || isset($_REQUEST)) {
 			$newname = clean($_POST['newname']); 
 			$newdesc = encodequotes($_POST['newdesc']); 
 			$types = $_POST['types']; 
-			foreach($types as $t) {
-				$t = clean($t); 
-				$proj->addType($t); 
-			}
 			$proj->instantiate($id); 
 			$proj->setName($newname); 
-			$proj->setDescription($newdesc); 
+			$proj->setDescription($newdesc);
+			$proj->setTypes(''); 
+			foreach($types as $key => $t) {
+				$t = clean($t); 
+				$proj->addType($t);    
+			}
 			if($proj->save()) echo 'changed successfully'; 
 			else echo 'failure';  
 			break; 
@@ -134,8 +135,8 @@ if(isset($_POST) || isset($_REQUEST)) {
 			$proj = new Project($dblink); 
 			$proj->instantiate($id); 
 			$proj->setStatus($status); 
-			if($proj->save()) error_log('successfully changed status'); 
-			else error_log('failure'); 
+			if($proj->save()) echo 'successfully changed status'; 
+			else echo 'failure'; 
 			break; 
 		default:
 			break; 
