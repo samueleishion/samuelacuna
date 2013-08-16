@@ -1,4 +1,8 @@
 var ajaxLoadedSubmit;
+	
+$(function() {
+	$('#Grid').mixitup(); 
+}); 
 
 $(document).ready(function() {
 	ajaxLoadedSubmit = false; 
@@ -92,7 +96,7 @@ $(document).ready(function() {
 			}, 
 			error: function(data) {
 				console.log("ERROR on upload"); 
-				console.log(data); 
+				// console.log(data); 
 			}, 
 			data: form, 
 			cache: false, 

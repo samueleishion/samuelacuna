@@ -178,7 +178,7 @@ class Project {
 		include_once("model.Image.php"); 
 		$i = new Image($this->dblink); 
 		$i->instantiate($this->cover);
-		return '<a href="project?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></a>';  
+		return '<li class="mix '.$this->splitTypes().'" data-cat="1"><div><a href="project?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></a></a>';  
 		// return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
 	}
 	
@@ -213,6 +213,15 @@ class Project {
 	
 	public function isInstance() {
 		return $this->id!=0; 
+	}
+	
+	private function splitTypes() {
+		$str = ''; 
+		$types = explode(',',$this->types); 
+		foreach($types as $key => $val) {
+			$str .= 'category_'.$val.' ';  
+		}
+		return $str; 
 	}
 }
 

@@ -28,6 +28,15 @@ function getAllProjects($dblink) {
 	return $list; 
 }
 
+function getAllTypes($dblink) {
+	$list = array(); 
+	$result = mysqli_query($dblink,"SELECT * FROM types");
+	while($row=mysqli_fetch_array($result)) {
+		$list[$row['id']] = $row['tagname']; 
+	} 
+	return $list; 
+}
+
 function projectNameRepeat($dblink,$name) {
 	$result = mysqli_query($dblink,"SELECT id FROM projects WHERE projname='$name'"); 
 	if(mysqli_num_rows($result)>0) return true; 
