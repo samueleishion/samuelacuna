@@ -13,7 +13,8 @@ HTMLnav($page);
 <section>
  <?
 	// show types
-	echo '<ul>'; 
+	echo '<ul>';
+	echo '<li class="filter" data-filter="all">All</li>';  
 	$typeslist = getAllTypes($dblink); 
 	foreach($typeslist as $key => $t) {
 		echo '<li class="filter" data-filter="category_'.$key.'">'.$t.'</li>'; 
