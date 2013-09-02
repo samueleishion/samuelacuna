@@ -1,6 +1,7 @@
 <?
 
 function HTMLhead($page) {
+	if($page=='admin') $_SESSION['DESlastadmin'] = ''; 
 	?>
 <!DOCTYPE html>
 <html><head>

@@ -191,7 +191,33 @@ function onSubmit(button) {
 					types: types
 				}, 
 				success: function(data) {
-					location.reload(); 
+					var projid = $('input#project').val();
+					$.ajax({
+						type:'post', 
+						url:'_controllers/operator.php', 
+						data: {
+							action:'loadproject', 
+							project: projid
+						}, 
+						success: function(data) {
+							alert("success!"); 
+							$('.gallery').html(data); 
+							// Determine whether project is public or private
+							if($('input#status').val()==1) {
+								$('.status .submit#knob').css({
+									'left':'20px'
+								}); 
+								$('.status .button#slide').css({
+									'background-color':'#33d8a7'
+								}); 
+								$('.status .label').html('public');
+							}  
+						}, 
+						error: function(data) {
+							alert("There was an error. Please try again later. "); 
+						}
+					});  
+					// location.reload(); 
 				}
 			}); 
 			break; 
@@ -210,7 +236,33 @@ function onSubmit(button) {
 					image:img
 				}, 
 				success: function(data) {
-					location.reload(); 
+					var projid = $('input#project').val();
+					$.ajax({
+						type:'post', 
+						url:'_controllers/operator.php', 
+						data: {
+							action:'loadproject', 
+							project: projid
+						}, 
+						success: function(data) {
+							alert("success!"); 
+							$('.gallery').html(data); 
+							// Determine whether project is public or private
+							if($('input#status').val()==1) {
+								$('.status .submit#knob').css({
+									'left':'20px'
+								}); 
+								$('.status .button#slide').css({
+									'background-color':'#33d8a7'
+								}); 
+								$('.status .label').html('public');
+							}  
+						}, 
+						error: function(data) {
+							alert("There was an error. Please try again later. "); 
+						}
+					});  
+					// location.reload(); 
 				}
 			}); 
 			break; 
@@ -225,7 +277,33 @@ function onSubmit(button) {
 					project:proj, 
 					image:img
 				}, success: function(data) {
-					location.reload(); 
+					var projid = $('input#project').val();
+					$.ajax({
+						type:'post', 
+						url:'_controllers/operator.php', 
+						data: {
+							action:'loadproject', 
+							project: projid
+						}, 
+						success: function(data) {
+							alert("success!"); 
+							$('.gallery').html(data); 
+							// Determine whether project is public or private
+							if($('input#status').val()==1) {
+								$('.status .submit#knob').css({
+									'left':'20px'
+								}); 
+								$('.status .button#slide').css({
+									'background-color':'#33d8a7'
+								}); 
+								$('.status .label').html('public');
+							}  
+						}, 
+						error: function(data) {
+							alert("There was an error. Please try again later. "); 
+						}
+					});  
+					// location.reload(); 
 				}
 			}); 
 			break; 
