@@ -16,9 +16,16 @@ switch($view) {
 	case 'admin':
 		require_once('_views/view.Admin.php'); 
 		break; 
-	case 'project':
+	case 'portfolio':
+	case 'project': 
 		$show = (isset($_GET['v'])) ? cleanView($_GET['v']) : 'all';  
 		require_once('_views/view.Project.php');
+		break; 
+	case 'blog': 
+		require_once('_views/view.Blog.php'); 
+		break; 
+	case 'resume': 
+		require_once('_views/view.Resume.php'); 
 		break; 
 	default:
 		require_once('_views/view.Home.php');  

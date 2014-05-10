@@ -24,7 +24,7 @@ class Admin extends User {
 	}
 	
 	public function getMenu() {
-		$menu = '<li class="curtainOpen" id="addProject">Add a project</li>'; 
+		$menu = '<li class="curtainOpen" id="addProject">Add an entry</li>'; 
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects ORDER BY id DESC"); 
 		while($row = mysqli_fetch_array($result)) {
 			$menu .= '

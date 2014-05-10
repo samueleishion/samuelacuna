@@ -7,6 +7,13 @@ function HTMLhead($page) {
 <html><head>
  <title></title>
  <link rel="stylesheet" type="text/css" href="_views/_stys/global.css">
+ <?
+ 	if($page=='admin') {
+ 		?>
+ <link rel="stylesheet" type="text/css" href="_views/_stys/admin.css">
+ 		<?
+ 	}
+ ?>
  <script src="_views/_scrs/jquery.min.js"></script>
  <script src="_views/_scrs/jquery.mixitup.min.js"></script>
  <script src="_views/_scrs/main.js"></script>
@@ -19,7 +26,9 @@ function HTMLnav($page) {
 	?>
 <nav>
  <a href="<? echo $des; ?>">Home</a>
- <a href="<? echo $des; ?>project?v=all">Projects</a>
+ <a href="<? echo $des; ?>resume">Resume</a>
+ <a href="<? echo $des; ?>blog">Blog</a>
+ <a href="<? echo $des; ?>portfolio">Portfolio</a>
  <a href="<? echo $des; ?>admin">Admin</a>
  <? if(isset($_SESSION['DESlogged']) && $_SESSION['DESlogged']==1) { ?><a href="#" id="logout">Log out</a><? } ?>
 </nav>

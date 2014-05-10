@@ -11,12 +11,12 @@
  * 
  */
 
-$sitename = 'Descartes'; 	// The name of your company/brand/website
+$sitename = 'samuelacuna'; 	// The name of your company/brand/website
 $siteurl = 'http://localhost:8888/'; 	// The domain of your website
 $dbhost = 'localhost'; 	// The hosting server of your database
 $dbuser = 'root'; 		// The username of your database
 $dbpass = 'root'; 		// The password to your database
-$dbname = 'Descartes'; 	// The database name
+$dbname = 'samuelacuna'; 	// The database name
 
 
 // *********************************
