@@ -70,5 +70,5 @@ li.filter { list-style-type:none;
 
 /* Social buttons */ 
 .social a { color:rgba(255,255,255,0.4); 
-	transition-duration: 0.08s;}
+	/*transition-duration: 0.08s;*/ }
 .social a:hover { text-shadow:0px 0px 15px rgba(255,255,255,0.4); }

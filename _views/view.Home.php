@@ -6,6 +6,7 @@
  <link rel="stylesheet" type="text/css" href="_views/_stys/global.css">
  <link rel="stylesheet" type="text/css" href="_views/_stys/home.css"> 
  <script src="_views/_scrs/jquery.min.js"></script> 
+ <script src="_views/_scrs/d3.v3.min.js"></script> 
  <script src="_views/_scrs/home.js"></script> 
  <script src="_views/_scrs/bgcolors.js"></script> 
 </head><body>
