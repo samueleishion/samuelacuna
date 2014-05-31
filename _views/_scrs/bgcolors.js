@@ -30,7 +30,7 @@ var w = window.innerWidth,
     simulate = true,
     // zoomToAdd = true,
     // https://github.com/mbostock/d3/blob/master/lib/colorbrewer/colorbrewer.js#L105
-    color = d3.scale.quantize().domain([10000, 7250]).range(["rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0.01)","rgba(255,255,255,0.05)","rgba(255,255,255,0.1)"])
+    color = d3.scale.quantize().domain([10000, 7250]).range(["rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0.01)","rgba(255,255,255,0.05)","rgba(255,255,255,0.1)","rgba(255,255,255,0.2)"])
 
 function change_color() {
 	var str1 = ""; 
@@ -104,7 +104,7 @@ $(document).ready(function() {
 	interval = window.setInterval("change_color()",100); 
 	//draw(); 
 
-    var numVertices = (w*h) / 3000;
+    var numVertices = (w*h) / 5000;
     console.log("numVertices = "+numVertices); 
     var vertices = d3.range(numVertices).map(function(i) {
         angle = radius * (i+10);
@@ -166,10 +166,10 @@ $(document).ready(function() {
             // 	vertices[0].y = d3.mouse(this)[1]; 
             // })
             .on("tick", function(d,i) {
-            	for(var i = 0; i < 4; i++) {
-            		vertices[get_random_int(0,vertices.length)].x = get_random_int(0,w); 
-            		vertices[get_random_int(0,vertices.length)].y = get_random_int(0,h); 
-            	}
+            	//for(var i = 0; i < 4; i++) {
+        		vertices[get_random_int(0,vertices.length)].x = get_random_int(0,w); 
+        		vertices[get_random_int(0,vertices.length)].y = get_random_int(0,h); 
+            	//}
             }) 
         path.attr("d", function(d) { return "M" + d.join("L") + "Z"; })
             .transition().duration(100).style("fill", function(d, i) { return color(d3.geom.polygon(d).area()) })
