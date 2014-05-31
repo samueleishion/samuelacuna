@@ -42,7 +42,7 @@ circle {
 }
 line {
     pointer-events: none;
-    stroke: rgba(255,255,255,.1); 
+    stroke: rgba(255,255,255,.15); 
     stroke-width:1px; 
     /*stroke: #EFEDF5;
     stroke-width: 2px;

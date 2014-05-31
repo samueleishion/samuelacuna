@@ -30,7 +30,7 @@ var w = window.innerWidth,
     simulate = true,
     // zoomToAdd = true,
     // https://github.com/mbostock/d3/blob/master/lib/colorbrewer/colorbrewer.js#L105
-    color = d3.scale.quantize().domain([10000, 7250]).range(["rgba(255,255,255,0)"]);//,"rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0.01)","rgba(255,255,255,0.05)","rgba(255,255,255,0.1)"])
+    color = d3.scale.quantize().domain([10000, 7250]).range(["rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0.01)","rgba(255,255,255,0.05)","rgba(255,255,255,0.1)"])
 
 function change_color() {
 	var str1 = ""; 
@@ -105,6 +105,7 @@ $(document).ready(function() {
 	//draw(); 
 
     var numVertices = (w*h) / 3000;
+    console.log("numVertices = "+numVertices); 
     var vertices = d3.range(numVertices).map(function(i) {
         angle = radius * (i+10);
         return {x: angle*Math.cos(angle)+(w/2), y: angle*Math.sin(angle)+(h/2)};
@@ -135,7 +136,7 @@ $(document).ready(function() {
     //     prevEventScale = d3.event.scale;
     // });
 
-    var svg = d3.select("svg")
+    svg = d3.select("svg")
             .attr("width", w)
             .attr("height", h)
 
@@ -177,10 +178,10 @@ $(document).ready(function() {
         circle = circle.data(vertices)
         circle.enter().append("circle")
               .attr("r", 0)
-              .transition().duration(1000).attr("r", 5);
+              //.transition().duration(1000).attr("r", 5);
         circle.attr("cx", function(d) { return d.x; })
               .attr("cy", function(d) { return d.y; });
-        circle.exit().transition().attr("r", 0).remove();
+        //circle.exit().transition().attr("r", 0).remove();
 
         link = link.data(d3_geom_voronoi.links(vertices))
         link.enter().append("line")
@@ -197,4 +198,10 @@ $(document).ready(function() {
         } 
     }
 }); 
+
+$(window).resize(function() {
+    svg = d3.select("svg")
+            .attr("width", window.innerWidth)
+            .attr("height", window.innerHeight)
+})
 
