@@ -29,9 +29,6 @@ HTMLnav($page);
   ?>
  </ul>
  <div class="gallery">
-  <?
-	echo $admin->getProjectToEdit(0); 
-  ?>
  </div>
 </section>
 

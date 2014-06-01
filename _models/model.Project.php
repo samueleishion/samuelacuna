@@ -33,7 +33,7 @@ class Project {
 	public function instantiate($id) { 
 		$id = clean($id); 
 		$page = $this->page; 
-		$result = mysqli_query($this->dblink,"SELECT * FROM projects WHERE id='$id' AND page='$page'"); 
+		$result = mysqli_query($this->dblink,"SELECT * FROM projects WHERE id='$id'"); 
 		if(mysqli_num_rows($result)==1) { 
 			while($row=mysqli_fetch_array($result)) {
 				$this->setId($row['id']); 
