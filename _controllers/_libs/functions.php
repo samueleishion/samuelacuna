@@ -19,9 +19,10 @@ function encode($str) { return hash('ripemd160',$str); }
 function now() { return date('Y\/m\/d H\:i\:s'); }
 function projectPrefix($str) { return substr(strtoupper($str),0,3); }
 
-function getAllProjects($dblink) {
+function getAllProjects($dblink,$page) {
+	$page = ($page!='portfolio' || strlen($page)==0) ? 'blog' : $page; 
 	$list = array(); 
-	$result = mysqli_query($dblink,"SELECT id FROM projects WHERE status='1' ORDER BY id DESC"); 
+	$result = mysqli_query($dblink,"SELECT id FROM projects WHERE status='1' AND page='$page' ORDER BY id DESC"); 
 	while($row=mysqli_fetch_array($result)) {
 		array_push($list,$row['id']); 
 	}

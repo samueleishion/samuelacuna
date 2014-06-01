@@ -145,13 +145,15 @@ function onSubmit(button) {
 		case 'addproject': 
 			var name = $('#newProjectName').val(); 
 			var desc = $('#newProjectDescription').val(); 
+			var page = $('input[name="newProjectType"]:checked').val(); 
 			$.ajax({
 				type:'post',
 				url:'_controllers/operator.php', 
 				data: {
 					action:id, 
 					name:name, 
-					desc:desc
+					desc:desc, 
+					page:page
 				}, 
 				success: function(data) { 
 					location.reload(); 

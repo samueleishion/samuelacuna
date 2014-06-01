@@ -32,11 +32,13 @@ if(isset($_POST) || isset($_REQUEST)) {
 			require_once('../_models/model.Project.php'); 
 			$proj = new Project($dblink); 
 			$name = strtolower(clean($_POST['name'])); 
+			$page = strtolower(clean($_POST['page'])); 
 			if(!projectNameRepeat($dblink,$name)) {
 				$desc = encodequotes($_POST['desc']); 
 				$time = now(); 
 				$proj->setName($name); 
 				$proj->setDescription($desc); 
+				$proj->setPage($page); 
 				$proj->setDate($time);
 				$proj->setCover(1); 
 				$proj->setStatus(0); 

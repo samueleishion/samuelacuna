@@ -40,6 +40,8 @@ HTMLnav($page);
   Add a project
   <input type="text" id="newProjectName" placeholder="Project Name"><br>
   <textarea id="newProjectDescription" placeholder="Description"></textarea>
+  <input type="radio" name="newProjectType" id="newProjectType_blog" value="blog" checked="checked"><label for="newProjectType_blog">Blog</label> 
+  <input type="radio" name="newProjectType" id="newProjectType_portfolio" value="portfolio"><label for="newProjectType_portfolio">Portfolio</label> 
   <input type="button" class="submit" id="addproject" value="Save">
   <a class="curtainClose" id="addProject">X</a>
  </div>

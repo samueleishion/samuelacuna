@@ -22,6 +22,7 @@ switch($view) {
 		require_once('_views/view.Project.php');
 		break; 
 	case 'blog': 
+		$show = (isset($_GET['v'])) ? cleanView($_GET['v']) : 'all';  
 		require_once('_views/view.Blog.php'); 
 		break; 
 	case 'resume': 
