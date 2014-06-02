@@ -28,7 +28,7 @@ class Admin extends User {
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects ORDER BY id DESC"); 
 		while($row = mysqli_fetch_array($result)) {
 			$menu .= '
-  <li id="proj'.$row['id'].'">('.(($row['page']=='portfolio') ? 'P' : 'B').') '.$row['projname'].'</li>'; 
+  <li id="proj'.$row['id'].'"><span class="entrytype">'.(($row['page']=='portfolio') ? "&#xf0f2;" : "&#xf032;").'</span>'.$row['projname'].'</li>'; 
 		}
 		return $menu;  
 	}
@@ -39,18 +39,24 @@ class Admin extends User {
 		$proj->instantiate(clean($id)); 
 		$images = $proj->getProjectImages();  
 		$out = ''; 
+		$height = ($proj->getPage()=="portfolio") ? '100px' : '400px'; 
 		 
 		if($proj->isInstance()) { 
 			$out = '<input type="text" id="newname" value="'.ucfirst($proj->getName()).'"><br>
- <textarea id="newdesc">'.$proj->getDescription().'</textarea>
  <div class="types">'; 
+ 			$i = 1; 
  			$result = mysqli_query($this->dblink,"SELECT * FROM types"); 
 			while($row=mysqli_fetch_array($result)) {
-				$checked = (stringContains($proj->getTypes(),$row['id'])) ? ' checked="checked"' : ' '; 
-				$out .= '<input type="checkbox" name="types[]" value="'.$row['id'].'"'.$checked.'><label for="types[]">'.$row['tagname'].'</label>'; 
+				$test = (stringContains($proj->getTypes(),$row['id'])); 
+				$checked = ($test) ? ' checked="checked"' : ' '; 
+				$class = ($test) ? 'type_sel' : 'type'; 
+				$out .= '<div class="'.$class.'"><input type="checkbox" name="types[]" value="'.$row['id'].'"'.$checked.'><label for="types[]">'.$row['tagname'].'</label></div>'; 
+				if($i%4==0) $out.='<br>'; 
+				$i++; 
 			}
  			$out .= '
- </div><br>	
+ </div>
+ <textarea id="newdesc" style="height:'.$height.';">'.$proj->getDescription().'</textarea><br>
  <input type="hidden" id="project" value="'.$proj->getId().'">
  <input type="button" class="submit" id="editproject" value="Save changes">
  <input type="button" class="submit" id="addimages" value="Add Images">
@@ -60,7 +66,6 @@ class Admin extends User {
   <div class="button" id="slide">
    <div class="submit" id="knob"></div>
   </div>
-  <div class="label">private</div>
  </div><br>'; 
 		}  
 		

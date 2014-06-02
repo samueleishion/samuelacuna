@@ -19,15 +19,15 @@
 	 	<a href="portfolio">Portfolio</a> 
 	</div> 
 	<div class="social">
-		<a href="samuelacuna-resume.pdf" target="_new" class="button" id="resume">t</a>
-		<a href="http://github.com/samueleishion" target="_new" class="button" id="github">h</a>
-		<a href="http://www.facebook.com/profile.php?id=788470441" target="_new" class="button" id="facebook">f</a>
-		<a href="http://twitter.com/samueleishion" target="_new" class="button" id="twitter">w</a>
-		<a href="http://instagram.com/samueleishion/" target="_new" class="button" id="instagram">p</a> 
-		<a href="https://plus.google.com/100032260337537072343/posts" target="_new" class="button" id="google">g</a>
-		<a href="http://www.linkedin.com/profile/view?id=165141414" target="_new" class="button" id="linkedin">i</a>
-		<a href="http://www.youtube.com/samueleishion" target="_new" class="button" id="youtube">y</a> 
-		<a href="mailto:samueleishion@gmail.com" target="_new" class="button" id="email">e</a>
+		<a href="samuelacuna-resume.pdf" target="_new" class="button" id="resume" alt="Download my R&eacute;sum&eacute;">t</a>
+		<a href="http://github.com/samueleishion" target="_new" class="button" id="github" alt="My Github">h</a>
+		<a href="http://www.facebook.com/profile.php?id=788470441" target="_new" class="button" id="facebook" alt="My Facebook">f</a>
+		<a href="http://twitter.com/samueleishion" target="_new" class="button" id="twitter" alt="My Twitter">w</a>
+		<a href="http://instagram.com/samueleishion/" target="_new" class="button" id="instagram" alt="My Instagram">p</a> 
+		<a href="https://plus.google.com/100032260337537072343/posts" target="_new" class="button" id="google" alt="My Google+">g</a>
+		<a href="http://www.linkedin.com/profile/view?id=165141414" target="_new" class="button" id="linkedin" alt="My Linkedin">i</a>
+		<a href="http://www.youtube.com/samueleishion" target="_new" class="button" id="youtube" alt="My youtube channel">y</a> 
+		<a href="mailto:samueleishion@gmail.com" target="_new" class="button" id="email" alt="Send me an e-mail">e</a>
 	</div> 
 </content> 
 

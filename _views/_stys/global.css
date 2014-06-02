@@ -3,6 +3,7 @@
 @font-face { font-family:webly; src:url('_fonts/weblysleekuil.ttf'); } 
 @font-face { font-family:webly_semi; src:url('_fonts/weblysleekuisl.ttf'); }
 @font-face { font-family:social; src:url('_fonts/social.ttf'); }
+@font-face { font-family:awesome; src:url('_fonts/fontawesome-webfont.ttf'); }
 
 /*
  * HTML defaults
@@ -28,7 +29,8 @@ a { cursor:pointer; }
 
 input, textarea { border:1px solid #ddd; 
 	outline:none; 
-	resize:none; } 
+	resize:none; 
+	margin:5px; } 
 	input:focus, textarea:focus { box-shadow:0px 0px 5px rgba(0,144,255,0.5); 
 		border:1px solid rgba(0,144,255,0.6); }
 
@@ -52,12 +54,19 @@ nav { display:block;
 nav a { color:#ddd; }
 nav a:hover { color:#fff; }
 
+#logout { position:fixed;
+	top:0px;  
+	right:0px; }
+
 section { display:block; }
 	section:first-child { padding-top:100px; }
 	section:nth-child(2n+1) { background-color:#ecf7ff; }
 
 .cover { display:inline-block; 
-	width:300px; height:150px; 
+	width:200px; height:200px; 
+	border-radius:200px; 
+	vertical-align:middle; 
+	text-align:center; 
 	background-size:cover; 
 	background-position:center center; }
 

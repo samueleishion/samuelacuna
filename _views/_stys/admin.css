@@ -4,10 +4,6 @@
 body { background-color:#ccc; 
 	background-image:url('../_imgs/adminbg.png'); }
 
-#logout { position:fixed;
-	top:0px;  
-	right:0px; }
-
 form#uploadform { position:absolute;
 	top:-500px; } 
 
@@ -24,23 +20,38 @@ ul#menu { display:inline;
 		/*border:1px solid blue; */
 		padding:8px; 
 		margin:8px; 
-		color:#333; 
+		color:#666; 
 		background-color:rgba(255,255,255,0.7); }
-	ul#menu li:hover { color:#111; 
+	ul#menu li:hover { color:#333; 
 		background-color:#fff; } 
 
 	ul#menu li#addProject { color:#fff; 
 		background-color:#33d8a7; } 
 	ul#menu li#addProject:hover { background-color:#44e9b8; }
 
-.gallery, .preview {display:inline-block; 
+	ul#menu li .entrytype { font-family:awesome; 
+		padding:0px; 
+		padding-right:5px; }
+
+.gallery, .preview { display:inline-block; 
 	float:left; 
 	background-color:#fff; 
 	border-left: 1px solid #ccc; }
 
-/*.gallery { border:1px solid green; }
-
-.preview { border:1px solid orange; }*/
+/* EDTING GALLERY STYLES */ 
+	.gallery #newname { width:400px; 
+		font-size:14pt; }
+	.gallery .types { font-size:10pt; }
+	.gallery .types .type, .gallery .types .type_sel { 
+		display:inline-block; 
+		padding:5px; margin:5px; 
+		border-radius:20px; } 
+	.gallery .types .type { border:1px solid #ddd; 
+		background-color:#fff; }
+	.gallery .types .type_sel { border:1px solid #09f; 
+		background-color:rgba(0,144,255,0.2); }
+	.gallery .types input { margin:0px; }
+	.gallery #newdesc { width:480px; }
 
 .curtain { display:none; 
 	position:fixed; 
@@ -60,14 +71,15 @@ ul#menu { display:inline;
 
 .submit { cursor:pointer; }
 
-progress { display:none; }
+/*progress { display:none; }*/
 
-.status { display:block;
+.status { display:inline-block;
 		position:relative; 
-		top:4px;  
+		top:-4px; 
+		left:45px;
 		width:120px; 
-		float:left; 
-		padding-left:10px; 
+		float:right; 
+		padding-right:0px; 
 		z-index:1; }
 		
 		.status .button#slide {

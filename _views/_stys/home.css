@@ -90,4 +90,7 @@ line {
 .social { margin-top:80px; 
 	font-family:social; 
 	font-size:14pt; 
-	letter-spacing:14px; } 
+	/*letter-spacing:14px; */
+	text-align:center; } 
+
+	.social a { padding:0px 14px 0px 14px; }

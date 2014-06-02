@@ -339,7 +339,6 @@ function slideKnob() {
 		$('.status .button#slide').css({
 			'background-color':'#f3f3f3'
 		});
-		$('.status .label').html('private'); 
 	} else {
 		$('.status .submit#knob').animate({
 			'left':'20px'
@@ -347,7 +346,6 @@ function slideKnob() {
 		$('.status .button#slide').css({
 			'background-color':'#33d8a7'
 		}); 
-		$('.status .label').html('public'); 
 	}
 	
 	var a = 'projectstatus'; 

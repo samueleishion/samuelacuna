@@ -22,7 +22,7 @@ HTMLnav($page);
   <input type="file" multiple name="file[]" id="images" accept="image/*">
   <input type="hidden" name="action" value="upload">
   <input type="hidden" name="project" id="proj" value="">
- </form><progress></progress>
+ </form><!-- <progress></progress> -->
  <ul id="menu">
   <?
 	echo $admin->getMenu(); 
