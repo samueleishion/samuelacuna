@@ -1,6 +1,9 @@
 /*
  * Admin stuff
  */
+body { background-color:#ccc; 
+	background-image:url('../_imgs/adminbg.png'); }
+
 #logout { position:fixed;
 	top:0px;  
 	right:0px; }
@@ -8,16 +11,36 @@
 form#uploadform { position:absolute;
 	top:-500px; } 
 
+section {padding:0px; }
+
 ul#menu { display:inline; 
 	width:200px; 
-	float:left; }
+	float:left; 
+	/*border:1px solid red; */
+	font-size:10pt; 
+	padding:0px; }
 
-	ul#menu li { color:#777; 
-		cursor:pointer; }
-	ul#menu li:hover { color:#000; }
+	ul#menu li { cursor:pointer; 
+		/*border:1px solid blue; */
+		padding:8px; 
+		margin:8px; 
+		color:#333; 
+		background-color:rgba(255,255,255,0.7); }
+	ul#menu li:hover { color:#111; 
+		background-color:#fff; } 
 
-.gallery { display:inline-block; 
-	float:left; }
+	ul#menu li#addProject { color:#fff; 
+		background-color:#33d8a7; } 
+	ul#menu li#addProject:hover { background-color:#44e9b8; }
+
+.gallery, .preview {display:inline-block; 
+	float:left; 
+	background-color:#fff; 
+	border-left: 1px solid #ccc; }
+
+/*.gallery { border:1px solid green; }
+
+.preview { border:1px solid orange; }*/
 
 .curtain { display:none; 
 	position:fixed; 

@@ -24,11 +24,11 @@ class Admin extends User {
 	}
 	
 	public function getMenu() {
-		$menu = '<li class="curtainOpen" id="addProject">Add an entry</li>'; 
+		$menu = '<li class="curtainOpen" id="addProject">+ Add an entry</li>'; 
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects ORDER BY id DESC"); 
 		while($row = mysqli_fetch_array($result)) {
 			$menu .= '
-  <li id="proj'.$row['id'].'">'.$row['projname'].'</li>'; 
+  <li id="proj'.$row['id'].'">('.(($row['page']=='portfolio') ? 'P' : 'B').') '.$row['projname'].'</li>'; 
 		}
 		return $menu;  
 	}

@@ -6,6 +6,8 @@ $(function() {
 
 $(document).ready(function() {
 	ajaxLoadedSubmit = false; 
+
+	$('.gallery,.preview').css('width',($(document).width()-242)/2); 
 	
 	// Log in and out
 	$('input#login').on('click',function(e) {

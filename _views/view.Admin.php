@@ -28,8 +28,8 @@ HTMLnav($page);
 	echo $admin->getMenu(); 
   ?>
  </ul>
- <div class="gallery">
- </div>
+ <div class="gallery"></div>
+ <div class="preview"></div>
 </section>
 
 <div class="curtain" id="addProject">

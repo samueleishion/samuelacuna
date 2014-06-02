@@ -21,6 +21,7 @@ body { color:#333;
 	-ms-user-select: none;
 	user-select: none; 
 	cursor:default; 
+	padding:0px; 
 	padding-top:40px; }
 
 a { cursor:pointer; }
@@ -43,9 +44,13 @@ nav { display:block;
 	position:fixed; 
 	top:0px; left:0px; 
 	width:100%;  
-	background-color:#ddd; 
+	background-color:#444; /*#ddd; */
 	color:#444; 
 	z-index:999; }
+
+/*nav { background-color:#444; }*/
+nav a { color:#ddd; }
+nav a:hover { color:#fff; }
 
 section { display:block; }
 	section:first-child { padding-top:100px; }
