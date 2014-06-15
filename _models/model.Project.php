@@ -12,6 +12,8 @@
  * 
  */
 
+require_once("model.Image.php"); 
+
 class Project {
 
 	private $dblink; 
@@ -123,7 +125,7 @@ class Project {
 	public function save() {
 		$id = $this->id; 
 		$name = $this->name; 
-		$desc = $this->desc; 
+		$desc = encodebrackets($this->desc); 
 		$date = now(); 
 		$cover = $this->cover; 
 		$type = $this->types; 
@@ -188,17 +190,28 @@ class Project {
 		include_once("model.Image.php"); 
 		$i = new Image($this->dblink); 
 		$i->instantiate($this->cover);
-		return '<li class="mix '.$this->splitTypes().'" data-cat="1"><div><a href="'.(($this->page=="portfolio") ? 'project' : 'blog').'?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.$this->name.'</div></a></a>';  
+		return '<li class="mix '.$this->splitTypes().'" data-cat="1"><div><a href="'.(($this->page=="portfolio") ? 'project' : 'blog').'?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.strtoupper($this->name).'</div></a></a>';  
 		// return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
 	}
 	
-	public function show() {
-		$show = "<h2>".ucfirst($this->name)."</h2><br>";  
-		$show .= decodequotes($this->desc).'<br>'; 
-		$imgs = $this->getProjectImages();
-		foreach($imgs as $i) {
-			$show .= $i->show(); 
+	public function show() { 
+		if($this->page=="blog") {
+			$i = new Image($this->dblink); 
+			$i->instantiate($this->cover); 
+			$cover = $i->getName(); 
+			$show = '<div class="middle"><content class="markdown">'; 
+			$show .= '<div class="entrycover" style="background-image:url(_views/_imgs/_uploads/'.$cover.');"></div>'; 
+			$show .= '<h1>'.ucfirst($this->name).'</h1>'; 
+			$show .= '<span class="datetime">by Samuel Acu&ntilde;a, '.date('M jS, Y',strtotime($this->datetime)).'</span>';
+			$show .= '<div class="entrytext">'.htmlspecialchars(decodequotes($this->desc)).'.</div></content>'; 
+			$show .= '</div>'; 
+		} else {
+			$imgs = $this->getProjectImages();
+			foreach($imgs as $i) {
+				$show .= $i->show(); 
+			} 
 		} 
+
 		return $show;  
 	}
 	

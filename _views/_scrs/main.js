@@ -8,7 +8,8 @@ $(document).ready(function() {
 	ajaxLoadedSubmit = false; 
 
 	$('.gallery,.preview').css('width',($(document).width()-242)/2); 
-	
+	$('.preview').css('width',($('.preview').width()+20)); 
+
 	// Log in and out
 	$('input#login').on('click',function(e) {
 		e.preventDefault(); 
@@ -67,6 +68,9 @@ $(document).ready(function() {
 						}); 
 						$('.status .label').html('public');
 					}  
+				}, 
+				complete: function(data) {
+					feedPreview(); 
 				}
 			}); 
 		}
@@ -114,6 +118,8 @@ $(document).ready(function() {
 		$('.submit').off('click',function() {return 0;}); 
 		activateSubmit();
 	}
+
+	updatePreview(); 
 }); 
 
 // Show curtains
@@ -137,6 +143,53 @@ function activateSubmit() {
 		// console.log('out '+id);  
 		onSubmit($(this));   
 	});  
+}
+
+// Function to preview the modified entry/project 
+function updatePreview() {
+	$('.gallery #newname, .gallery #newdesc').on('keyup',function() {
+		feedPreview(); 
+	}); 
+}
+
+function feedPreview() {
+	$('.preview').html(' '); 
+
+	var title = $('.gallery #newname').val(); 
+	var entry = $('.gallery #newdesc').val(); 
+	var type = $('.gallery #newtype').val(); 
+	var imgs = $('.gallery img'); 
+	var cover; 
+	var content; 
+
+	if(type=="portfolio") {
+		content = '<content>'; 
+		content += '<h1>'+title+'</h1>'+content+'<br>'; 
+		for(var i=0; i<imgs.length; i++)
+			content += '<img src="'+imgs[i]["src"]+'">'; 
+	} else {
+		content = '<content class="markdown">'; 
+		// console.log(imgs.length); 
+		// console.log(imgs); 
+		if(imgs.length>0)
+			cover = imgs[0]["src"]; 
+		else cover = '_views/_imgs/_uploads/_default.png'; 
+		// console.log(cover); 
+		content += '<div class="entrycover" style="background-image:url('+cover+');"></div>';
+		content += '<h1>'+title+'</h1>'; 
+		// console.log(entry); 
+		//for(var i=1; i<imgs.length; i++)
+			//content += '<img src="'+imgs[i]["src"]+'">'; 
+		// console.log(markdown(entry)); 
+		content += markdown(entry); 
+		// console.log(markdown(entry)); 
+		//content += '<p>'+markdown(entry)+'</p>'; 
+	} 
+	content += '</content>'; 
+
+	// console.log(content); 
+
+	$('.preview').append(content); 
 }
 
 function onSubmit(button) {

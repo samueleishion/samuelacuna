@@ -19,6 +19,24 @@ function encode($str) { return hash('ripemd160',$str); }
 function now() { return date('Y\/m\/d H\:i\:s'); }
 function projectPrefix($str) { return substr(strtoupper($str),0,3); }
 
+function encodebrackets($str) {
+	$result = ""; 
+	for($i=0; $i<strlen($str); $i++) {
+		switch($str[$i]) {
+			case '<': 
+				$result .= '&lt;'; 
+				break; 
+			case '<':
+				$result .= '&gt;'; 
+				break; 
+			default:
+				$result .= $str[$i]; 
+				break; 
+		}
+	}
+	return $result; 
+}
+
 function getAllProjects($dblink,$page) {
 	$page = ($page!='portfolio' || strlen($page)==0) ? 'blog' : $page; 
 	$list = array(); 

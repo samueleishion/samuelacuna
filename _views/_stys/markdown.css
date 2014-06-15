@@ -1,0 +1,59 @@
+@font-face { font-family:consolas; src:url('_fonts/Consolas.ttf'); }
+
+.markdown { display:block; 
+	/*border:1px solid red;*/ 
+	padding:0px; }
+
+.markdown .entrycover { display:block; 
+	background-repeat:no-repeat; 
+	background-size:cover; 
+	background-position: center center; 
+	height:300px; 
+	margin-bottom:20px; } 
+
+/*.markdown h1 { font-size:20pt; 
+	font-family:webly; 
+	letter-spacing:1px; } */
+.markdown .datetime { display:block; 
+	padding:0px 40px; 
+	font-size:12pt; 
+	color:#999; }
+
+.markdown p { padding:10px; 
+	color:#444; 
+	letter-spacing:1px; } 
+
+.markdown code { display:block; 
+	padding:10px; 
+	background-color:#373832; 
+	border-left:10px solid #e6e6e6; 
+	color:#fff; 
+	font-family:consolas;
+	font-size:10pt; } 
+
+.markdown code comment { display:inline-block; 
+	color:#bbb; 
+	font-style:italic; 
+	padding:0px; }
+
+.markdown code keyword { display:inline-block; 
+	color:#6de; 
+	padding:0px; }
+
+.markdown code actionword { display:inline-block; 
+	color:#f27; 
+	padding:0px; }
+
+.markdown b { font-family:webly_bold; 
+	color:#444; 
+	padding:0px; 
+	letter-spacing:-1px; 
+	/*text-shadow:1px 1px 0px #000;*/ }
+
+.markdown i { padding:0px; } 
+
+.markdown h { display:block; 
+	font-family:webly_bold; 
+	font-size:16pt; 
+	color:#333; 
+	border-bottom:1px solid #ddd; }

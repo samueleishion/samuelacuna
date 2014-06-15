@@ -53,6 +53,10 @@ ul#menu { display:inline;
 	.gallery .types input { margin:0px; }
 	.gallery #newdesc { width:480px; }
 
+	.preview { padding:0px; } 
+	.preview content { display:block; 
+		padding:0px; }
+
 .curtain { display:none; 
 	position:fixed; 
 	top:0px; left:0px;  
