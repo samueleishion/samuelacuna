@@ -1,10 +1,10 @@
 COLORS = [//[191,238,230], 
-		  [63,172,163], 
-		  [175,77,51], 
-		  [163,127,144], 
-		  [216,144,103], 
-		  [159,90,123], 
-		  [85,194,185]]; 
+          [63,172,163], 
+          [175,77,51], 
+          [163,127,144], 
+          [216,144,103], 
+          [159,90,123], 
+          [85,194,185]]; 
 
 // Selected color index to compare 
 var sel1 = choose_random_color(); 
@@ -33,78 +33,78 @@ var w = window.innerWidth,
     color = d3.scale.quantize().domain([10000, 7250]).range(["rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0.01)","rgba(255,255,255,0.05)","rgba(255,255,255,0.1)","rgba(255,255,255,0.2)"])
 
 function change_color() {
-	var str1 = ""; 
-	var str2 = ""; 
-	var hex1,hex2; 
+    var str1 = ""; 
+    var str2 = ""; 
+    var hex1,hex2; 
 
-	// If colors match, get a new color 
-	if(colors_equal(COLORS[sel1],cur1)) {
-		sel1 = choose_random_color(); }
-	if(colors_equal(COLORS[sel2],cur2)) {
-		sel2 = choose_random_color(); }
+    // If colors match, get a new color 
+    if(colors_equal(COLORS[sel1],cur1)) {
+        sel1 = choose_random_color(); }
+    if(colors_equal(COLORS[sel2],cur2)) {
+        sel2 = choose_random_color(); }
 
-	// Change colors 
-	for(var i = 0; i < cur1.length; i++) {
-		if(cur1[i] < COLORS[sel1][i]) cur1[i]++; 
-		else if(cur1[i]==COLORS[sel1][i]) cur1[i] = cur1[i]; 
-		else cur1[i]--; 
-		str1 += cur1[i].toString()+","; 
+    // Change colors 
+    for(var i = 0; i < cur1.length; i++) {
+        if(cur1[i] < COLORS[sel1][i]) cur1[i]++; 
+        else if(cur1[i]==COLORS[sel1][i]) cur1[i] = cur1[i]; 
+        else cur1[i]--; 
+        str1 += cur1[i].toString()+","; 
 
-		if(cur2[i] < COLORS[sel2][i]) cur2[i]++; 
-		else if(cur2[i]==COLORS[sel2][i]) cur2[i] = cur2[i]; 
-		else cur2[i]--; 
-		str2 += cur2[i].toString()+","; 
-	}	
+        if(cur2[i] < COLORS[sel2][i]) cur2[i]++; 
+        else if(cur2[i]==COLORS[sel2][i]) cur2[i] = cur2[i]; 
+        else cur2[i]--; 
+        str2 += cur2[i].toString()+","; 
+    }   
 
-	// Show new colors 
-	hex1 = array_to_color(cur1); 
-	hex2 = array_to_color(cur2); 
-	$('#s1').attr('stop-color',hex1); 
-	$('#s2').attr('stop-color',hex2); 
+    // Show new colors 
+    hex1 = array_to_color(cur1); 
+    hex2 = array_to_color(cur2); 
+    $('#s1').attr('stop-color',hex1); 
+    $('#s2').attr('stop-color',hex2); 
 }
 
 function colors_equal(one,two) {
-	var result = true; 
-	for(var i = 0;i < one.length;i++) {
-		result = result && (one[i]==two[i]); 
-	}
-	return result; 
+    var result = true; 
+    for(var i = 0;i < one.length;i++) {
+        result = result && (one[i]==two[i]); 
+    }
+    return result; 
 }
 
 function choose_random_color() {
-	return Math.floor((10*Math.random())%COLORS.length); 
+    return Math.floor((10*Math.random())%COLORS.length); 
 }
 
 function array_to_color(array) {
-	var color = "#"; 
-	var v1,v2; 
-	var val; 
+    var color = "#"; 
+    var v1,v2; 
+    var val; 
 
-	for(var i = 0; i < array.length; i++) {
-		v1 = Math.floor(array[i]/16); 
-		v2 = array[i]%16; 
+    for(var i = 0; i < array.length; i++) {
+        v1 = Math.floor(array[i]/16); 
+        v2 = array[i]%16; 
 
-		val = (v1>9) ? String.fromCharCode(97+(v1%10)) : v1.toString(); 
-		color += val; 
+        val = (v1>9) ? String.fromCharCode(97+(v1%10)) : v1.toString(); 
+        color += val; 
 
-		val = (v2>9) ? String.fromCharCode(97+(v2%10)) : v2.toString(); 
-		color += val; 
-	}
+        val = (v2>9) ? String.fromCharCode(97+(v2%10)) : v2.toString(); 
+        color += val; 
+    }
 
-	return color; 
+    return color; 
 } 
 
 function get_random_int(min,max) {
-	return Math.floor(Math.random() * (max-min+1))+min; 
+    return Math.floor(Math.random() * (max-min+1))+min; 
 }
 
 $(document).ready(function() {
-	$('#s1').attr('stop-color',array_to_color(cur1)); 
-	$('#s2').attr('stop-color',array_to_color(cur2)); 
-	interval = window.setInterval("change_color()",100); 
-	//draw(); 
+    $('#s1').attr('stop-color',array_to_color(cur1)); 
+    $('#s2').attr('stop-color',array_to_color(cur2)); 
+    interval = window.setInterval("change_color()",100); 
+    //draw(); 
 
-    var numVertices = (w*h) / 5000;
+    var numVertices = 200; //(w*h) / 5000;
     console.log("numVertices = "+numVertices); 
     var vertices = d3.range(numVertices).map(function(i) {
         angle = radius * (i+10);
@@ -162,14 +162,14 @@ $(document).ready(function() {
             )*/ 
             .style("fill", function(d, i) { return color(0) }) 
             // .on("mousemove", function (d,i) {
-            // 	vertices[0].x = d3.mouse(this)[0]; 
-            // 	vertices[0].y = d3.mouse(this)[1]; 
+            //  vertices[0].x = d3.mouse(this)[0]; 
+            //  vertices[0].y = d3.mouse(this)[1]; 
             // })
             .on("tick", function(d,i) {
-            	//for(var i = 0; i < 4; i++) {
-        		vertices[get_random_int(0,vertices.length)].x = get_random_int(0,w); 
-        		vertices[get_random_int(0,vertices.length)].y = get_random_int(0,h); 
-            	//}
+                //for(var i = 0; i < 4; i++) {
+                vertices[get_random_int(0,vertices.length)].x = get_random_int(0,w); 
+                vertices[get_random_int(0,vertices.length)].y = get_random_int(0,h); 
+                //}
             }) 
         path.attr("d", function(d) { return "M" + d.join("L") + "Z"; })
             .transition().duration(100).style("fill", function(d, i) { return color(d3.geom.polygon(d).area()) })
@@ -193,8 +193,8 @@ $(document).ready(function() {
         link.exit().remove()
 
         if(!simulate) {
-        	console.log("stopping"); 
-        	force.stop()
+            console.log("stopping"); 
+            force.stop()
         } 
     }
 }); 
