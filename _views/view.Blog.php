@@ -5,16 +5,22 @@ $page = 'blog';
 $project->setPage($page); 
 HTMLhead($page); 
 HTMLnav($page); 
+$spotlight = false; 
 ?>
 
 <section style="padding:0px; ">
  <?
 	if($project->instantiateByName($show)) {
+		$spotlight = true; 
 		echo $project->show(); 
-		echo '</section><section>'; 
 	}
+
+	if($spotlight)
+		echo '</section><section style="padding-top:30px; border-top:1px solid #ddd;">'; 
+	else echo '</section><section style="padding-top:30px;">'; 
+
 	// show types
-	echo '<ul style="padding-top:50px; text-align:middle; ">';
+	echo '<ul id="GridTags" style="text-align:middle; ">';
 	echo '<li class="filter" data-filter="all">All</li>';  
 	$typeslist = getAllTypes($dblink); 
 	foreach($typeslist as $key => $t) {

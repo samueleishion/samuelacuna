@@ -2,14 +2,15 @@
 
 .markdown { display:block; 
 	/*border:1px solid red;*/ 
+	margin:0px; 
 	padding:0px; }
 
-.markdown .entrycover { display:block; 
+.entrycover { display:block; 
 	background-repeat:no-repeat; 
 	background-size:cover; 
 	background-position: center center; 
-	height:300px; 
-	margin-bottom:20px; } 
+	height:350px; 
+	/*margin-bottom:20px;*/ } 
 
 /*.markdown h1 { font-size:20pt; 
 	font-family:webly; 
@@ -21,7 +22,8 @@
 
 .markdown p { padding:10px; 
 	color:#444; 
-	letter-spacing:1px; } 
+	letter-spacing:1px; 
+	line-height:28px; } 
 
 .markdown code { display:block; 
 	padding:10px; 
@@ -29,7 +31,8 @@
 	border-left:10px solid #e6e6e6; 
 	color:#fff; 
 	font-family:consolas;
-	font-size:10pt; } 
+	font-size:10pt; 
+	line-height:14px; } 
 
 .markdown code comment { display:inline-block; 
 	color:#bbb; 

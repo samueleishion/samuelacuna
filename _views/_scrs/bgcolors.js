@@ -104,7 +104,7 @@ $(document).ready(function() {
 	interval = window.setInterval("change_color()",100); 
 	//draw(); 
 
-    var numVertices = (w*h) / 5000;
+    var numVertices = 300; //(w*h) / 5000;
     console.log("numVertices = "+numVertices); 
     var vertices = d3.range(numVertices).map(function(i) {
         angle = radius * (i+10);
