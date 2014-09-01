@@ -16,7 +16,7 @@ $spotlight = false;
 	}
 
 	if($spotlight)
-		echo '</section><section style="padding-top:30px; border-top:1px solid #ddd;">'; 
+		echo '</section><section style="padding-top:30px; background-color:#fafafa; ">'; 
 	else echo '</section><section style="padding-top:30px;">'; 
 
 	// show types

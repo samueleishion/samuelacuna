@@ -45,6 +45,16 @@ function HTMLnav($page) {
 }
 
 function HTMLfoot($page) {
+	if($page!='admin') {
+		?>
+<section class="footer">
+ <content class="middle"> 
+	Samuel Acu&ntilde;a
+ </content> 
+</section> 
+		<?
+	}
+
 	?>
 </body></html>
 	<?
