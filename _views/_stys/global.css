@@ -1,5 +1,6 @@
 @font-face { font-family:hype; src:url('_fonts/HYPE.ttf'); }
 @font-face { font-family:hype_bold; src:url('_fonts/HYPE_bold.ttf'); } 
+@font-face { font-family:museo; src:url('_fonts/Museo-500.otf'); }
 @font-face { font-family:webly; src:url('_fonts/weblysleekuil.ttf'); } 
 @font-face { font-family:webly_semi; src:url('_fonts/weblysleekuisl.ttf'); }
 @font-face { font-family:webly_bold; src:url('_fonts/weblysleekuisb.ttf'); }
@@ -27,7 +28,8 @@ body { color:#333;
 	padding-top:40px; 
 	background-color:#fafafa; }
 
-a { cursor:pointer; }
+a { cursor:pointer; 
+	text-decoration:none; }
 
 input, textarea { border:1px solid #ddd; 
 	outline:none; 
@@ -70,9 +72,17 @@ nav a#home { font-family:hype;
 	padding:13px 7px 5px 7px;
 	line-height:10px; }
 
+	nav content { padding:0px; 
+		margin:0px; 
+		width:1100px; 
+		margin:auto; 
+		margin-bottom:0px; }
+
 #logout { position:fixed;
 	top:0px;  
-	right:0px; }
+	left:50%; 
+	margin-left:425px; }
+/*#logout { float:right; }*/
 
 section { display:block; 
 	background-color:#fff; }
@@ -146,9 +156,17 @@ li.filter { list-style-type:none;
 		border:1px solid #fff; } 
 
 /* Social buttons */ 
-.social a { color:rgba(255,255,255,0.4); 
+.social a { color:#bbb; 
+	font-family:social; 
+	font-size:11pt; 
 	/*transition-duration: 0.08s;*/ }
-.social a:hover { text-shadow:0px 0px 15px rgba(255,255,255,0.4); }
+.social a:hover { color:#45b5ff; 
+	text-shadow:0px 0px 15px rgba(255,255,255,0.4); }
+
+	.social .button#seelio { font-size:18pt; 
+		font-family:museo; 
+		position:relative; 
+		top:1px; }
 
 .footer { border-top:1px solid #eee; 
 	background-color:#fafafa; }

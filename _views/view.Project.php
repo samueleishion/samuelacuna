@@ -27,8 +27,9 @@ $spotlight = false;
 		echo '<li class="filter" data-filter="category_'.$key.'">'.ucfirst($t).'</li>'; 
 	}
 	echo '</ul></section>'; 
+
 	// show covers  
-	echo '<section><content class="middle"><ul id="Grid">'; 
+	echo '<section'.(($spotlight) ? ' style="background-color:#fafafa;"' : '').'><content class="middle"><ul id="Grid">'; 
 	$projectlist = getAllProjects($dblink,$page); 
 	foreach($projectlist as $key => $p) {
 		$project->instantiate($p); 
