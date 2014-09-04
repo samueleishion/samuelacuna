@@ -203,12 +203,14 @@ class Project {
 			$show .= '<div class="middle entry"><content class="markdown">'; 
 			$show .= '<h1>'.ucfirst($this->name).'</h1>'; 
 			$show .= '<span class="datetime">by Samuel Acu&ntilde;a, '.date('M jS, Y',strtotime($this->datetime)).'</span>';
-			$show .= '<div class="entrytext">'.htmlspecialchars(decodequotes($this->desc)).'.</div></content>'; 
+			$show .= '<div class="entrytext">'.htmlspecialchars(decodequotes($this->desc)).'</div></content>'; 
 			$show .= '</div>'; 
 		} else {
 			$imgs = $this->getProjectImages();
 			$show = '<div class="middle"><content class="markdown">'; 
-			$show .= '<div class="middle"><content>'; 
+			$show .= '<h1>'.ucfirst($this->name).'</h1>'; 
+			$show .= '<div class="entrytext">'.htmlspecialchars(decodequotes($this->desc)).'</div></content>'; 
+			// $show .= '<div class="middle"><content>'; 
 			foreach($imgs as $i) {
 				$show .= $i->show(); 
 			} 

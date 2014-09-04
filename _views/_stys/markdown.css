@@ -20,6 +20,9 @@
 	font-size:12pt; 
 	color:#999; }
 
+.markdown a { padding:0px; 
+	margin:0px; }
+
 .markdown p { padding:10px; 
 	color:#444; 
 	letter-spacing:1px; 
@@ -59,4 +62,4 @@
 	font-family:webly_bold; 
 	font-size:16pt; 
 	color:#333; 
-	border-bottom:1px solid #ddd; }
+	border-bottom:1px solid #ddd; } 

@@ -28,7 +28,7 @@ class Admin extends User {
 		$result = mysqli_query($this->dblink,"SELECT * FROM projects ORDER BY id DESC"); 
 		while($row = mysqli_fetch_array($result)) {
 			$menu .= '
-  <li id="proj'.$row['id'].'"><span class="entrytype">'.(($row['page']=='portfolio') ? "&#xf0f2;" : "&#xf032;").'</span>'.$row['projname'].'</li>'; 
+  <li id="proj'.$row['id'].'"><span class="entrytype">'.(($row['page']=='portfolio') ? "&#xf0f2;" : "&#xf032;").'</span>'.((strlen($row['projname'])>23) ? substr($row['projname'],0,23).'...' : $row['projname']).'</li>'; 
 		}
 		return $menu;  
 	}

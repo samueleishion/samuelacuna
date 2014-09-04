@@ -29,7 +29,8 @@ body { color:#333;
 	background-color:#fafafa; }
 
 a { cursor:pointer; 
-	text-decoration:none; }
+	text-decoration:none; 
+	color:#09f; }
 
 input, textarea { border:1px solid #ddd; 
 	outline:none; 
@@ -43,10 +44,18 @@ h1 { display:block;
 	font-size:24pt; 
 	color:#333; }
 
-img { max-width:400px; 
-	max-height:300px; 
+img { max-width:700px; 
+	max-height:500px; 
+	display:block; 
+	/*border:0px solid #fff; */
+	/*box-shadow:0px 0px 20px rgba(0,0,0,0.05); */
+	padding:0px; 
 	margin:10px; }
 
+marquee { display:inline; 
+	border:1px solid red; 
+	padding:0px; 
+	margin:0px; }
 
 /*
  * HTML secions and modules

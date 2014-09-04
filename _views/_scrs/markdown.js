@@ -8,10 +8,12 @@
 // tags
 var bold = false; 
 var italics = false; 
+var link = false; 
 var header = false; 
 var comment = false; 
 var keyword = false; 
 var actionword = false; 
+var href = ''; 
 
 function markdown(string) {
 	var result = "<p>"; 
@@ -52,6 +54,22 @@ function markdown(string) {
 			case '*': // ** italics
 				result += search_next(string[++i],'*',(italics) ? '</i>' : '<i>'); 
 				break; 
+			case '@': // @@ link 
+				result += search_next(string[++i],'@',(link) ? '</a>' : '<a href="'); 
+
+				if(link) {
+					while(string[i]!="[") i++; 
+					i++; 
+					while(string[i]!="]") 
+						href += string[i++]; 
+
+					result += href+'" target="_new">'; 
+
+				} else href = ''; 
+
+				// console.log(href); 
+
+				break; 
 			case '#': // ## header, ### subheader 
 				result += search_next(string[++i],'#',(header) ? '</h>' : '<h>'); 
 				break; 
@@ -67,10 +85,9 @@ function markdown(string) {
 			case '~': // ~~ tab
 				result += search_next(string[++i],'~','&nbsp;&nbsp;&nbsp;&nbsp;'); 
 				break; 
-			case '[': // url 
 			default: 
 				result += string[i]; 
-			break; 
+				break; 
 		}
 
 
@@ -86,8 +103,9 @@ function search_next(next,search,result) {
 		if(next==search) {
 			out = result; 
 			switch(search) {
-				case '_': bold = !bold; break 
+				case '_': bold = !bold; break; 
 				case '*': italics = !italics; break; 
+				case '@': link = !link; break; 
 				case '#': header = !header; break; 
 				case '/': comment = !comment; break; 
 				case ':': keyword = !keyword; break; 
