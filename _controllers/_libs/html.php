@@ -10,6 +10,7 @@ function HTMLhead($page) {
  <script src="_views/_scrs/jquery.min.js"></script>
  <script src="_views/_scrs/jquery.mixitup.min.js"></script>
  <script src="_views/_scrs/main.js"></script>
+ <script src="_views/_scrs/colors.js"></script> 
  <?
  	if($page=='admin') {
  		?>

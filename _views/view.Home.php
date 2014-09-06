@@ -8,6 +8,7 @@
  <script src="_views/_scrs/jquery.min.js"></script> 
  <script src="_views/_scrs/d3.v3.min.js"></script> 
  <script src="_views/_scrs/home.js"></script> 
+ <script src="_views/_scrs/colors.js"></script> 
  <script src="_views/_scrs/bgcolors.js"></script> 
 </head><body>
 

@@ -1,3 +1,11 @@
+COLORS = [//[191,238,230], 
+		  [63,172,163], 
+		  [175,77,51], 
+		  [163,127,144], 
+		  [216,144,103], 
+		  [159,90,123], 
+		  [85,194,185]]; 
+
 var ajaxLoadedSubmit;
 	
 $(function() {
@@ -6,6 +14,7 @@ $(function() {
 
 $(document).ready(function() {
 	ajaxLoadedSubmit = false; 
+	interval = window.setInterval("change_a_color()",100); 
 
 	$('.gallery,.preview').css('width',($(document).width()-242)/2); 
 	$('.preview').css('width',($('.preview').width()+20)); 
@@ -190,6 +199,7 @@ function feedPreview() {
 	// console.log(content); 
 
 	$('.preview').append(content); 
+	$('.preview').height($('.gallery').height()+20); 
 }
 
 function onSubmit(button) {

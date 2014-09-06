@@ -55,7 +55,8 @@ ul#menu { display:inline;
 
 .gallery img { max-width:500px; }
 
-	.preview { padding:0px; } 
+	.preview { padding:0px; 
+		overflow-y:auto; } 
 	.preview content { display:block; 
 		padding:0px; }
 
