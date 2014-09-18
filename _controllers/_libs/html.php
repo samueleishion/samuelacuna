@@ -2,6 +2,7 @@
 
 function HTMLhead($page) {
 	if($page=='admin') $_SESSION['DESlastadmin'] = ''; 
+	error_log($page); 
 	?>
 <!DOCTYPE html>
 <html><head>
@@ -30,8 +31,12 @@ function HTMLhead($page) {
   <script src="_views/_scrs/resume.js"></script> 
  		<?
  	} elseif($page=='portfolio') {
+ 		error_log("I'm on portfolio"); 
  		?>
-  <link rel="stylesheet" type="text/css" href="_views/_stys/project.css"> 
+ <link rel="stylesheet" type="text/css" href="_views/_stys/project.css"> 
+ <link rel="stylesheet" type="text/css" href="_views/_stys/markdown.css">
+ <script src="_views/_scrs/markdown.js"></script>
+ <script src="_views/_scrs/blog.js"></script> 
  		<?
  	} 
  ?>
