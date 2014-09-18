@@ -152,7 +152,7 @@ HTMLnav($page);
 	</ul> 
  </content> 
 </section> 
-<section class="">
+<section class="skills">
  <content class="middle">
  	<h1>SKILLS</h1> 
  </content> 

@@ -35,10 +35,20 @@ span { padding:0px; }
 section { padding:30px; }
 section:nth-child(2n) { background-color:#fafafa; }
 
+/*============*/
+/* RESUME TOP */
+/*============*/
+.resumetop, .resumefoot { 
+	background-image:url('../_imgs/staticgraph.png'); 
+	background-size:cover; 
+	background-position:center center; }
 
 .resumetop { padding:40px; 
 	padding-bottom:100px; }
 
+/*============*/
+/* INTEREST   */
+/*============*/
 .interest { display:inline-block; 
 	width:100px; 
 	height:100px; 
@@ -70,6 +80,9 @@ section:nth-child(2n) { background-color:#fafafa; }
 		width:180px; 
 		text-align:center; }
 
+/*============*/
+/* ABOUT      */
+/*============*/
 .about .mypic { display:inline-block; 
 	width:150px; 
 	height:150px; 
@@ -78,11 +91,33 @@ section:nth-child(2n) { background-color:#fafafa; }
 	background-size:cover; 
 	border-radius:100px; }
 
-.resumetop, .resumefoot { 
-	background-image:url('../_imgs/staticgraph.png'); 
-	background-size:cover; 
-	background-position:center center; }
+/*============*/
+/* SKILLS     */
+/*============*/
+.pl { display:inline-block; 
+	width:305px; }
+.pl table { padding:0px; }
+.pl .pllabel { display:block; 
+	padding:0px; 
+	/*position:relative; 
+	top:-12px; */
+	width:50px; 
+	text-align:right; }
+.pl .graph { width:200px; 
+	display:inline-block; 
+	background-color:#ddd; 
+	padding:0px; 
+	border-radius:40px; }
+.pl .value { width:100px; 
+	background-color:#f00; 
+	padding:20px; 
+	border-radius:40px; 
+	font-size:9pt; 
+	font-style:italic; }
 
+/*============*/
+/* RESUME FOOT*/
+/*============*/
 	.resumefoot { padding:40px; }
 
 	.resumetop h1, 

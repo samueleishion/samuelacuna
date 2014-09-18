@@ -27,6 +27,7 @@ function HTMLhead($page) {
  	} elseif($page=='resume') {
  		?>
   <link rel="stylesheet" type="text/css" href="_views/_stys/resume.css"> 
+  <script src="_views/_scrs/resume.js"></script> 
  		<?
  	}
  ?>
