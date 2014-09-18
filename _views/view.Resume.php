@@ -83,6 +83,12 @@ HTMLnav($page);
 				<li><span class="position">Student Technician</span>:  Back-end developer of Environ video game 
       using Unity. Also developed a program to track and visualize how 
       users interact with the game.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=82">Environ Data Visualization</a></li>
+      				<li><a href="http://samuelacuna.com/project?v=81">Environ Videogame</a></li>
+      				<li><a href="http://samuelacuna.com/project?v=80">DMI Website</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>WireWatt <span class="date"> Austin, TX (Jan 2013 - Mar 2013)</span></h2> 
@@ -93,16 +99,31 @@ HTMLnav($page);
 		<li><h2>Teaching Learning Solutions <span class="date"> Austin, TX (Jan 2013 - Jun 2013)</span></h2> 
 			<ul>
 				<li><span class="position">Independent Developer</span>:  Developed website&#39;s back-end and a file-sharing web app for a national conference.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=70">TLS Website</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>LetsGOGH <span class="date"> Austin, TX (Dec 2012 - Mar 2013)</span></h2> 
 			<ul>
 				<li><span class="position">Lead Developer</span>:  Developed artwork marketplace that tracked user actions to recommend art to purchase based on likes and views.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=69">LetsGOGH Website</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>NovaNet <span class="date"> Dallas, TX (Mar 2008 - Aug 2013)</span></h2> 
 			<ul>
 				<li><span class="position">Founder, Lead Designer, Lead Developer</span>:  Designed and developed front/back-end for businesses&#39; webapps.
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=65">NovaNet website</a></li>
+      				<li><a href="http://samuelacuna.com/project?v=66">Bluegrid website</a></li>
+      				<li><a href="http://samuelacuna.com/project?v=67">Who is my president? website</a></li>
+      				<li><a href="http://samuelacuna.com/project?v=68">If you know what I meme website</a></li>
+      			</ul>
 			</ul>
 		</li>
 	</ul> 
@@ -115,16 +136,37 @@ HTMLnav($page);
 		<li><h2>Neural Network <span class="date"> Austin, TX (Feb 2014 - present)</span></h2> 
 			<ul>
 				<li>Implemented a customized neural network algorithm. Built network visualization.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=77">Neural Network Visualization</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>Meme Language Model <span class="date"> Austin, TX (Nov 2013 - present)</span></h2> 
 			<ul>
 				<li>Pull data from Twitter and Instagram to develop a meme language model to automatically populate a meme website.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=79">NLP for memes</a></li>
+      			</ul>
+			</ul>
+		</li>
+		<li><h2>Clustering Visualization <span class="date"> Austin, TX (Feb 2014 - present)</span></h2> 
+			<ul>
+				<li>Implemented the k-means algorithm and built a visualization for it.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=78">Clustering Visualization</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>Data Visualization Research <span class="date"> Austin, TX (May 2013 - Jun 2013)</span></h2> 
 			<ul>
 				<li>Developed a visualization for Dr. Baldridge&#39;s research on wikipedia&#39;s geotagged words.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=75">Wikiworld</a></li>
+      			</ul>
 			</ul>
 		</li>
 	</ul> 
@@ -137,11 +179,19 @@ HTMLnav($page);
 		<li><h2>DMI Bootcamp <span class="date"> Austin, TX (May 2013 - Jun 2013)</span></h2> 
 			<ul>
 				<li>Collaborated on projects and got exposed to web frameworks like Django and Bootstrap.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=76">CH</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>3-Day Startup <span class="date"> Austin, TX (Oct 2012 - Oct 2012)</span></h2> 
 			<ul>
 				<li>Developed a site for a sex education startup: EduSex. Award received for best "wired-in" coder.</li>
+      			<li><span class="position">Work</span>:</li>
+      			<ul>
+      				<li><a href="http://samuelacuna.com/project?v=71">EduSex</a></li>
+      			</ul>
 			</ul>
 		</li>
 		<li><h2>HackTX <span class="date"> Austin, TX</span></h2> 
