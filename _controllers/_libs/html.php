@@ -6,7 +6,20 @@ function HTMLhead($page) {
 	?>
 <!DOCTYPE html>
 <html><head>
- <title></title>
+ <title>Samuel Acu&ntilde;a</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta name="title" content="Samuel Acu&ntilde;a">
+ <meta name="keywords" content="samuel acuna, web design, web development, ui/ux, user interface, user interaction, user experience, design, development, artificial intelligence, computational linguistics, natural language processing, language, computer, computer science, science, math, philosophy">
+ <meta name="description" content="Samuel Acu&ntilde;a's personal website.">
+ <meta property="fb:admins" content="788470441">
+ <meta property="og:title" content="Samuel Acu&ntilde;a">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="http://samuelacuna.com">
+ <meta property="og:description" content="Samuel Acu&ntilde;a's personal website.">
+ <meta property="og:image" content="http://samuelacuna.com/_views/_imgs/meta_img.png">
+ <!--<meta property="og:image" content="http://benova.net/_imgs/projects/whoismypresh.png">-->
+ <meta property="og:site_name" content="Samuel Acu&ntilde;a">
+ <link rel="icon" type="image/x-icon" href="http://samuelacuna.com/_views/_imgs/favicon.ico">
  <link rel="stylesheet" type="text/css" href="_views/_stys/global.css">
  <script src="_views/_scrs/jquery.min.js"></script>
  <script src="_views/_scrs/jquery.mixitup.min.js"></script>
