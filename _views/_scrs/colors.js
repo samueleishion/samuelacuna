@@ -85,6 +85,9 @@ function change_a_color() {
 	$('a.button:hover').css({'color':hex1}); 
 	$('a:not(.button), li.filter').css({'color':hex1,'background-color':'#fff'}); 
 	$('a:hover:not(.button), li.filter:hover').css({'color':'#fff','background-color':hex1}); 
+	$('.resumetop,.resumefoot').css({'color':'#fff','background-color':hex1}); 
+	$('.resumetop a.button,.resumefoot a.button').css({'color':'rgba(255,255,255,0.4)'}); 
+	$('.resumetop a.button:hover,.resumefoot a.button:hover').css({'color':'rgba(255,255,255,1)'}); 
 }
 
 

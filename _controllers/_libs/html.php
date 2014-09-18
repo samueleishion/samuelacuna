@@ -24,6 +24,10 @@ function HTMLhead($page) {
  <script src="_views/_scrs/markdown.js"></script>
  <script src="_views/_scrs/blog.js"></script> 
  		<?
+ 	} elseif($page=='resume') {
+ 		?>
+  <link rel="stylesheet" type="text/css" href="_views/_stys/resume.css"> 
+ 		<?
  	}
  ?>
 </head><body>
@@ -52,7 +56,8 @@ function HTMLfoot($page) {
 		?>
 <section class="footer">
  <content class="middle"> 
-	picture
+	<div class="mypic"></div> 
+	<div>Samuel Acu&ntilde;a</div> 
 	<div class="social">
 		<a href="samuelacuna-resume.pdf" target="_new" class="button" id="resume" alt="Download my R&eacute;sum&eacute;">t</a>
 		<a href="http://github.com/samueleishion" target="_new" class="button" id="github" alt="My Github">h</a>
