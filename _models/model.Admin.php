@@ -56,7 +56,7 @@ class Admin extends User {
 			}
  			$out .= '
  </div>
- <input type="hidden" id="newtype" value="'.$proj->getPage().'"">
+ <input type="hidden" id="newtype" value="'.$proj->getPage().'">
  <textarea id="newdesc" style="height:'.$height.';">'.$proj->getDescription().'</textarea><br>
  <input type="hidden" id="project" value="'.$proj->getId().'">
  <input type="button" class="submit" id="editproject" value="Save changes">
