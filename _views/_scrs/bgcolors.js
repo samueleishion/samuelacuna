@@ -1,4 +1,3 @@
-
 //var width = window.innerWidth; //window.width; 
 //var height = window.innerHeight; //window.height; 
 var vertices, voronoi, svg, path; 
@@ -13,15 +12,16 @@ var w = window.innerWidth,
     // https://github.com/mbostock/d3/blob/master/lib/colorbrewer/colorbrewer.js#L105
     color = d3.scale.quantize().domain([10000, 7250]).range(["rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0)","rgba(255,255,255,0.01)","rgba(255,255,255,0.05)","rgba(255,255,255,0.1)","rgba(255,255,255,0.2)"])
 
+
 function get_random_int(min,max) {
-	return Math.floor(Math.random() * (max-min+1))+min; 
+    return Math.floor(Math.random() * (max-min+1))+min; 
 }
 
 $(document).ready(function() {
-	$('#s1').attr('stop-color',array_to_color(cur1)); 
-	$('#s2').attr('stop-color',array_to_color(cur2)); 
-	interval = window.setInterval("change_color()",100); 
-	//draw(); 
+    $('#s1').attr('stop-color',array_to_color(cur1)); 
+    $('#s2').attr('stop-color',array_to_color(cur2)); 
+    interval = window.setInterval("change_color()",100); 
+    //draw(); 
 
     var numVertices = 300; //(w*h) / 5000;
     console.log("numVertices = "+numVertices); 
@@ -81,14 +81,14 @@ $(document).ready(function() {
             )*/ 
             .style("fill", function(d, i) { return color(0) }) 
             // .on("mousemove", function (d,i) {
-            // 	vertices[0].x = d3.mouse(this)[0]; 
-            // 	vertices[0].y = d3.mouse(this)[1]; 
+            //  vertices[0].x = d3.mouse(this)[0]; 
+            //  vertices[0].y = d3.mouse(this)[1]; 
             // })
             .on("tick", function(d,i) {
-            	//for(var i = 0; i < 4; i++) {
-        		vertices[get_random_int(0,vertices.length)].x = get_random_int(0,w); 
-        		vertices[get_random_int(0,vertices.length)].y = get_random_int(0,h); 
-            	//}
+                //for(var i = 0; i < 4; i++) {
+                vertices[get_random_int(0,vertices.length)].x = get_random_int(0,w); 
+                vertices[get_random_int(0,vertices.length)].y = get_random_int(0,h); 
+                //}
             }) 
         path.attr("d", function(d) { return "M" + d.join("L") + "Z"; })
             .transition().duration(100).style("fill", function(d, i) { return color(d3.geom.polygon(d).area()) })
@@ -112,8 +112,8 @@ $(document).ready(function() {
         link.exit().remove()
 
         if(!simulate) {
-        	console.log("stopping"); 
-        	force.stop()
+            console.log("stopping"); 
+            force.stop()
         } 
     }
 }); 
