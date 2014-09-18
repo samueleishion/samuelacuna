@@ -188,3 +188,5 @@ HTMLnav($page);
 	</div> 
  </content> 
 </section> 
+
+<a href="samuelacuna-resume.pdf" target="_new" class="download">Download pdf version</a> 

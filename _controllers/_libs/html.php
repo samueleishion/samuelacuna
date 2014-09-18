@@ -29,7 +29,11 @@ function HTMLhead($page) {
   <link rel="stylesheet" type="text/css" href="_views/_stys/resume.css"> 
   <script src="_views/_scrs/resume.js"></script> 
  		<?
- 	}
+ 	} elseif($page=='portfolio') {
+ 		?>
+  <link rel="stylesheet" type="text/css" href="_views/_stys/project.css"> 
+ 		<?
+ 	} 
  ?>
 </head><body>
 	<?

@@ -10,7 +10,7 @@ $spotlight = false;
 
 <section style="padding:0px; ">
  <? 
-	if($project->instantiateByName($show)) {
+	if($project->instantiate($show)) {
 		$spotlight = true; 
 		echo $project->show(); 
 	}

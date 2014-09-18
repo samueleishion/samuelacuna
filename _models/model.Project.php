@@ -190,7 +190,7 @@ class Project {
 		include_once("model.Image.php"); 
 		$i = new Image($this->dblink); 
 		$i->instantiate($this->cover);
-		return '<li class="mix '.$this->splitTypes().'" data-cat="1"><div><a href="'.(($this->page=="portfolio") ? 'project' : 'blog').'?v='.$this->name.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.strtoupper($this->name).'</div></a></a>';  
+		return '<li class="mix '.$this->splitTypes().'" data-cat="1"><div><a href="'.(($this->page=="portfolio") ? 'project' : 'blog').'?v='.$this->id.'" class="cover" id="'.$this->name.'" style="background-image:url(\''.$_SESSION['DESpath'].'_views/_imgs/_uploads/'.$i->getName().'\'); "><div class="covertext" id="'.$this->name.'">'.strtoupper($this->name).'</div></a></a>';  
 		// return '<img src="_views/_imgs/_uploads/'.$i->getName().'" class="cover"><div id="covertext">'.$this->name.'</div>'; 
 	}
 	
@@ -208,13 +208,15 @@ class Project {
 		} else {
 			$imgs = $this->getProjectImages();
 			$show = '<div class="middle"><content class="markdown">'; 
-			$show .= '<h1>'.ucfirst($this->name).'</h1>'; 
-			$show .= '<div class="entrytext">'.htmlspecialchars(decodequotes($this->desc)).'</div></content>'; 
+			$show .= '<div class="description">'; 
+				$show .= '<h1>'.ucfirst($this->name).'</h1>'; 
+				$show .= '<div class="entrytext">'.htmlspecialchars(decodequotes($this->desc)).'</div></content>'; 
 			// $show .= '<div class="middle"><content>'; 
+			$show .= '</div><div class="project">'; 
 			foreach($imgs as $i) {
 				$show .= $i->show(); 
 			} 
-			$show .= '</content></div>'; 
+			$show .= '</div></content></div>'; 
 			$show .= '</div>'; 
 		} 
 

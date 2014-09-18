@@ -171,3 +171,16 @@ section:nth-child(2n) { background-color:#fafafa; }
 		/*top:5px;*/ }
 
 	.resumefoot a:hover { color:#fff; } 
+
+
+/*============*/
+/* DOWNLOAD   */
+/*============*/
+.download { position:fixed; 
+	bottom:0px; 
+	right:20px; 
+	font-size:9pt; }
+
+	.download:hover { border:1px solid #fff; 
+		border-bottom:0px; 
+		right:19px; } 
