@@ -173,7 +173,7 @@ function feedPreview() {
 
 	if(type=="portfolio") {
 		content = '<content>'; 
-		content += '<h1>'+title+'</h1>'+content+'<br>'; 
+		content += '<h1>'+title+'</h1>'+markdown(entry)+'<br>'; 
 		for(var i=0; i<imgs.length; i++)
 			content += '<img src="'+imgs[i]["src"]+'">'; 
 	} else {
@@ -197,6 +197,7 @@ function feedPreview() {
 	content += '</content>'; 
 
 	// console.log(content); 
+	console.log(content); 
 
 	$('.preview').append(content); 
 	$('.preview').height($('.gallery').height()+20); 
