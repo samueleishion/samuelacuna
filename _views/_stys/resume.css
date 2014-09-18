@@ -1,0 +1,105 @@
+/*nav { border-bottom:0px; 
+	box-shadow:0px 0px 5px rgba(0,0,0,0.3); }*/
+
+h1 { text-align:center; 
+	font-family:hype; 
+	font-size:28pt; } 
+h2 { font-family:webly_bold; 
+	font-size:12pt; 
+	letter-spacing:0px; }
+/*
+p { padding:0px; 
+	padding-left:40px; 
+	padding-bottom:20px; }*/
+p { display:inline-block; }
+
+ul { padding:10px; }
+li { list-style:none; 
+	padding:5px; 
+	padding-left:10px; 
+	text-align:left; }
+li h2 { padding:0px; }
+
+h2 .data, .date { font-family:webly; 
+	font-size:9pt; 
+	color:#777; 
+	position:relative; 
+	top:-2px; 
+	padding-left:20px; }
+
+span { padding:0px; } 
+
+.social .separator { background-color:transparent !important; 
+	padding:10px; }
+
+section { padding:30px; }
+section:nth-child(2n) { background-color:#fafafa; }
+
+
+.resumetop { padding:40px; 
+	padding-bottom:100px; }
+
+.interest { display:inline-block; 
+	width:100px; 
+	height:100px; 
+	border:10px solid rgba(255,255,255,0.8); 
+	border-radius:100px;
+	margin:30px 45px;  
+	text-align:center; 
+	vertical-align:middle; 
+	font-size:10pt; 
+	background-position:10px 5px; 
+	background-repeat:no-repeat; 
+	color:rgba(255,255,255,0.7); } 
+
+	.interest#ui { background-image:url('../_imgs/res_ui.png'); }
+	.interest#web { background-image:url('../_imgs/res_web.png'); }
+	.interest#data { background-image:url('../_imgs/res_data.png'); }
+
+	.interest:hover { background-color:rgba(255,255,255,0.1); 
+		border:10px solid #fff; 
+		color:#fff; 
+		cursor:default; }
+
+	.interest ul { position:relative; 
+		top:120px; 
+		left:-40px; }
+
+	.interest ul, 
+	.interest li { padding:5px 0px; 
+		width:180px; 
+		text-align:center; }
+
+.about .mypic { display:inline-block; 
+	width:150px; 
+	height:150px; 
+	background-color:#777; 
+	background-image:url('../_imgs/me.jpg'); 
+	background-size:cover; 
+	border-radius:100px; }
+
+.resumetop, .resumefoot { 
+	background-image:url('../_imgs/staticgraph.png'); 
+	background-size:cover; 
+	background-position:center center; }
+
+	.resumefoot { padding:40px; }
+
+	.resumetop h1, 
+	.resumefoot h1 { color:#fff; }
+
+	.resumefoot div { text-align:center; 
+		margin:auto; }
+
+	.resumefoot .myname { font-family:hype; 
+		font-size:24pt; }
+
+	.resumefoot .social a { display:inline-block; 
+		color:rgba(255,255,255,1);
+		line-height:100px; 
+		font-size:20pt; 
+		/*border:1px solid red;*/ }
+	.resumefoot .social #seelio { font-size:32pt; 
+		/*top:5px;*/ }
+
+	.resumefoot a:hover { color:#fff; } 
