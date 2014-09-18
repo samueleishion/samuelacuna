@@ -37,7 +37,8 @@ HTMLnav($page);
 		<tr><td valign="middle">
 			<a href="#" class="mypic"></a>
 		</td><td>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam viverra nisi ac tortor condimentum fringilla. Integer venenatis lacinia velit id pulvinar. Ut consequat, quam at convallis hendrerit, ante felis convallis arcu, eget blandit libero eros vitae elit. Curabitur ipsum odio, semper in condimentum at, tristique et metus. In placerat, nisi eu dignissim pharetra, nulla augue ultricies enim, vitae finibus ante eros et eros. </p>
+			<p>Born in Monterrey, Mexico. Moved to the United States in 2004.<br>
+			I am very passionate about putting thought into the things I do. My goal in every project I work on is to deliver, to the best of my abilities, the best of products. Usability, efficieny, and aesthetics are three of my guiding principles for deneral design and developement. </p>
 		</td></tr>
 	</table>
  </content> 
@@ -155,6 +156,16 @@ HTMLnav($page);
 <section class="skills">
  <content class="middle">
  	<h1>SKILLS</h1> 
+ 	<div class="cs-skills"></div> 
+ 	<div class="lang-skills">
+ 		<div class="lang" id="es"></div> 
+ 		<div class="lang" id="en"></div> 
+ 		<div class="lang" id="fr"></div> 
+ 	</div> 
+ 	<div class="des-skills">
+ 		<div class="adobe" id="ps"></div> 
+ 		<div class="adobe" id="ai"></div> 
+ 	</div> 
  </content> 
 </section> 
 <section class="resumefoot">

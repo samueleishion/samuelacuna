@@ -18,14 +18,17 @@ li { list-style:none;
 	padding:5px; 
 	padding-left:10px; 
 	text-align:left; }
-li h2 { padding:0px; }
+li h2 { padding:0px; 
+	font-size:14pt; }
 
 h2 .data, .date { font-family:webly; 
 	font-size:9pt; 
 	color:#777; 
 	position:relative; 
-	top:-2px; 
+	top:-1px; 
 	padding-left:20px; }
+
+.position { font-family:webly_bold; }
 
 span { padding:0px; } 
 
@@ -94,6 +97,11 @@ section:nth-child(2n) { background-color:#fafafa; }
 /*============*/
 /* SKILLS     */
 /*============*/
+
+.skills .middle .cs-skills { padding:0px; }
+.lang-skills, .des-skills { margin:auto; 
+	text-align:center; }
+
 .pl { display:inline-block; 
 	width:305px; }
 .pl table { padding:0px; }
@@ -114,6 +122,31 @@ section:nth-child(2n) { background-color:#fafafa; }
 	border-radius:40px; 
 	font-size:9pt; 
 	font-style:italic; }
+
+	.lang { display:inline-block; 
+		width:171px; 
+		height:161px; 
+		background-repeat:no-repeat; 
+		background-position:center center; 
+		padding:0px; 
+		margin:60px 25px; } 
+
+		.lang#es { background-image:url('../_imgs/lang_es.png'); }
+		.lang#en { background-image:url('../_imgs/lang_en.png'); }
+		.lang#fr { background-image:url('../_imgs/lang_fr.png'); }
+
+	.adobe { display:inline-block; 
+		width:134px; 
+		height:135px; 
+		padding:0px; 
+		margin:20px 25px;
+		margin-bottom:60px; 
+		background-repeat:no-repeat; 
+		background-position:center center; 
+		/*margin:20px 150px;*/ }
+
+		.adobe#ps { background-image:url('../_imgs/adobe_ps.png'); }
+		.adobe#ai { background-image:url('../_imgs/adobe_ai.png'); }
 
 /*============*/
 /* RESUME FOOT*/
