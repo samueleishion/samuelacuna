@@ -167,6 +167,8 @@ section:nth-child(2n) { background-color:#fafafa; }
 		color:rgba(255,255,255,1);
 		line-height:100px; 
 		font-size:20pt; 
+		padding-left:10px; 
+		padding-right:10px;
 		/*border:1px solid red;*/ }
 	.resumefoot .social #seelio { font-size:32pt; 
 		/*top:5px;*/ }
