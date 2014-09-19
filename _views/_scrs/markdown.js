@@ -58,10 +58,16 @@ function markdown(string) {
 				result += search_next(string[++i],'@',(link) ? '</a>' : '<a href="'); 
 
 				if(link) {
-					while(string[i]!="[") i++; 
-					i++; 
-					while(string[i]!="]") 
-						href += string[i++]; 
+					for(j=i;j<string.length;j++){ 
+						i++; 
+						if(string[i]=="[") break; 
+					}
+
+					for(j=i;j<string.length;j++){ 
+						i++; 
+						if(string[i]=="]") break; 
+						href += string[i]; 
+					}
 
 					result += href+'" target="_new">'; 
 

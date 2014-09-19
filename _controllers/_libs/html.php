@@ -2,7 +2,6 @@
 
 function HTMLhead($page) {
 	if($page=='admin') $_SESSION['DESlastadmin'] = ''; 
-	error_log($page); 
 	?>
 <!DOCTYPE html>
 <html><head>
@@ -17,7 +16,6 @@ function HTMLhead($page) {
  <meta property="og:url" content="http://samuelacuna.com">
  <meta property="og:description" content="Samuel Acu&ntilde;a's personal website.">
  <meta property="og:image" content="http://samuelacuna.com/_views/_imgs/meta_img.png">
- <!--<meta property="og:image" content="http://benova.net/_imgs/projects/whoismypresh.png">-->
  <meta property="og:site_name" content="Samuel Acu&ntilde;a">
  <link rel="icon" type="image/x-icon" href="http://samuelacuna.com/_views/_imgs/favicon.ico">
  <link rel="stylesheet" type="text/css" href="_views/_stys/global.css">
