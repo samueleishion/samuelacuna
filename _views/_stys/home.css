@@ -30,7 +30,7 @@ content { display:block;
 		text-align:center; } 
 
 svg,rect { position:fixed; z-index:-1; } 
-rect { fill: url(#gradient); } 
+rect { fill: url(http://samuelacuna.com/#gradient); } 
 svg { border:0px; 
   width:100%; 
   height:100%; 
