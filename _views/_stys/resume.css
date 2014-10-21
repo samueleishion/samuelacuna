@@ -70,10 +70,10 @@ section:nth-child(2n) { background-color:#fafafa; }
 	.interest#web { background-image:url('../_imgs/res_web.png'); }
 	.interest#data { background-image:url('../_imgs/res_data.png'); }
 
-	.interest:hover { background-color:rgba(255,255,255,0.1); 
+	/*.interest:hover { background-color:rgba(255,255,255,0.1); 
 		border:10px solid #fff; 
 		color:#fff; 
-		cursor:default; }
+		cursor:default; }*/
 
 	.interest ul { position:relative; 
 		top:120px; 
