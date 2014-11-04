@@ -28,6 +28,9 @@ switch($view) {
 	case 'resume': 
 		require_once('_views/view.Resume.php'); 
 		break; 
+	case 'reservar':
+		header("Location: http://goo.gl/forms/tG1Boc662N"); 
+		break; 
 	default:
 		require_once('_views/view.Home.php');  
 		break; 
