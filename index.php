@@ -20,7 +20,7 @@ include_once('_controllers/_libs/html.php');
 require_once('_controllers/settings.php'); 
 require_once('_controllers/controller.php'); 
 
-$controller = new Controller($_SERVER['REQUEST_URI']); 
+$controller = new Controller($dblink,$_SERVER['REQUEST_URI']); 
 // $controller->match(); 
 
 ?>

@@ -12,11 +12,15 @@
  */
 
 require_once('api.php'); 
+require_once('settings.php'); 
 
 class Controller extends API {
 
-	public function __construct($route) {
+	private $dblink; 
 
+	public function __construct($dblink, $route) {
+
+		$this->dblink = $dblink; 
 		$this->request = new Request(); 
 		$this->response = new Response(); 
 		
@@ -29,7 +33,14 @@ class Controller extends API {
 
 		switch($route['view']) {
 			case 'projects': 
-				$R['data'] = 'data'; 
+				include_once('_models/model.Project.php'); 
+				$R= array(); 
+				$result = mysqli_query($this->dblink,"SELECT id FROM projects WHERE status='1' AND page='portfolio' ORDER BY id DESC"); 
+				while($row=mysqli_fetch_array($result)) {
+					$proj = new Project($this->dblink); 
+					$proj->instantiate($row['id']); 
+					array_push($R,$proj->__toJSON()); 
+				}
 
 				$this->response->setStatus(Response::$STATUS['ok']); 
 				$this->response->setMessage("API.getAllProjects OK");
@@ -38,7 +49,15 @@ class Controller extends API {
 			case 'project': 
 				$R = array(); 
 				if(array_key_exists('page', $route) && $route['page']!="") {
-					$R['data'] = 'data'; 
+					include_once('_models/model.Project.php'); 
+					$R = array(); 
+					$p = clean($route['page']); 
+					$result = mysqli_query($this->dblink,"SELECT id FROM projects WHERE id='$p'"); 
+					while($row=mysqli_fetch_array($result)) {
+						$proj = new Project($this->dblink); 
+						$proj->instantiate($row['id']); 
+						array_push($R,$proj->__toJSON()); 
+					}
 
 					$this->response->setStatus(Response::$STATUS['ok']); 
 					$this->response->setMessage("API.getProject(".$route['page'].") OK");

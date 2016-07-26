@@ -241,6 +241,28 @@ class Project {
 	public function __toString() {
 		return $this->id.':'.$this->name.', '.$this->desc.' ('.$this->datetime.')'; 
 	}
+
+	public function __toJSON() {
+		$json = array(); 
+		$json['id'] 	= intval($this->id); 
+		$json['name'] 	= $this->name; 
+		$json['desc'] 	= $this->desc; 
+		$json['datetime'] = $this->datetime; 
+
+		$img = new Image($this->dblink); 
+		$img->instantiate($this->cover); 
+		$json['cover'] 	= $img->getURL(); 
+
+		$imgs = $this->getProjectImages(); 
+		foreach($imgs as $index => $img) 
+			$imgs[$index] = $img->getURL(); 
+		$json['images'] = $imgs; 
+
+		$json['types'] 	= explode(',',$this->types); 
+		$json['status'] = $this->status; 
+
+		return $json; 
+	}
 	
 	public function isInstance() {
 		return $this->id!=0; 

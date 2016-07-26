@@ -42,6 +42,7 @@ class Image {
 	
 	public function getId() { return $this->id; }
 	public function getName() { return $this->name; }
+	public function getURL() { return $_SESSION['DESpath'].'_views/_imgs/_uploads/'.$this->name; }
 	public function getProject() { return $this->project; }
 	public function getDate() { return $this->datetime; }
 	
