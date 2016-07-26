@@ -11,29 +11,80 @@
  * 
  */
 
-$view = (isset($_GET['view'])) ? cleanView($_GET['view']) : 'home'; 
-switch($view) {
-	case 'admin':
-		require_once('_views/view.Admin.php'); 
-		break; 
-	case 'portfolio':
-	case 'project': 
-		$show = (isset($_GET['v'])) ? cleanView($_GET['v']) : 'all';  
-		require_once('_views/view.Project.php');
-		break; 
-	case 'blog': 
-		$show = (isset($_GET['v'])) ? cleanView($_GET['v']) : 'all';  
-		require_once('_views/view.Blog.php'); 
-		break; 
-	case 'resume': 
-		require_once('_views/view.Resume.php'); 
-		break; 
-	case 'reservar':
-		header("Location: http://goo.gl/forms/tG1Boc662N"); 
-		break; 
-	default:
-		require_once('_views/view.Home.php');  
-		break; 
+require_once('api.php'); 
+
+class Controller extends API {
+
+	public function __construct($route) {
+
+		$this->request = new Request(); 
+		$this->response = new Response(); 
+		
+		$this->parseRequest($route); 
+		echo $this->response->getJSON(); 
+	}
+
+	private function manager($route) {
+		$R = array(); 
+
+		switch($route['view']) {
+			case 'projects': 
+				$R['data'] = 'data'; 
+
+				$this->response->setStatus(Response::$STATUS['ok']); 
+				$this->response->setMessage("API.getAllProjects OK");
+				$this->response->setData($R); 
+				break; 
+			case 'project': 
+				$R = array(); 
+				if(array_key_exists('page', $route) && $route['page']!="") {
+					$R['data'] = 'data'; 
+
+					$this->response->setStatus(Response::$STATUS['ok']); 
+					$this->response->setMessage("API.getProject(".$route['page'].") OK");
+					$this->response->setData($R); 
+				} else {
+					$this->response->setStatus(Response::$STATUS['bad_request']); 
+					$this->response->setMessage("Missing project id");
+					$this->response->setData($R); 
+				}
+				break; 
+			default: 
+				$this->response->setStatus(Response::$STATUS['not_found']); 
+				$this->response->setMessage("Endpoint not found");
+				$this->response->setData($R); 
+				break; 
+		}
+	}
+
+	private function parseRequest($route) {
+		$this->manager( $this->parseURI($route) ); 
+	}
+
+	private function parseURI($uri) {
+		$routes = explode("/",$uri); 
+		$rndex = 0; 
+		$result = array(); 
+		$result["other"] = ""; 
+
+		foreach($routes as $route) {
+			if($route==""||$route=="htdocs"||$route=="samuelacuna") continue; 
+			switch($rndex) {
+				case 0:
+					$result["view"] = $route; 
+					break; 
+				case 1:
+					$result["page"] = $route; 
+					break; 
+				default: 
+					$result["other"] .= "/".$route; 
+					break; 
+			}
+			$rndex++; 
+		}
+
+		return $result; 
+	}
 }
 
 ?>
