@@ -1,0 +1,40 @@
+{
+  "name": "samuelacuna",
+  "version": "2014.0.1",
+  "description": "Samuel Acuna's portfolio site. 2014 design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samueleishion/samuelacuna"
+  },
+  "keywords": [
+    "Samuel Acuna",
+    "Sam Acuna",
+    "Sam",
+    "samueleishion",
+    "portfolio",
+    "web design",
+    "web development",
+    "UI",
+    "User Interface",
+    "UX",
+    "User Experience",
+    "Development",
+    "Software Development",
+    "Design"
+  ],
+  "author": "Acuna, Samuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samueleishion/samuelacuna/issues"
+  },
+  "homepage": "http://samuelacuna.com",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.79.0"
+  }
+}
