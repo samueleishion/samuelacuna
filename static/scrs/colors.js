@@ -1,5 +1,4 @@
-COLORS = [//[191,238,230], 
-		  [63,172,163], 
+COLORS = [[63,172,163], 
 		  [175,77,51], 
 		  [163,127,144], 
 		  [216,144,103], 
@@ -80,7 +79,6 @@ function change_a_color() {
 	hex1 = array_to_color(cur1); 
 
 	// change link colors 
-	// $('a').css({'color':hex1}); 
 	$('a.button').css({'color':'#bbb'}); 
 	$('a.button:hover').css({'color':hex1}); 
 	$('a:not(.button), li.filter').css({'color':hex1,'background-color':'#fff'}); 
