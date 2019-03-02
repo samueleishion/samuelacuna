@@ -16,6 +16,21 @@ html, body {
   font-weight: 500;
   -webkit-font-smoothing: antialiased; }
 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html, body {
+    font-size: 0.75rem; } }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  html, body {
+    font-size: 0.8rem; } }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  html, body {
+    font-size: 1rem; } }
+
 a {
   color: rgba(74, 74, 74, 0.25);
   transition: color 0.15s linear 0s;

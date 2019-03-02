@@ -1,3 +1,7 @@
+$screen-sm-min: 768px; 
+$screen-md-min: 992px; 
+$screen-lg-min: 1200px; 
+
 @font-face {
 	font-family:HelveticaNeue;
 	src:url('../fonts/HelveticaNeue.otf');
@@ -20,6 +24,28 @@ html, body {
 	font-size:1rem;
 	font-weight:500;
 	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) { 
+	html, body {
+		font-size:0.75rem; 
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+	html, body {
+		font-size:0.8rem; 
+	} 
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+	html, body {
+		font-size:1rem; 
+	} 
 }
 
 a {
