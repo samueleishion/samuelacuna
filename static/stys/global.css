@@ -16,72 +16,40 @@ html, body {
   font-weight: 500;
   -webkit-font-smoothing: antialiased; }
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  html, body {
-    font-size: 0.75rem; } }
+body {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  html, body {
-    font-size: 0.8rem; } }
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0px;
+  min-height: 100vh; }
+  .jumbotron svg {
+    enable-background: new 0 0 270 42.8; }
+    .jumbotron svg .st0 {
+      font-family: 'HelveticaNeue-Medium'; }
+    .jumbotron svg .st1 {
+      font-size: 34px; }
+    .jumbotron svg .st2 {
+      fill: #030202;
+      stroke: #231F20;
+      stroke-width: 4;
+      stroke-linecap: square;
+      stroke-miterlimit: 10; }
+    .jumbotron svg .st3 {
+      fill: none;
+      stroke: #a9a9a9;
+      stroke-width: 4;
+      stroke-linecap: square;
+      stroke-miterlimit: 10;
+      enable-background: new; }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  html, body {
-    font-size: 1rem; } }
-
-a {
-  color: rgba(74, 74, 74, 0.25);
-  transition: color 0.15s linear 0s;
-  -webkit-transition: color 0.15s linear 0s;
-  -ms-transition: color 0.15s linear 0s;
-  -o-transition: color 0.15s linear 0s; }
-  a:hover {
-    color: #4a4a4a; }
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0; }
-
-.intro {
-  display: block;
-  width: 510px;
-  height: 380px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -255px;
-  margin-top: -190px;
-  text-align: center;
-  line-height: 21px; }
-  .intro .logo {
-    display: block;
-    width: 300px;
-    height: 47px;
-    background-image: url("../imgs/logo.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin: auto; }
-  @media only screen and (min-device-width: 768px) {
-    .intro .logo {
-      width: 510px;
-      height: 80px; } }
-  .intro p {
-    max-width: 300px;
-    margin: 20px auto; }
-    .intro p.links {
-      max-width: 350px;
-      padding: 20px 0px;
-      font-size: 24px; }
-      .intro p.links a {
-        margin-right: 5px; }
-        .intro p.links a.resume {
-          margin-right: 25px; }
+section {
+  background-color: rgba(255, 255, 255, 0.4); }
+  section .sa-divider {
+    background-color: #fff;
+    padding: 40px 0px; }
+  section .sa-project {
+    min-height: 100vh; }

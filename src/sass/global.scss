@@ -1,121 +1,77 @@
-$screen-sm-min: 768px; 
-$screen-md-min: 992px; 
-$screen-lg-min: 1200px; 
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("../fonts/HelveticaNeue.otf");
+  font-weight: 300; }
 
 @font-face {
-	font-family:HelveticaNeue;
-	src:url('../fonts/HelveticaNeue.otf');
-	font-weight:300; 
-}
-
-@font-face{
-	font-family:'FontAwesome';
-	src:url('../fonts/fontawesome-webfont.eot?v=4.4.0');
-	src:url('../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'),
-		url('../fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'),
-		url('../fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'),
-		url('../fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'),
-		url('../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
-	font-weight:normal;
-	font-style:normal}
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 html, body {
-	font-family:HelveticaNeue;
-	font-size:1rem;
-	font-weight:500;
-	-webkit-font-smoothing: antialiased;
+  font-family: HelveticaNeue;
+  font-size: 1rem;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
 }
 
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: $screen-sm-min) { 
-	html, body {
-		font-size:0.75rem; 
-	}
+body {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md-min) { 
-	html, body {
-		font-size:0.8rem; 
-	} 
+.navbar {
+  // background-color: rgba(225, 225, 225, 0.85) !important;
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: $screen-lg-min) { 
-	html, body {
-		font-size:1rem; 
-	} 
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0px;
+  min-height: 100vh;
+
+  svg {
+    enable-background:new 0 0 270 42.8;
+
+    .st0 {
+      font-family:'HelveticaNeue-Medium';
+    }
+
+    .st1 {
+      font-size:34px;
+    }
+
+    .st2 {
+      fill:#030202;
+      stroke:#231F20;
+      stroke-width:4;
+      stroke-linecap:square;
+      stroke-miterlimit:10;
+    }
+
+    .st3 {
+      fill:none;
+      stroke:#a9a9a9;
+      stroke-width:4;
+      stroke-linecap:square;
+      stroke-miterlimit:10;
+      enable-background:new;
+    }
+  }
 }
 
-a {
-	color:rgba(74,74,74,0.25); 
-	transition:color 0.15s linear 0s;
-	-webkit-transition:color 0.15s linear 0s; 
-	-ms-transition:color 0.15s linear 0s; 
-	-o-transition:color 0.15s linear 0s; 
+section {
+  background-color: rgba(255, 255, 255, 0.4);
 
-	&:hover {
-		color:rgba(74,74,74,1); 
-	}
-}
+  .sa-divider {
+    background-color: #fff;
+    padding: 40px 0px;
+  }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-}
-
-.intro {
-	display:block; 
-	width:510px; height:380px; 
-	position:fixed; 
-	top:50%; left:50%; 
-	margin-left:-255px; 
-	margin-top:-190px; 
-	text-align:center; 
-	line-height:21px; 
-
-	.logo {
-		display:block; 
-		width:300px; 
-		height:47px; 
-		background-image:url('../imgs/logo.png'); 
-		background-repeat:no-repeat; 
-		background-position:center center; 
-		background-size:cover; 
-		margin:auto; 
-	}
-
-	@media only screen 
-		and (min-device-width: 768px) {
-	  	.logo {
-	  		width:510px; 
-	  		height:80px;
-	  	}
-	}
-
-	p {
-		max-width:300px; 
-		margin:20px auto; 
-
-		&.links {
-			max-width:350px;
-			padding:20px 0px; 
-			font-size:24px;
-
-			a {
-				margin-right:5px; 
-
-				&.resume {
-					margin-right:25px;
-				}
-			}
-		}
-	}
+  .sa-project {
+    min-height: 100vh;
+  }
 }
