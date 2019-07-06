@@ -10,11 +10,8 @@
   font-weight: normal;
   font-style: normal; }
 
-html, body {
-  font-family: HelveticaNeue;
-  font-size: 1rem;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
+html {
+  font-size: 16px;
 }
 
 body {
@@ -22,18 +19,114 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: HelveticaNeue;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #222;
+
+  &:not(.btn) {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.sa-code {
+  padding: 1rem 0;
+
+  code {
+    background-color: #f8f9fa;
+    color: #666;
+    display: block;
+    font-weight: 500;
+    padding: .5rem;
+    text-align: left;
+  }
+}
+
+.sa-pills {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+
+  .sa-pill {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    background-color: #fff;
+    padding: .25rem .5rem;
+    margin: .2rem;
+    border-radius: 1rem;
+    color: #000;
+    display: inline-block;
+  }
+
+  &--light {
+    .sa-pill {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+
+  &--dark {
+    .sa-pill {
+      background-color: transparent;
+      border: 1px solid #000;
+      color: #000;
+    }
+  }
 }
 
 .navbar {
   // background-color: rgba(225, 225, 225, 0.85) !important;
+  .sa-skip {
+  //   background-color: #000;
+  //   color: #fff;
+  //   left: 5px;
+  //   position:absolute;
+    padding: .5rem;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+  }
 }
 
 .jumbotron {
+  align-items: stretch;
   background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
   margin-bottom: 0px;
   min-height: 100vh;
 
-  svg {
+  .container {
+    min-height: 100%;
+
+    .row {
+      align-items: center;
+      display: flex;
+      min-height: 100%;
+
+      [class^="col"] {
+        flex-direction: column;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .sa-logo {
     enable-background:new 0 0 270 42.8;
 
     .st0 {
@@ -41,12 +134,12 @@ body {
     }
 
     .st1 {
+      fill: #222;
       font-size:34px;
     }
 
     .st2 {
-      fill:#030202;
-      stroke:#231F20;
+      stroke:#222;
       stroke-width:4;
       stroke-linecap:square;
       stroke-miterlimit:10;
@@ -54,11 +147,21 @@ body {
 
     .st3 {
       fill:none;
-      stroke:#a9a9a9;
+      stroke:#ccc;
       stroke-width:4;
       stroke-linecap:square;
       stroke-miterlimit:10;
       enable-background:new;
+    }
+  }
+
+  .sa-hello {
+    padding: 30px 0;
+  }
+
+  .sa-links {
+    .btn {
+      margin: 0 5px;
     }
   }
 }
@@ -68,10 +171,107 @@ section {
 
   .sa-divider {
     background-color: #fff;
-    padding: 40px 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .sa-header {
+      // max-height: 50px;
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      font-weight: 300;
+      letter-spacing: 10px;
+      padding: 10px;
+      padding-left: 25px;
+    }
   }
 
   .sa-project {
     min-height: 100vh;
+    padding: 5rem;
+
+    &-logo {
+      max-height: 100px;
+      max-width: 200px;
+      margin-top: 2rem;
+    }
+
+    &-title {
+      font-weight: 500;
+      letter-spacing: 5px;
+      margin: 2.5rem 0 .5rem 0;
+    }
+
+    &-role {
+      background-color: #fff;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 2px 6px;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      padding: 2.5rem 0;
+    }
+
+    &-pic {
+      border: 1rem solid #fff;
+      margin: 2rem 0;
+      width: 100%;
+    }
+
+    &#sa-work-experience {
+      background-color: rgba(#fff, 0.9);
+      color: #fff;
+    }
+
+    &#sa-project {
+      &-visa {
+        background-color: rgba(#1a1f71, .75);
+        color: #fff;
+
+        .sa-project-role {
+          color: #1a1f71;
+        }
+      }
+
+      &-perspective {
+        background-color: rgba(#222, .8);
+        color: #fff;
+
+        .sa-project-role {
+          color: #ea4957;
+        }
+      }
+
+      &-visafc {
+        background-color: rgba(#f7b600, .6);
+        color: #000;
+
+        .sa-project-logo {
+          max-height: 200px;
+        }
+
+        .sa-project-role {
+          background-color: #000;
+          color: #f7b600;
+        }
+      }
+
+      &-gulpaxe {
+        background-color: rgba(#023448, 0.8);
+        color: #fff;
+
+        .sa-project-logo {
+          height: 150px;
+          max-height: 200px;
+        }
+
+        .sa-project-role {
+          background-color: #fff;
+          color: #007cc5;
+        }
+      }
+    }
   }
 }

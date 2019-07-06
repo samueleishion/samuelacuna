@@ -10,46 +10,171 @@
   font-weight: normal;
   font-style: normal; }
 
-html, body {
-  font-family: HelveticaNeue;
-  font-size: 1rem;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased; }
+html {
+  font-size: 16px; }
 
 body {
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  font-family: HelveticaNeue;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  color: #222; }
+  a:not(.btn) {
+    text-decoration: underline; }
+    a:not(.btn):hover, a:not(.btn):focus {
+      background-color: #000;
+      color: #fff; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300; }
+
+.sa-code {
+  padding: 1rem 0; }
+  .sa-code code {
+    background-color: #f8f9fa;
+    color: #666;
+    display: block;
+    font-weight: 500;
+    padding: .5rem;
+    text-align: left; }
+
+.sa-pills {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0; }
+  .sa-pills .sa-pill {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    background-color: #fff;
+    padding: .25rem .5rem;
+    margin: .2rem;
+    border-radius: 1rem;
+    color: #000;
+    display: inline-block; }
+  .sa-pills--light .sa-pill {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff; }
+  .sa-pills--dark .sa-pill {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000; }
+
+.navbar .sa-skip {
+  padding: .5rem; }
+
+.navbar .navbar-brand {
+  margin-right: 0; }
 
 .jumbotron {
+  align-items: stretch;
   background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
   margin-bottom: 0px;
   min-height: 100vh; }
-  .jumbotron svg {
+  .jumbotron .container {
+    min-height: 100%; }
+    .jumbotron .container .row {
+      align-items: center;
+      display: flex;
+      min-height: 100%; }
+      .jumbotron .container .row [class^="col"] {
+        flex-direction: column;
+        min-height: 100%; }
+  .jumbotron .sa-logo {
     enable-background: new 0 0 270 42.8; }
-    .jumbotron svg .st0 {
+    .jumbotron .sa-logo .st0 {
       font-family: 'HelveticaNeue-Medium'; }
-    .jumbotron svg .st1 {
+    .jumbotron .sa-logo .st1 {
+      fill: #222;
       font-size: 34px; }
-    .jumbotron svg .st2 {
-      fill: #030202;
-      stroke: #231F20;
+    .jumbotron .sa-logo .st2 {
+      stroke: #222;
       stroke-width: 4;
       stroke-linecap: square;
       stroke-miterlimit: 10; }
-    .jumbotron svg .st3 {
+    .jumbotron .sa-logo .st3 {
       fill: none;
-      stroke: #a9a9a9;
+      stroke: #ccc;
       stroke-width: 4;
       stroke-linecap: square;
       stroke-miterlimit: 10;
       enable-background: new; }
+  .jumbotron .sa-hello {
+    padding: 30px 0; }
+  .jumbotron .sa-links .btn {
+    margin: 0 5px; }
 
 section {
   background-color: rgba(255, 255, 255, 0.4); }
   section .sa-divider {
     background-color: #fff;
-    padding: 40px 0px; }
+    padding-top: 40px;
+    padding-bottom: 40px; }
+    section .sa-divider .sa-header {
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      font-weight: 300;
+      letter-spacing: 10px;
+      padding: 10px;
+      padding-left: 25px; }
   section .sa-project {
-    min-height: 100vh; }
+    min-height: 100vh;
+    padding: 5rem; }
+    section .sa-project-logo {
+      max-height: 100px;
+      max-width: 200px;
+      margin-top: 2rem; }
+    section .sa-project-title {
+      font-weight: 500;
+      letter-spacing: 5px;
+      margin: 2.5rem 0 .5rem 0; }
+    section .sa-project-role {
+      background-color: #fff;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 2px 6px;
+      text-transform: uppercase; }
+    section .sa-project-description {
+      padding: 2.5rem 0; }
+    section .sa-project-pic {
+      border: 1rem solid #fff;
+      margin: 2rem 0;
+      width: 100%; }
+    section .sa-project#sa-work-experience {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #fff; }
+    section .sa-project#sa-project-visa {
+      background-color: rgba(26, 31, 113, 0.75);
+      color: #fff; }
+      section .sa-project#sa-project-visa .sa-project-role {
+        color: #1a1f71; }
+    section .sa-project#sa-project-perspective {
+      background-color: rgba(34, 34, 34, 0.8);
+      color: #fff; }
+      section .sa-project#sa-project-perspective .sa-project-role {
+        color: #ea4957; }
+    section .sa-project#sa-project-visafc {
+      background-color: rgba(247, 182, 0, 0.6);
+      color: #000; }
+      section .sa-project#sa-project-visafc .sa-project-logo {
+        max-height: 200px; }
+      section .sa-project#sa-project-visafc .sa-project-role {
+        background-color: #000;
+        color: #f7b600; }
+    section .sa-project#sa-project-gulpaxe {
+      background-color: rgba(2, 52, 72, 0.8);
+      color: #fff; }
+      section .sa-project#sa-project-gulpaxe .sa-project-logo {
+        height: 150px;
+        max-height: 200px; }
+      section .sa-project#sa-project-gulpaxe .sa-project-role {
+        background-color: #fff;
+        color: #007cc5; }
