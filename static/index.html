@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <title>Samuel Acu&ntilde;a</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -23,7 +24,7 @@
   <link rel="stylesheet" type="text/css" href="stys/global.css">
 </head><body>
 
-<nav class="navbar navbar-expand-lg fixed-top bg-light">
+<nav role="navigation" class="navbar navbar-expand-lg fixed-top bg-light">
   <div class="container">
     <div class="row">
       <div class="col-sm">
@@ -34,9 +35,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a href="#content" class="nav-link sr-only sr-only-focusable sa-skip">skip to main content.</a>
-            <a href="#" class="nav-link active">home. <span class="sr-only">(current)</span></a>
-            <a href="#experience" class="nav-link">experience.</a>
+            <a href="#content" class="nav-link active">home.</a>
             <a href="#projects" class="nav-link">projects.</a>
+            <a href="./sa-resume.pdf" class="nav-link" target="_blank">resume.</a>
           </div>
         </div>
       </div>
@@ -44,7 +45,7 @@
   </div>
 </nav>
 
-<div class="jumbotron text-center" id="content">
+<header role="banner" class="jumbotron text-center" id="content">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 align-middle">
@@ -70,52 +71,33 @@
           hello. i am a developer and designer working on interfaces, experiences, tools, and applications for optimal product development.
         </p>
         <p class="links sa-links">
-          <a href="/assets/samuelacuna-resume.pdf" target="_blank" class="btn btn-light btn-sm">
+          <a href="./sa-resume.pdf" target="_blank" class="btn btn-sm">
             <i class="fa fa-file-text-o"></i>&nbsp;
-            Resume
+            resume
           </a>
-          <a href="https://www.linkedin.com/in/samuelacuna" target="_blank" class="btn btn-light btn-sm">
+          <a href="https://www.linkedin.com/in/samuelacuna" target="_blank" class="btn btn-sm">
             <i class="fa fa-linkedin-square"></i>&nbsp;
-            Linkedin
+            linkedin
           </a>
-          <a href="http://github.com/samueleishion" target="_blank" class="btn btn-light btn-sm">
+          <a href="http://github.com/samueleishion" target="_blank" class="btn btn-sm">
             <i class="fa fa-github-alt"></i>&nbsp;
-            Github
+            github
           </a>
-          <a href="https://twitter.com/samueleishion" target="_blank" class="btn btn-light btn-sm">
+          <a href="https://twitter.com/samueleishion" target="_blank" class="btn btn-sm">
             <i class="fa fa-twitter"></i>&nbsp;
-            Twitter
+            twitter
           </a>
-          <a href="https://medium.com/@samueleishion" target="_blank" class="btn btn-light btn-sm">
+          <a href="https://medium.com/@samueleishion" target="_blank" class="btn btn-sm">
             <i class="fa fa-medium"></i>&nbsp;
-            Medium
+            medium
           </a>
         </p>
       </div>
     </div>
   </div>
-</div>
+</header>
 
-<section class="text-center" id="experience">
-  <div class="container-fluid sa-divider">
-    <div class="row">
-      <div class="col text-center">
-        <h2 class="sa-header">experience.</h2>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid sa-project" id="sa-work-experience">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          work experience
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="text-center" id="projects">
+<main role="main" class="text-center" id="projects">
   <div class="container-fluid sa-divider">
     <div class="row">
       <div class="col text-center">
@@ -124,7 +106,7 @@
     </div>
   </div>
 
-  <div class="container-fluid sa-project" id="sa-project-visa">
+  <div class="container-fluid sa-project sa-project--light" id="sa-project-visa">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -139,9 +121,9 @@
             <p>
               The Visa Design System (VDS) is an internal design system focused on serving
               applications with Visa-ready design mocks, design patterns, styles, and components.
-              We've divided VDS into different verticals to support multiple technologies and
-              methods of consumption. These verticals include Design, Web (html + css), Angular,
-              React, and React Native. The project was also set up as an internal open-sourced
+              We've divided VDS into different tracks to support multiple technologies and
+              methods of consumption. These tracks include Design, Web (html + css), Angular,
+              React, and React Native. The project was also set up as an internally open-sourced
               project, in which many designers and developers across the company could contribute to
               the design system.
             </p>
@@ -149,20 +131,20 @@
               My role on this projects was to lead the Web library, which included pixel-perfect
               styles implemented via SASS from the design mocks. We'd also provide documentation
               with accessible HTML snippets for markup reference. In a way, this worked like an
-              internal bootstrap with responsive behavior and with full accessibility (a11y) testing
+              internal bootstrap with responsive behavior and with fully accessibility (a11y) testing
               across browsers, screen readers, and other assistive technologies. The styles exported
-              by the Web library was consumed by server-side rendered applications, our Angular
-              library, and our React library.
+              by the Web library was consumed by server-side rendered applications, AEM sites (like
+              <a href="https://developer.visa.com/" target="_blank">Visa Developer Center</a>), our Angular
+              library, our React library, and other Javascript based applications across the company.
             <p>
             <p>
               My involvement on the project started since before it was fully chartered, by
               developing a library of basic components that could be themed, modified, extended,
               and/or forked to produce other component libraries for multiple projects across Visa.
               We would provide a default Visa theme, that would then turn into the VDS design and
-              code libraries.
-            </p>
-            <p>
-              The VDS Web library was consumed, extended, and forked across many teams at Visa.
+              code libraries. These libraries would also follow Visa's General A11y Guidelines
+              (<a href="https://developer.visa.com/pages/accessibility" target="_blank">VGAR</a>) to
+              ensure our components where usable and accessible across the board.
             </p>
           </div>
           <ul class="sa-pills sa-pills--light">
@@ -205,7 +187,7 @@
     </div>
   </div>
 
-  <div class="container-fluid sa-project" id="sa-project-perspective">
+  <div class="container-fluid sa-project sa-project--light" id="sa-project-perspective">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -218,14 +200,35 @@
         <div class="col-md-6 offset-md-3">
           <div class="sa-project-description">
             <p>
-              Lorem Ipsum
+              <a href="https://perspectiveux.com/" target="_blank">Perspective</a> is a company and
+              a product which focuses on tracking and analyzing real time customer reactions to
+              your product. We would do this by allowing our customers to create a survey, in which
+              each question would be triggered and displayed to the user after him/her had performed
+              an action. This would allow the questions to be contextual (relative to the context of
+              the action the user had performed), thus providing a less intrusive user experience
+              by limiting distractions, and improving response rates. All of this aggregated data
+              resulted in visualizations with statistical analysis that would help you understand
+              your users better, finding patterns in their collective responses.
+            </p>
+            <p>
+              My role was to oversee the development of all the technologies that made Perspective
+              operational, including the marketing site, the plugin for client's apps, the dashboard
+              front-end application, and the API & database updates. I would also oversee visual,
+              application, and UX design, as well as the research and development of our data
+              analytics and visualization.
+            </p>
+            <p>
+              My involvement on the project when my co-founder and I relized the need for a product
+              like this. We built multiple prototypes, tested them, gathered feedback and market
+              validation, and adapted our project to build our alphas and final beta application.
             </p>
           </div>
           <ul class="sa-pills sa-pills--light">
+            <li class="sa-pill">#business</li>
+            <li class="sa-pill">#entrpreneurship</li>
+            <li class="sa-pill">#startup</li>
             <li class="sa-pill">#development</li>
-            <li class="sa-pill">#design</li>
-            <li class="sa-pill">#open source</li>
-            <li class="sa-pill">#community</li>
+            <li class="sa-pill">#application</li>
             <li class="sa-pill">#components</li>
             <li class="sa-pill">#html</li>
             <li class="sa-pill">#css</li>
@@ -234,7 +237,7 @@
             <li class="sa-pill">#javascript</li>
             <li class="sa-pill">#js</li>
             <li class="sa-pill">#react</li>
-            <li class="sa-pill">#stencil</li>
+            <li class="sa-pill">#stenciljs</li>
             <li class="sa-pill">#metalsmith</li>
             <li class="sa-pill">#express</li>
             <li class="sa-pill">#java</li>
@@ -249,9 +252,13 @@
             <li class="sa-pill">#agile</li>
             <li class="sa-pill">#ux</li>
             <li class="sa-pill">#ui</li>
+            <li class="sa-pill">#cx</li>
             <li class="sa-pill">#user interface</li>
             <li class="sa-pill">#user experience</li>
             <li class="sa-pill">#customer experience</li>
+            <li class="sa-pill">#feedback</li>
+            <li class="sa-pill">#research</li>
+            <li class="sa-pill">#survey</li>
             <li class="sa-pill">#data science</li>
             <li class="sa-pill">#natural language processing</li>
             <li class="sa-pill">#nlp</li>
@@ -264,20 +271,21 @@
       </div>
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <img class="sa-project-pic" src="imgs/projects/perspective-site-1.png" alt="Perspective's homepage screenshot" />
-          <img class="sa-project-pic" src="imgs/projects/perspective-site-2.png" alt="Perspective plugin sample" />
-          <img class="sa-project-pic" src="imgs/projects/perspective-site-3.png" alt="Perspective's dashboard screenshot" />
-          <img class="sa-project-pic" src="imgs/projects/perspective-site-4.png" alt="Perspective's drilldown data visualization screenshot" />
+          <div class="sa-project-pics">
+            <img class="sa-project-pic" src="imgs/projects/perspective-site-1.png" alt="Perspective's homepage screenshot" />
+            <img class="sa-project-pic" src="imgs/projects/perspective-site-2.png" alt="Perspective plugin sample" />
+            <img class="sa-project-pic" src="imgs/projects/perspective-site-3.png" alt="Perspective's dashboard screenshot" />
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid sa-project" id="sa-project-visafc">
+  <div class="container-fluid sa-project sa-project--dark" id="sa-project-visafc">
     <div class="container">
       <div class="row">
         <div class="col">
-          <img class="sa-project-logo" src="imgs/projects/visafc-logo.png" alt="Visa Football Club logo" />
+          <img class="sa-project-logo" src="imgs/projects/visafc-logo--black.png" alt="Visa Football Club logo" />
           <h3 class="sa-project-title">VISA FC</h3>
           <span class="sa-project-role">President</span>
         </div>
@@ -286,7 +294,17 @@
         <div class="col-md-6 offset-md-3">
           <div class="sa-project-description">
             <p>
-              Lorem ipsum
+              Visa FC is an indoor soccer club that plays in a competitive indoor league. I got
+              involved with the soccer team once I started working at Visa. The club had just begun
+              to receive sponsorship from Visa when I joined as a player. Two years later, in 2017,
+              I stepped in as the President, overseeing its communications, finances, member
+              enrollment, and coordination with HR.
+            </p>
+            <p>
+              The team had humble beginnings, with few commited players, we had to develop skill,
+              endurance, and chemistry. By 2018, our core team had grown and improved so much, we
+              created 2 teams. In 2019, we won our first championship in the league, so one of our
+              teams got promoted to a higher division.
             </p>
           </div>
           <ul class="sa-pills sa-pills--dark">
@@ -305,7 +323,7 @@
     </div>
   </div>
 
-  <div class="container-fluid sa-project" id="sa-project-gulpaxe">
+  <div class="container-fluid sa-project sa-project--light" id="sa-project-gulpaxe">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -318,8 +336,16 @@
         <div class="col-md-6 offset-md-3">
           <div class="sa-project-description">
             <p>
-              Lorem ipsum
+              Other axe-based plugins are built to generate reports. While these reports are great
+              for analysis, these CLIs, plugins, and packages do not always work well with
+              development pipelines. With gulp-axe-cli, we leverage the power of gulp as a task
+              runner 💪 and the automation for a11y testing of aXe 💥 to prevent bad code from being
+              committed or built. 👍
             </p>
+          </div>
+          <div class="sa-project-links">
+            <a href="https://www.npmjs.com/package/gulp-axe-cli" target="_blank">npm package &raquo;</a> |
+            <a href="https://github.com/samueleishion/gulp-axe-cli" target="_blank">github repo &raquo;</a>
           </div>
           <div class="sa-code">
             <code>$ npm install --save-dev gulp-axe-cli</code>
@@ -343,10 +369,25 @@
       </div>
     </div>
   </div>
+</main>
 
-</section>
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col text-right">
+        <span class="footer-text" role="presentation" aria-label="2019 &copy; samuel acu&ntilde;a">
+          <span id="footer-year"></span>
+          <span id="footer-copy">
+            &copy;
+          </span>
+          <span id="footer-name"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="scrs/home.js" type="text/javascript"></script>
