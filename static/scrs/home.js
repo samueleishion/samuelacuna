@@ -39,14 +39,12 @@ var setBackgroundImage = function() {
 };
 
 var setNavMenu = function() {
-  var movePage = function(e) {
-    var link;
+  var movePage = function(e, link) {
     var href;
     var pos;
 
     e.preventDefault();
 
-    link = $(this);
     href = link.attr('href');
     pos = $(href).offset().top - $('nav').outerHeight();
     console.log(href, $(href).offset().top, $('nav').outerHeight(), pos);
@@ -60,10 +58,12 @@ var setNavMenu = function() {
   };
 
   $('nav a[href^="#"]:not(.sa-skip)')
-    .on('click', movePage(e))
+    .on('click', function(e) {
+      movePage(e, $(this));
+    })
     .on('keyup', function(e) {
       if (e.which === 13 || e.which === 32) {
-        movePage(e);
+        movePage(e, $(this));
       }
     });
 };
