@@ -1,95 +1,388 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Noto+Sans+JP&display=swap');
+
 @font-face {
-	font-family:HelveticaNeue;
-	src:url('../fonts/HelveticaNeue.otf');
-	font-weight:300; 
+  font-family: HelveticaNeue;
+  src: url("../fonts/HelveticaNeue.otf");
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  font-size: 16px;
 }
 
-@font-face{
-	font-family:'FontAwesome';
-	src:url('../fonts/fontawesome-webfont.eot?v=4.4.0');
-	src:url('../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'),
-		url('../fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'),
-		url('../fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'),
-		url('../fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'),
-		url('../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
-	font-weight:normal;
-	font-style:normal}
-
-html, body {
-	font-family:HelveticaNeue;
-	font-size:1rem;
-	font-weight:500;
-	-webkit-font-smoothing: antialiased;
+body {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-	color:rgba(74,74,74,0.25); 
-	transition:color 0.15s linear 0s;
-	-webkit-transition:color 0.15s linear 0s; 
-	-ms-transition:color 0.15s linear 0s; 
-	-o-transition:color 0.15s linear 0s; 
+  color: #222;
 
-	&:hover {
-		color:rgba(74,74,74,1); 
-	}
+  &:not(.btn) {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #000;
+      color: #fff;
+      outline: none;
+    }
+
+    &:active {
+      background-color: #333;
+    }
+  }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: HelveticaNeue;
+  font-weight: 300;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-family: HelveticaNeue;
+  color: #000;
+  transition: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #000;
+    border: 1px solid #000;
+    box-shadow: 0 0 0 0;
+    color: #fff;
+    outline: none;
+  }
+
+  &:active {
+    background-color: #333;
+  }
+}
+
+.sa-code {
+  padding: 3rem 0;
+
+  code {
+    background-color: #f8f9fa;
+    color: #666;
+    display: block;
+    font-weight: 500;
+    padding: .5rem;
+    text-align: left;
+  }
+}
+
+.sa-pills {
+  list-style: none;
+  margin-bottom: 0;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+
+  .sa-pill {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    background-color: #fff;
+    padding: .25rem .5rem;
+    margin: .2rem;
+    border-radius: 1rem;
+    color: #000;
+    display: inline-block;
+  }
+
+  &--light {
+    .sa-pill {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+
+  &--dark {
+    .sa-pill {
+      background-color: transparent;
+      border: 1px solid #000;
+      color: #000;
+    }
+  }
 }
 
-.intro {
-	display:block; 
-	width:510px; height:380px; 
-	position:fixed; 
-	top:50%; left:50%; 
-	margin-left:-255px; 
-	margin-top:-190px; 
-	text-align:center; 
-	line-height:21px; 
+.navbar {
+  // background-color: rgba(225, 225, 225, 0.85) !important;
+  font-family: HelveticaNeue;
 
-	.logo {
-		display:block; 
-		width:300px; 
-		height:47px; 
-		background-image:url('../imgs/logo.png'); 
-		background-repeat:no-repeat; 
-		background-position:center center; 
-		background-size:cover; 
-		margin:auto; 
-	}
+  .sa-skip {
+  //   background-color: #000;
+  //   color: #fff;
+  //   left: 5px;
+  //   position:absolute;
+    padding: .5rem;
+  }
 
-	@media only screen 
-		and (min-device-width: 768px) {
-	  	.logo {
-	  		width:510px; 
-	  		height:80px;
-	  	}
-	}
+  .navbar-brand {
+    margin-right: 0;
+  }
+}
 
-	p {
-		max-width:300px; 
-		margin:20px auto; 
+.jumbotron {
+  align-items: stretch;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  margin-bottom: 0px;
+  min-height: 100vh;
 
-		&.links {
-			max-width:350px;
-			padding:20px 0px; 
-			font-size:24px;
+  .container {
+    min-height: 100%;
 
-			a {
-				margin-right:5px; 
+    .row {
+      align-items: center;
+      display: flex;
+      min-height: 100%;
 
-				&.resume {
-					margin-right:25px;
-				}
-			}
-		}
-	}
+      [class^="col"] {
+        flex-direction: column;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .sa-logo {
+    enable-background:new 0 0 270 42.8;
+
+    .st0 {
+      font-family:'HelveticaNeue-Medium';
+    }
+
+    .st1 {
+      fill: #222;
+      font-size:34px;
+    }
+
+    .st2 {
+      stroke:#222;
+      stroke-width:4;
+      stroke-linecap:square;
+      stroke-miterlimit:10;
+    }
+
+    .st3 {
+      fill:none;
+      stroke:#000;
+      stroke-width:4;
+      stroke-linecap:square;
+      stroke-miterlimit:10;
+      enable-background:new;
+      opacity: .25;
+    }
+  }
+
+  .sa-hello {
+    padding: 30px 0;
+  }
+
+  .sa-links {
+    .btn {
+      margin: 0 5px;
+    }
+  }
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.4);
+
+  .sa-divider {
+    background-color: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .sa-header {
+      // max-height: 50px;
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      font-weight: 300;
+      letter-spacing: 10px;
+      padding: 10px;
+      padding-left: 25px;
+    }
+  }
+
+  .sa-project {
+    $sa-project: &;
+    min-height: 100vh;
+    padding: 5rem;
+
+    &-logo {
+      max-height: 100px;
+      max-width: 200px;
+      margin-top: 2rem;
+    }
+
+    &-title {
+      font-weight: 500;
+      letter-spacing: 5px;
+      margin: 2.5rem 0 .5rem 0;
+    }
+
+    &-role {
+      font-family: HelveticaNeue;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 2px 6px;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      padding: 2.5rem 0;
+    }
+
+    &-pic {
+      border: .25rem solid transparent;
+      border-radius: .25rem;
+      margin: 2rem 0;
+      outline: 1rem solid #fff;
+      width: 100%;
+
+      &s {
+        margin-top: 3rem;
+      }
+    }
+
+    &-links {
+      // padding: 1.25rem 0;
+      font-size: .85rem;
+
+      a {
+        padding: .25rem .5rem;
+        margin: 0 1rem;
+      }
+    }
+
+    &--light {
+      color: #fff;
+
+      .sa-project-role {
+        background-color: #fff;
+      }
+
+      a {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+
+    &--dark {
+      color: #000;
+
+      .sa-project-role {
+        background-color: #000;
+      }
+
+      a {
+        color: #000;
+
+        &:hover,
+        &:focus {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+
+    &--transparent {
+      background-color: transparent;
+      color: transparent;
+    }
+
+    &#sa-work-experience {
+      background-color: rgba(#fff, 0.9);
+    }
+
+    &#sa-project {
+      &-visa {
+        background-color: rgba(#15195a, .85);
+
+        .sa-project-role {
+          color: #15195a;
+        }
+      }
+
+      &-perspective {
+        background-color: rgba(#222, .8);
+        color: #fff;
+        font-weight: 500;
+
+        .sa-project-role {
+          color: #d21d33;
+        }
+      }
+
+      &-visafc {
+        background-color: rgba(#f7b600, .6);
+
+        .sa-project-logo {
+          max-height: 200px;
+        }
+
+        .sa-project-role {
+          color: #fff;
+        }
+      }
+
+      &-gulpaxe {
+        background-color: rgba(#023448, 0.8);
+
+        .sa-project-logo {
+          height: 150px;
+          max-height: 200px;
+        }
+
+        .sa-project-role {
+          color: #023448;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: rgba(#fff, 0.8);
+  padding: .5rem;
+
+  .footer-text {
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: .75rem;
+    line-height: 3rem;
+    padding: 1rem;
+
+    #footer-copy {
+      margin: 0 .5rem;
+    }
+
+    #footer-name {
+      font-family: 'Libre Barcode 128 Text', sans-serif;
+      font-size: 2rem;
+    }
+  }
 }
