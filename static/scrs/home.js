@@ -47,7 +47,6 @@ var setNavMenu = function() {
 
     href = link.attr('href');
     pos = $(href).offset().top - $('nav').outerHeight();
-    console.log(href, $(href).offset().top, $('nav').outerHeight(), pos);
 
     $('html').animate({
       scrollTop: pos
