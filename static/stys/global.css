@@ -151,6 +151,9 @@ main {
   main .sa-project {
     min-height: 100vh;
     padding: 5rem; }
+    @media (max-width: 992px) {
+      main .sa-project {
+        padding: 5rem 0; } }
     main .sa-project-logo {
       max-height: 100px;
       max-width: 200px;
