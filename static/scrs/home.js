@@ -39,7 +39,7 @@ var setBackgroundImage = function() {
 };
 
 var setNavMenu = function() {
-  $('nav a[href^="#"]').on('click', function(e) {
+  var movePage = function(e) {
     var link;
     var href;
     var pos;
@@ -57,7 +57,15 @@ var setNavMenu = function() {
       $(link).blur();
       $(href).focus();
     });
-  });
+  };
+
+  $('nav a[href^="#"]:not(.sa-skip)')
+    .on('click', movePage(e))
+    .on('keyup', function(e) {
+      if (e.which === 13 || e.which === 32) {
+        movePage(e);
+      }
+    });
 };
 
 var setFooter = function() {
