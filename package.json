@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node-sass --include-path ./src/sass/ --recursive ./src/sass/ -o static/stys/ --watch & node index.js"
+    "build:dev": "npm-run-all --parallel build:dev:sass serve",
+    "build:dev:sass": "node-sass --include-path ./src/sass/ --recursive ./src/sass/ -o static/stys/ --watch",
+    "build:prod": "npm-run-all --serial build:prod:sass",
+    "build:prod:sass": "node-sass --include-path ./src/sass/ --recursive ./src/sass/ -o static/stys/",
+    "serve": "node index.js",
+    "start": "npm-run-all build:dev"
   },
   "repository": {
     "type": "git",
@@ -34,8 +39,11 @@
   },
   "homepage": "http://samuelacuna.com",
   "dependencies": {
-    "express": "4.14.0",
-    "node-sass": "^3.7.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
     "request": "^2.79.0"
   }
 }

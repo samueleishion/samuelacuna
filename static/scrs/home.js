@@ -99,8 +99,106 @@ var setFooter = function() {
   }, 100);
 };
 
+var setProjects = function() {
+  var projectsContainer = $('#projects');
+  console.log("setProjects", projectsContainer);
+
+  var projectTemplate = '\
+<div class="container">\
+  <div class="row">\
+    <div class="col">\
+      <img class="sa-project-logo" />\
+      <h3 class="sa-project-title">Project Title</h3>\
+      <span class="sa-project-role" />\
+    </div>\
+  </div>\
+  <div class="row">\
+    <div class="col-md-6 offset-md-3">\
+      <div class="sa-project-description">\
+      </div>\
+      <ul class="sa-pills">\
+      </ul>\
+    </div>\
+  </div>\
+  <div class="row">\
+    <div class="col-md-8 offset-md-2">\
+      <div class="sa-project-pics">\
+      </div>\
+    </div>\
+  </div>\
+</div>\
+';
+
+  var projects = $.getJSON("./data/projects.json",
+    function(data) {
+      $.each(data.projects, function(index, project) {
+        var projectElement = $(document.createElement('div'));
+        projectElement.append($.parseHTML(projectTemplate));
+
+        var projectLogo = projectElement.find('.sa-project-logo');
+        var projectTitle = projectElement.find('.sa-project-title');
+        var projectRole = projectElement.find('.sa-project-role');
+        var projectDescription = projectElement.find('.sa-project-description');
+        var projectTags = projectElement.find('.sa-pills');
+        var projectPics = projectElement.find('.sa-project-pics');
+
+        projectElement.addClass('container-fluid sa-project');
+        projectElement.attr('id', 'sa-project-' + project.id);
+        projectElement.attr('style', 'background-color: ' + project.color.background);
+
+        switch(project.color.foreground) {
+          case 'light':
+            projectElement.addClass('sa-project--light');
+            projectTags.addClass('sa-pills--light');
+            break;
+          case 'dark':
+            projectElement.addClass('sa-project--dark');
+            projectTags.addClass('sa-pills--dark');
+            break;
+          default:
+            break;
+        };
+
+        projectLogo.attr('src', project.image.src);
+        projectLogo.attr('alt', project.image.alt);
+
+        projectTitle.html(project.title);
+
+        projectRole.html(project.role);
+
+        $.each(project.description, function(jndex, paragraph) {
+          console.log(jndex, paragraph);
+          var p = $(document.createElement('p'));
+          p.html($.parseHTML(paragraph));
+          projectDescription.append(p);
+        });
+
+        $.each(project.tags, function(jndex, tag) {
+          var li = $(document.createElement('li'));
+          li.addClass('sa-pill')
+            .html($.parseHTML('#' + tag));
+          projectTags.append(li);
+        });
+
+        $.each(project.screenshots, function(jndex, screenshot) {
+          var pic = $(document.createElement('img'));
+          pic.addClass('sa-project-pic')
+            .attr('src', screenshot.src)
+            .attr('alt', screenshot.alt);
+          projectPics.append(pic);
+        });
+
+        projectsContainer.append(projectElement);
+      });
+    })
+    .fail(function(e) {
+      console.error("fail", e);
+    });
+};
+
 $(document).ready(function() {
   setBackgroundImage();
   setNavMenu();
   setFooter();
+  setProjects();
 });

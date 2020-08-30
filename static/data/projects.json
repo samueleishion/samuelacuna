@@ -1,0 +1,198 @@
+{
+  "projects": [
+    {
+      "title": "Visa Design System",
+      "role": "Lead Developer",
+      "image": {
+        "src": "imgs/projects/visa-logo.svg",
+        "alt": "Visa logo"
+      },
+      "color": {
+        "background": "rgba(21, 25, 90, 0.85)",
+        "foreground": "light",
+        "role": "#15195a"
+      },
+      "id": "visa",
+      "description": [
+        "The Visa Design System (VDS) is an internal design system focused on serving applications with Visa-ready design mocks, design patterns, styles, and components. We've divided VDS into different tracks to support multiple technologies and methods of consumption. These tracks include Design, Web (html + css), Angular, React, and React Native. The project was also set up as an internally open-sourced project, in which many designers and developers across the company could contribute to the design system.",
+        "My role on this projects was to lead the Web library, which included pixel-perfect styles implemented via SASS from the design mocks. We'd also provide documentation with accessible HTML snippets for markup reference. In a way, this worked like an internal bootstrap with responsive behavior and with fully accessibility (a11y) testing across browsers, screen readers, and other assistive technologies. The styles exported by the Web library was consumed by server-side rendered applications, AEM sites (like <a href=\"https://developer.visa.com/\" target=\"_blank\">Visa Developer Center</a>), our Angular library, our React library, and other Javascript based applications across the company.", "My involvement on the project started since before it was fully chartered, by developing a library of basic components that could be themed, modified, extended, and/or forked to produce other component libraries for multiple projects across Visa. We would provide a default Visa theme, that would then turn into the VDS design and code libraries. These libraries would also follow Visa's General A11y Guidelines (<a href=\"https://developer.visa.com/pages/accessibility\" target=\"_blank\">VGAR</a>) to ensure our components where usable and accessible across the board."
+      ],
+      "screenshots": [],
+      "tags": [
+        "development",
+        "design",
+        "open source",
+        "community",
+        "components",
+        "html",
+        "css",
+        "scss",
+        "sass",
+        "gulp",
+        "npm",
+        "node",
+        "lint",
+        "eslint",
+        "prettier",
+        "browser-sync",
+        "architecture",
+        "layouts",
+        "axe",
+        "a11y",
+        "accessibility",
+        "themes",
+        "white label",
+        "project management",
+        "agile",
+        "ux",
+        "ui",
+        "user interface",
+        "user experience",
+        "styleguide",
+        "documentation",
+        "pixel perfect",
+        "design implementation"
+      ]
+    },
+    {
+      "title": "Perspective",
+      "role": "Co-Founder & CTO",
+      "image": {
+        "src": "imgs/projects/perspective-logo.svg",
+        "alt": "Perspective logo"
+      },
+      "color": {
+        "background": "rgba(34, 34, 34, 0.8)",
+        "foreground": "light",
+        "role": "#d21d33"
+      },
+      "id": "perspective",
+      "description": [
+        "<a href=\"https://perspectiveux.com/\" target=\"_blank\">Perspective</a> is a company and a product which focuses on tracking and analyzing real time customer reactions to your product. We would do this by allowing our customers to create a survey, in which each question would be triggered and displayed to the user after him/her had performed an action. This would allow the questions to be contextual (relative to the context of the action the user had performed), thus providing a less intrusive user experience by limiting distractions, and improving response rates. All of this aggregated data resulted in visualizations with statistical analysis that would help you understand your users better, finding patterns in their collective responses.",
+        "My role was to oversee the development of all the technologies that made Perspective operational, including the marketing site, the plugin for client's apps, the dashboard front-end application, and the API & database updates. I would also oversee visual, application, and UX design, as well as the research and development of our data analytics and visualization.",
+        "My involvement on the project when my co-founder and I relized the need for a product like this. We built multiple prototypes, tested them, gathered feedback and market validation, and adapted our project to build our alphas and final beta application."
+      ],
+      "screenshots": [
+        {
+          "src": "imgs/projects/perspective-site-1.png",
+          "alt": "Perspective's homepage screenshot"
+        },
+        {
+          "src": "imgs/projects/perspective-site-2.png",
+          "alt": "Perspective plugin sample"
+        },
+        {
+          "src": "imgs/projects/perspective-site-3.png",
+          "alt": "Perspective's dashboard screenshot"
+        }
+      ],
+      "tags": [
+        "business",
+        "entrpreneurship",
+        "startup",
+        "development",
+        "application",
+        "components",
+        "html",
+        "css",
+        "scss",
+        "sass",
+        "javascript",
+        "js",
+        "react",
+        "stenciljs",
+        "metalsmith",
+        "express",
+        "java",
+        "heroku",
+        "digital ocean",
+        "gulp",
+        "npm",
+        "node",
+        "browser-sync",
+        "architecture",
+        "project management",
+        "agile",
+        "ux",
+        "ui",
+        "cx",
+        "user interface",
+        "user experience",
+        "customer experience",
+        "feedback",
+        "research",
+        "survey",
+        "data science",
+        "natural language processing",
+        "nlp",
+        "data visualization",
+        "design",
+        "sketch",
+        "invision"
+      ]
+    },
+    {
+      "title": "Visa FC",
+      "role": "President",
+      "image": {
+        "src": "imgs/projects/visafc-logo--black.png",
+        "alt": "Visa Football Club logo"
+      },
+      "color": {
+        "background": "rgba(247, 182, 0, 0.6)",
+        "foreground": "dark",
+        "role": "#fff"
+      },
+      "id": "visafc",
+      "description": [
+        "Visa FC is an indoor soccer club that plays in a competitive indoor league. I got involved with the soccer team once I started working at Visa. The club had just begun to receive sponsorship from Visa when I joined as a player. Two years later, in 2017, I stepped in as the President, overseeing its communications, finances, member enrollment, and coordination with HR.",
+        "The team had humble beginnings, with few commited players, we had to develop skill, endurance, and chemistry. By 2018, our core team had grown and improved so much, we created 2 teams. In 2019, we won our first championship in the league, so one of our teams got promoted to a higher division."
+      ],
+      "screenshots": [],
+      "tags": [
+        "soccer",
+        "football",
+        "futbol",
+        "visafc",
+        "lifeatvisa",
+        "sports",
+        "team",
+        "sportmanship",
+        "leadership"
+      ]
+    },
+    {
+      "title": "gulp-axe-cli",
+      "role": "developer / maintainer",
+      "image": {
+        "src": "imgs/projects/gulpaxe-logo.png",
+        "alt": "gulp-axe-cli project accessibility icon"
+      },
+      "color": {
+        "background": "rgba(2, 52, 72, 0.8)",
+        "foreground": "light",
+        "role": "#023448"
+      },
+      "id": "gulpaxe",
+      "description": [
+        "Other axe-based plugins are built to generate reports. While these reports are great for analysis, these CLIs, plugins, and packages do not always work well with development pipelines. With gulp-axe-cli, we leverage the power of gulp as a task runner 💪 and the automation for a11y testing of aXe 💥 to prevent bad code from being committed or built. 👍"
+      ],
+      "screenshots": [],
+      "tags": [
+        "gulp",
+        "axe",
+        "a11y",
+        "accessibility",
+        "testing",
+        "automation",
+        "cli",
+        "ci",
+        "cd",
+        "continuous integration",
+        "continuous development",
+        "open source",
+        "plugin"
+      ]
+    }
+  ]
+}
