@@ -116,6 +116,10 @@ var setProjects = function() {
     <div class="col-md-6 offset-md-3">\
       <div class="sa-project-description">\
       </div>\
+      <div class="sa-project-links">\
+      </div>\
+      <div class="sa-code">\
+      </div>\
       <ul class="sa-pills">\
       </ul>\
     </div>\
@@ -139,6 +143,8 @@ var setProjects = function() {
         var projectTitle = projectElement.find('.sa-project-title');
         var projectRole = projectElement.find('.sa-project-role');
         var projectDescription = projectElement.find('.sa-project-description');
+        var projectLinks = projectElement.find('.sa-project-links');
+        var projectCode = projectElement.find('.sa-code');
         var projectTags = projectElement.find('.sa-pills');
         var projectPics = projectElement.find('.sa-project-pics');
 
@@ -167,11 +173,30 @@ var setProjects = function() {
         projectRole.html(project.role);
 
         $.each(project.description, function(jndex, paragraph) {
-          console.log(jndex, paragraph);
           var p = $(document.createElement('p'));
           p.html($.parseHTML(paragraph));
           projectDescription.append(p);
         });
+
+        $.each(project.links, function(jndex, link) {
+          var a = $(document.createElement('a'));
+          a.attr('href', link.href);
+          a.attr('target', '_blank');
+          a.html(link.label + ' &raquo;');
+          projectLinks.append(a);
+
+          if (jndex < project.links.length - 1) {
+            projectLinks.append("|");
+          }
+        });
+
+        if (project.code !== undefined && project.code.length > 0) {
+          $.each(project.code, function(jndex, snippet) {
+            var code = $(document.createElement('code'));
+            code.html(snippet);
+            projectCode.append(code);
+          });
+        }
 
         $.each(project.tags, function(jndex, tag) {
           var li = $(document.createElement('li'));
@@ -186,6 +211,22 @@ var setProjects = function() {
             .attr('src', screenshot.src)
             .attr('alt', screenshot.alt);
           projectPics.append(pic);
+        });
+
+        $.each(project.videos, function(jndex, video) {
+          var iframe = $(document.createElement('iframe'));
+          var frame = $(document.createElement('div'));
+
+          frame.addClass('sa-project-video');
+          iframe.attr('width', '560');
+          iframe.attr('height', '315');
+          iframe.attr('frameborder', '0');
+          iframe.attr('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+          iframe.attr('allowfullscreen', 'true');
+          iframe.attr('src', "https://www.youtube.com/embed/" + video);
+
+          frame.append(iframe);
+          projectPics.append(frame);
         });
 
         projectsContainer.append(projectElement);
