@@ -4,11 +4,14 @@
   "description": "Samuel Acuna's portfolio site. 2017 design.",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm-run-all --serial build:prod",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "npm-run-all --parallel build:dev:sass serve",
+    "build:dev": "npm-run-all --parallel build:dev:sass build:dev:js serve",
     "build:dev:sass": "node-sass --include-path ./src/sass/ --recursive ./src/sass/ -o static/stys/ --watch",
-    "build:prod": "npm-run-all --serial build:prod:sass",
-    "build:prod:sass": "node-sass --include-path ./src/sass/ --recursive ./src/sass/ -o static/stys/",
+    "build:dev:js": "cpx ./src/scrs/home.js ./static/scrs/home.js -w",
+    "build:prod": "npm-run-all --serial build:prod:sass build:prod:js",
+    "build:prod:sass": "node-sass --include-path ./src/sass/ --recursive ./src/sass/ -o static/stys/ --output-style compressed",
+    "build:prod:js": "uglifyjs ./src/scrs/home.js -c -o ./static/scrs/home.js",
     "serve": "node index.js",
     "start": "npm-run-all build:dev"
   },
@@ -42,8 +45,10 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "uglify-js": "^3.10.3"
   }
 }
