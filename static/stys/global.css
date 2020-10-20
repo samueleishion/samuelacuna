@@ -54,15 +54,14 @@ h1, h2, h3, h4, h5, h6 {
   .btn:active {
     background-color: #333; }
 
-.sa-code {
-  padding: 3rem 0; }
-  .sa-code code {
-    background-color: #f8f9fa;
-    color: #666;
-    display: block;
-    font-weight: 500;
-    padding: .5rem;
-    text-align: left; }
+.sa-code code {
+  background-color: #f8f9fa;
+  color: #666;
+  display: block;
+  font-weight: 500;
+  margin: 3rem 0rem;
+  padding: .5rem;
+  text-align: left; }
 
 .sa-pills {
   list-style: none;
@@ -174,14 +173,23 @@ main {
       text-transform: uppercase; }
     main .sa-project-description {
       padding: 2.5rem 0; }
-    main .sa-project-pic {
+    main .sa-project .sa-project-pic, main .sa-project .sa-project-video {
       border: .25rem solid transparent;
       border-radius: .25rem;
-      margin: 2rem 0;
-      outline: 1rem solid #fff;
+      outline: 1rem solid #fff; }
+    main .sa-project-pic {
+      margin: 2rem auto;
       width: 100%; }
       main .sa-project-pics {
         margin-top: 3rem; }
+    main .sa-project-video {
+      height: 315px;
+      margin: 5rem auto 2rem auto;
+      width: 560px; }
+      main .sa-project-video iframe {
+        left: -4px;
+        position: relative;
+        top: -4px; }
     main .sa-project-links {
       font-size: .85rem; }
       main .sa-project-links a {
@@ -210,29 +218,6 @@ main {
       color: transparent; }
     main .sa-project#sa-work-experience {
       background-color: rgba(255, 255, 255, 0.9); }
-    main .sa-project#sa-project-visa {
-      background-color: rgba(21, 25, 90, 0.85); }
-      main .sa-project#sa-project-visa .sa-project-role {
-        color: #15195a; }
-    main .sa-project#sa-project-perspective {
-      background-color: rgba(34, 34, 34, 0.8);
-      color: #fff;
-      font-weight: 500; }
-      main .sa-project#sa-project-perspective .sa-project-role {
-        color: #d21d33; }
-    main .sa-project#sa-project-visafc {
-      background-color: rgba(247, 182, 0, 0.6); }
-      main .sa-project#sa-project-visafc .sa-project-logo {
-        max-height: 200px; }
-      main .sa-project#sa-project-visafc .sa-project-role {
-        color: #fff; }
-    main .sa-project#sa-project-gulpaxe {
-      background-color: rgba(2, 52, 72, 0.8); }
-      main .sa-project#sa-project-gulpaxe .sa-project-logo {
-        height: 150px;
-        max-height: 200px; }
-      main .sa-project#sa-project-gulpaxe .sa-project-role {
-        color: #023448; }
 
 footer {
   background-color: rgba(255, 255, 255, 0.8);

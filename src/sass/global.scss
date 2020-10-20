@@ -75,13 +75,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sa-code {
-  padding: 3rem 0;
 
   code {
     background-color: #f8f9fa;
     color: #666;
     display: block;
     font-weight: 500;
+    margin: 3rem 0rem;
     padding: .5rem;
     text-align: left;
   }
@@ -263,15 +263,32 @@ main {
       padding: 2.5rem 0;
     }
 
-    &-pic {
+    %sa-media-frame {
       border: .25rem solid transparent;
       border-radius: .25rem;
-      margin: 2rem 0;
       outline: 1rem solid #fff;
+    }
+
+    &-pic {
+      @extend %sa-media-frame;
+      margin: 2rem auto;
       width: 100%;
 
       &s {
         margin-top: 3rem;
+      }
+    }
+
+    &-video {
+      @extend %sa-media-frame;
+      height: 315px;
+      margin: 5rem auto 2rem auto;
+      width: 560px;
+
+      iframe {
+        left: -4px;
+        position: relative;
+        top: -4px;
       }
     }
 
@@ -331,48 +348,48 @@ main {
     }
 
     &#sa-project {
-      &-visa {
-        background-color: rgba(#15195a, .85);
-
-        .sa-project-role {
-          color: #15195a;
-        }
-      }
-
-      &-perspective {
-        background-color: rgba(#222, .8);
-        color: #fff;
-        font-weight: 500;
-
-        .sa-project-role {
-          color: #d21d33;
-        }
-      }
-
-      &-visafc {
-        background-color: rgba(#f7b600, .6);
-
-        .sa-project-logo {
-          max-height: 200px;
-        }
-
-        .sa-project-role {
-          color: #fff;
-        }
-      }
-
-      &-gulpaxe {
-        background-color: rgba(#023448, 0.8);
-
-        .sa-project-logo {
-          height: 150px;
-          max-height: 200px;
-        }
-
-        .sa-project-role {
-          color: #023448;
-        }
-      }
+      // &-visa {
+      //   background-color: rgba(#15195a, .85);
+      //
+      //   .sa-project-role {
+      //     color: #15195a;
+      //   }
+      // }
+      //
+      // &-perspective {
+      //   background-color: rgba(#222, .8);
+      //   color: #fff;
+      //   font-weight: 500;
+      //
+      //   .sa-project-role {
+      //     color: #d21d33;
+      //   }
+      // }
+      //
+      // &-visafc {
+      //   background-color: rgba(#f7b600, .6);
+      //
+      //   .sa-project-logo {
+      //     max-height: 200px;
+      //   }
+      //
+      //   .sa-project-role {
+      //     color: #fff;
+      //   }
+      // }
+      //
+      // &-gulpaxe {
+      //   background-color: rgba(#023448, 0.8);
+      //
+      //   .sa-project-logo {
+      //     height: 150px;
+      //     max-height: 200px;
+      //   }
+      //
+      //   .sa-project-role {
+      //     color: #023448;
+      //   }
+      // }
     }
   }
 }
