@@ -1,7 +1,7 @@
 {
   "name": "samuelacuna",
-  "version": "2017.0.1",
-  "description": "Samuel Acuna's portfolio site. 2017 design.",
+  "version": "2020.0.1",
+  "description": "Samuel Acuna's portfolio site. 2020 design.",
   "main": "index.js",
   "scripts": {
     "postinstall": "npm-run-all --serial build:prod",

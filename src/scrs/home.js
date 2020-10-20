@@ -170,6 +170,7 @@ var setProjects = function() {
 
         projectTitle.html(project.title);
 
+        projectRole.attr('style', 'color: ' + project.color.role);
         projectRole.html(project.role);
 
         $.each(project.description, function(jndex, paragraph) {

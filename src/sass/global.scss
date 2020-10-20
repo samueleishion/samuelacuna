@@ -348,48 +348,48 @@ main {
     }
 
     &#sa-project {
-      &-visa {
-        background-color: rgba(#15195a, .85);
-
-        .sa-project-role {
-          color: #15195a;
-        }
-      }
-
-      &-perspective {
-        background-color: rgba(#222, .8);
-        color: #fff;
-        font-weight: 500;
-
-        .sa-project-role {
-          color: #d21d33;
-        }
-      }
-
-      &-visafc {
-        background-color: rgba(#f7b600, .6);
-
-        .sa-project-logo {
-          max-height: 200px;
-        }
-
-        .sa-project-role {
-          color: #fff;
-        }
-      }
-
-      &-gulpaxe {
-        background-color: rgba(#023448, 0.8);
-
-        .sa-project-logo {
-          height: 150px;
-          max-height: 200px;
-        }
-
-        .sa-project-role {
-          color: #023448;
-        }
-      }
+      // &-visa {
+      //   background-color: rgba(#15195a, .85);
+      //
+      //   .sa-project-role {
+      //     color: #15195a;
+      //   }
+      // }
+      //
+      // &-perspective {
+      //   background-color: rgba(#222, .8);
+      //   color: #fff;
+      //   font-weight: 500;
+      //
+      //   .sa-project-role {
+      //     color: #d21d33;
+      //   }
+      // }
+      //
+      // &-visafc {
+      //   background-color: rgba(#f7b600, .6);
+      //
+      //   .sa-project-logo {
+      //     max-height: 200px;
+      //   }
+      //
+      //   .sa-project-role {
+      //     color: #fff;
+      //   }
+      // }
+      //
+      // &-gulpaxe {
+      //   background-color: rgba(#023448, 0.8);
+      //
+      //   .sa-project-logo {
+      //     height: 150px;
+      //     max-height: 200px;
+      //   }
+      //
+      //   .sa-project-role {
+      //     color: #023448;
+      //   }
+      // }
     }
   }
 }
