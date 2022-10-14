@@ -101,7 +101,7 @@ var setFooter = function() {
 
 var setProjects = function() {
   var projectsContainer = $('#projects');
-  console.log("setProjects", projectsContainer);
+  // console.log("setProjects", projectsContainer);
 
   var projectTemplate = '\
 <div class="container">\
@@ -218,16 +218,33 @@ var setProjects = function() {
           var iframe = $(document.createElement('iframe'));
           var frame = $(document.createElement('div'));
 
+          function resizeVideo(e, iframe) {
+            var width = 560; 
+            var ratio = 0.5625; 
+
+            if (e.innerWidth < 561) {
+              width = 400; 
+            } else if (e.innerWidth < 993) {
+              width = 480; 
+            }
+
+            iframe.attr('width', `${width}px`); 
+            iframe.attr('height', `${width * ratio}px`); 
+          }
+
           frame.addClass('sa-project-video');
-          iframe.attr('width', '560');
-          iframe.attr('height', '315');
           iframe.attr('frameborder', '0');
           iframe.attr('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
           iframe.attr('allowfullscreen', 'true');
           iframe.attr('src', "https://www.youtube.com/embed/" + video);
+          resizeVideo($(window).get(0), iframe); 
 
           frame.append(iframe);
           projectPics.append(frame);
+
+          $(window).on('resize', (e) => {
+            resizeVideo(e.target, iframe); 
+          }); 
         });
 
         projectsContainer.append(projectElement);
