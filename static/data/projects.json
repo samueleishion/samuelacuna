@@ -65,7 +65,7 @@
         "alt": "gulp-axe-cli project accessibility icon"
       },
       "color": {
-        "background": "rgba(2, 52, 72, 0.8)",
+        "background": "rgba(2, 52, 72, 0.85)",
         "foreground": "light",
         "role": "#023448"
       },
@@ -111,7 +111,7 @@
         "alt": "Perspective logo"
       },
       "color": {
-        "background": "rgba(34, 34, 34, 0.8)",
+        "background": "rgba(34, 34, 34, 0.85)",
         "foreground": "light",
         "role": "#d21d33"
       },
@@ -189,7 +189,7 @@
         "alt": "Robinhood logo - the trading platform for stockbot"
       },
       "color": {
-        "background": "rgba(4, 13, 20, 0.8)",
+        "background": "rgba(4, 13, 20, 0.85)",
         "foreground": "light",
         "role": "#30cd9a"
       },

@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .jumbotron {
   align-items: stretch;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   display: flex;
   margin-bottom: 0px;
   min-height: 100vh; }
@@ -207,11 +207,16 @@ main,
         .sa-main .sa-project-video {
           height: 270px;
           width: 480px; } }
-      @media (max-width: 561px) {
+      @media (max-width: 567px) {
         main .sa-project-video,
         .sa-main .sa-project-video {
           height: 225px;
           width: 400px; } }
+      @media (max-width: 475px) {
+        main .sa-project-video,
+        .sa-main .sa-project-video {
+          height: 140.625px;
+          width: 250px; } }
       main .sa-project-video iframe,
       .sa-main .sa-project-video iframe {
         left: -4px;
