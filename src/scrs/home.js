@@ -235,8 +235,8 @@ var setProjects = function() {
               width = 480; 
             }
 
-            iframe.attr('width', `${width}px`); 
-            iframe.attr('height', `${width * ratio}px`); 
+            iframe.attr('width', width+"px"); 
+            iframe.attr('height', (width * ratio) + "px"); 
           }
 
           frame.addClass('sa-project-video');
@@ -249,7 +249,7 @@ var setProjects = function() {
           frame.append(iframe);
           projectPics.append(frame);
 
-          $(window).on('resize', (e) => {
+          $(window).on('resize', function(e) {
             resizeVideo(iframe); 
           }); 
         });
