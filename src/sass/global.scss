@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .jumbotron {
   align-items: stretch;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   display: flex;
   margin-bottom: 0px;
   min-height: 100vh;
@@ -208,7 +208,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-main {
+main,
+.sa-main {
   background-color: rgba(255, 255, 255, 0.4);
 
   .sa-divider {
@@ -260,7 +261,9 @@ main {
     }
 
     &-description {
+      line-height: 1.85rem;
       padding: 2.5rem 0;
+      text-align: left;
     }
 
     %sa-media-frame {
@@ -281,9 +284,30 @@ main {
 
     &-video {
       @extend %sa-media-frame;
-      height: 315px;
+      $ratio: 0.5625; 
+      $width: 560px; 
+
+      height: $width * $ratio;
       margin: 5rem auto 2rem auto;
-      width: 560px;
+      width: $width;
+
+      @media (max-width: 992px) {
+        $width: 480px; 
+        height: $width * $ratio; 
+        width: $width; 
+      }
+
+      @media (max-width: 567px) {
+        $width: 400px; 
+        height: $width * $ratio; 
+        width: $width; 
+      }
+
+      @media (max-width: 475px) {
+        $width: 250px; 
+        height: $width * $ratio; 
+        width: $width; 
+      }
 
       iframe {
         left: -4px;

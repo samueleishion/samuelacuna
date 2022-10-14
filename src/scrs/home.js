@@ -101,7 +101,7 @@ var setFooter = function() {
 
 var setProjects = function() {
   var projectsContainer = $('#projects');
-  console.log("setProjects", projectsContainer);
+  // console.log("setProjects", projectsContainer);
 
   var projectTemplate = '\
 <div class="container">\
@@ -113,7 +113,7 @@ var setProjects = function() {
     </div>\
   </div>\
   <div class="row">\
-    <div class="col-md-6 offset-md-3">\
+    <div class="col-xl-6 offset-xl-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">\
       <div class="sa-project-description">\
       </div>\
       <div class="sa-project-links">\
@@ -125,7 +125,7 @@ var setProjects = function() {
     </div>\
   </div>\
   <div class="row">\
-    <div class="col-md-8 offset-md-2">\
+    <div class="col-lg-8 offset-lg-2">\
       <div class="sa-project-pics">\
       </div>\
     </div>\
@@ -218,16 +218,40 @@ var setProjects = function() {
           var iframe = $(document.createElement('iframe'));
           var frame = $(document.createElement('div'));
 
+          function resizeVideo(iframe) {
+            var width = 560; 
+            var ratio = 0.5625; 
+            var windowWidth = $(window).width(); 
+            // console.log("resizeVideo", $(window).width(), $(document).width(), $('main').width()); 
+
+            if (windowWidth < 476) {
+              console.log(windowWidth, "a"); 
+              width = 250; 
+            } else if (windowWidth < 568) {
+              console.log(windowWidth, "b"); 
+              width = 400; 
+            } else if (windowWidth < 993) {
+              console.log(windowWidth, "c"); 
+              width = 480; 
+            }
+
+            iframe.attr('width', width+"px"); 
+            iframe.attr('height', (width * ratio) + "px"); 
+          }
+
           frame.addClass('sa-project-video');
-          iframe.attr('width', '560');
-          iframe.attr('height', '315');
           iframe.attr('frameborder', '0');
           iframe.attr('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
           iframe.attr('allowfullscreen', 'true');
           iframe.attr('src', "https://www.youtube.com/embed/" + video);
+          resizeVideo(iframe); 
 
           frame.append(iframe);
           projectPics.append(frame);
+
+          $(window).on('resize', function(e) {
+            resizeVideo(iframe); 
+          }); 
         });
 
         projectsContainer.append(projectElement);
