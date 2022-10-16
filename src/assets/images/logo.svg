@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 270 42.8" style="enable-background:new 0 0 270 42.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'HelveticaNeue-Medium';}
+	.st1{font-size:34px;}
+	.st2{fill:#030202;stroke:#231F20;stroke-width:4;stroke-linecap:square;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#C8C8C8;stroke-width:4;stroke-linecap:square;stroke-miterlimit:10;enable-background:new    ;}
+</style>
+<title>saAsset 1</title>
+<g>
+	<g id="Header">
+		<g id="Name">
+			<g>
+				<defs>
+					<rect id="SVGID_1_" x="-4.1" y="-6" width="278" height="53"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+				</clipPath>
+			</g>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 0 33)" class="st0 st1">SAMUEL ACUNA</text>
+	<line class="st2" x1="226.4" y1="2.3" x2="241.9" y2="2.3"/>
+	<line class="st3" x1="2.4" y1="2" x2="217" y2="2"/>
+	<line class="st3" x1="2.9" y1="40" x2="268" y2="40"/>
+	<line class="st3" x1="249.4" y1="2.3" x2="266.9" y2="2.3"/>
+</g>
+</svg>

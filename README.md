@@ -1,4 +1,5 @@
-samuelacuna
-===========
+# Samuel Acu&nilde;a
 
-Repo for my website: [samuelacuna.com](http://samuelacuna.com)
+Repo for my portfolio site: [samuelacuna.com](http://samuelacuna.com)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
