@@ -1,0 +1,32 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("../../assets/fonts/HelveticaNeue.otf");
+  font-weight: 300; 
+}
+
+.sa-logo {
+  enable-background: new 0 0 270 42.8;
+}
+
+.sa-name {
+  fill: var(--sa-text-color);
+  font-family: 'HelveticaNeue-Medium';
+  font-size: 34px;
+}
+
+.sa-name-tilde {
+  fill: var(--sa-text-color);
+  stroke: var(--sa-text-color);
+  stroke-width: 4;
+  stroke-linecap: square;
+  stroke-miterlimit: 10;
+}
+
+.sa-logo-border {
+  fill: none;
+  stroke: var(--sa-border);
+  stroke-width: 4;
+  stroke-linecap: square;
+  stroke-miterlimit: 10;
+  enable-background: new;
+}
