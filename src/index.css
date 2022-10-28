@@ -17,6 +17,7 @@
 :root {
   --sa-border: rgb(200, 200, 200); 
   --sa-surface-1: rgb(255, 255, 255); 
+  --sa-surface-1-alt: rgba(255, 255, 255, 0.8); 
   --sa-surface-2: rgb(248, 249, 250); 
   --sa-text-color: rgb(0, 0, 0); 
 }
@@ -24,9 +25,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --sa-border: rgb(80, 80, 80); 
-    --sa-surface-1: rgb(17, 17, 17); 
+    --sa-surface-1: rgb(17, 17, 17);
+    --sa-surface-1-alt: rgba(17, 17, 17, 0.8); 
     --sa-surface-2: rgb(25, 26, 27);
     --sa-text-color: rgb(221, 221, 221); 
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: white;
   }
 }
 
@@ -50,6 +57,16 @@ p {
   font-family: 'Noto Sans JP', sans-serif; 
 }
 
+a {
+  color: var(--sa-text-color);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--sa-surface-1);
+  background-color: var(--sa-text-color); 
+}
+
 .sa-surface-1 {
   background-color: var(--sa-surface-1); 
   padding: 12px; 
@@ -65,7 +82,8 @@ p {
   text-decoration: underline;
 }
 
-.sa-link:hover {
+.sa-link:hover,
+.sa-link:focus-visible {
   background-color: var(--sa-text-color); 
   color: var(--sa-surface-1); 
 }
@@ -87,7 +105,8 @@ p {
   padding: 6px 8px; 
 }
 
-.sa-button:hover {
+.sa-button:hover,
+.sa-button-visible {
   background: var(--sa-text-color); 
   color: var(--sa-surface-1); 
 }

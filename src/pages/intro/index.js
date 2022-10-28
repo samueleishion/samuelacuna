@@ -1,17 +1,43 @@
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import { Container, Row, Col } from 'react-grid';
 import { Helmet } from 'react-helmet'; 
+import { animateScroll as scroll, scroller} from 'react-scroll';
 
 import { IMAGES } from '../../data/static'; 
+import projects from '../../data/projects'; 
 
-// import logo from '../../assets/images/logo.svg';
 import Logo from '../../shared/logo'; 
+import Project from '../../shared/project';
+
+import Resume from '../../assets/files/samuelacuna-resume.pdf'; 
+
 import './styles.css';
 
 function App() {
 
   const index = Math.round(Math.random() * (IMAGES.length - 1));
   const [background] = useState(IMAGES[index]); 
+
+  const scrollTo = (e, id) => {
+    e.preventDefault(); 
+    scroller.scrollTo(id, {
+      duration: 1000,
+      delay: 0,
+      smooth: 'easeInOutQuad'
+    });
+  }; 
+
+  const scrollHome = (e) => {
+    scrollTo(e, 'home'); 
+  }; 
+
+  const scrollProjects = (e) => {
+    scrollTo(e, 'projects'); 
+  }; 
+
+  useEffect(() => {
+    console.log(projects); 
+  }, []); 
 
   return (
     <>
@@ -23,24 +49,23 @@ function App() {
           <Container>
             <Row>
               <Col>
-                <a href="./" className="sa-link">home</a>
-                <a href="./" className="sa-link">projects</a>
-                <a href="./" className="sa-link">resume</a>
+                <a href="./" className="sa-link" onClick={scrollHome}>home</a>
+                <a href="./" className="sa-link" onClick={scrollProjects}>projects</a>
+                <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-link">resume</a>
               </Col>
             </Row>
           </Container>
         </nav>
-        <header className="sa-main sa-banner sa-project">
+        <header className="sa-main sa-banner sa-project" id="home">
           <Container>
             <Row>
-              <Col md="6" offset={{md:3}}>
-                {/* <img src={logo} alt="Samuel Acuna logo" /> */}
+              <Col md="6" sm="10" offset={{sm:1,md:3}}>
                 <Logo />
               </Col>
             </Row>
             <br />
             <Row>
-              <Col md="6" offset={{md:3}}>
+              <Col md="6" sm="10" offset={{sm:1,md:3}}>
                 <p>
                   hello. i am a design engineer working on applications, libraries, tools, and experiences for optimal product development.
                 </p>
@@ -48,18 +73,18 @@ function App() {
             </Row>
             <br />
             <Row>
-              <Col md="6" offset={{md:3}}>
+              <Col md="6" sm="10" offset={{sm:1,md:3}}>
                 <div className="sa-button-group">
-                  <a href="./samuelacuna-resume.pdf" target="_blank" rel="noreferrer" className="sa-button sa-button-small">
-                    <i class="fa fa-file-text-o"></i>&nbsp;
+                  <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
+                    <i className="fa fa-file-text-o"></i>&nbsp;
                     resume
                   </a>
-                  <a href="https://www.linkedin.com/in/samuelacuna" target="_blank" rel="noreferrer" className="sa-button sa-button-small">
-                    <i class="fa fa-linkedin"></i>&nbsp;
+                  <a href="https://www.linkedin.com/in/samuelacuna" target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
+                    <i className="fa fa-linkedin"></i>&nbsp;
                     linkedin
                   </a>
-                  <a href="http://github.com/samueleishion" target="_blank" rel="noreferrer" className="sa-button sa-button-small">
-                    <i class="fa fa-github-alt"></i>&nbsp;
+                  <a href="http://github.com/samueleishion" target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
+                    <i className="fa fa-github-alt"></i>&nbsp;
                     github
                   </a>
                 </div>
@@ -67,27 +92,36 @@ function App() {
             </Row>
           </Container>
         </header>
-        <main>
+        <main id="projects">
           <div className="sa-divider sa-surface-1">
             <h2 className="sa-divider-label">
               projects
             </h2>
           </div>
-          <section className="sa-banner sa-project">
-          <Container>
-            <Row>
-              <Col md="6" offset={{md:3}}>
-                project 1
-              </Col>
-            </Row>
-          </Container>
-          </section>
+          {projects.map((p, i) => (
+            <Project
+              key={i}
+              title={p.title}
+              role={p.role}
+              imageAsset={p.image.asset}
+              imageAlt={p.image.alt}
+              colorBackground={p.color.background}
+              colorForeground={p.color.foreground}
+              colorRole={p.color.role}
+              description={p.description}
+              links={p.links}
+              code={p.code}
+              tags={p.tags}
+              screenshots={p.screenshots}
+              videos={p.videos}
+            />
+          ))}
         </main>
         <footer className="sa-footer sa-surface-2">
           <Container>
             <Row>
               <Col>
-                2022 &copy; samuel.acuna
+                &copy; 2022
               </Col>
             </Row>
           </Container>

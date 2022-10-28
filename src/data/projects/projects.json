@@ -4,12 +4,12 @@
       "title": "Visa Product Design System",
       "role": "Lead Developer",
       "image": {
-        "src": "images/projects/visa-logo.svg",
+        "src": "imgs/projects/visa-logo.svg",
         "alt": "Visa logo"
       },
       "color": {
         "background": "rgba(21, 25, 90, 0.85)",
-        "foreground": "light",
+        "foreground": "rgb(221, 221, 221)",
         "role": "#15195a"
       },
       "id": "visa",
@@ -61,12 +61,12 @@
       "title": "gulp-axe-cli",
       "role": "developer / maintainer",
       "image": {
-        "src": "images/projects/gulpaxe-logo.png",
+        "src": "imgs/projects/gulpaxe-logo.png",
         "alt": "gulp-axe-cli project accessibility icon"
       },
       "color": {
         "background": "rgba(2, 52, 72, 0.85)",
-        "foreground": "light",
+        "foreground": "rgb(221, 221, 221)",
         "role": "#023448"
       },
       "id": "gulpaxe",
@@ -107,12 +107,12 @@
       "title": "Perspective",
       "role": "Co-Founder & CTO",
       "image": {
-        "src": "images/projects/perspective-logo.svg",
+        "src": "imgs/projects/perspective-logo.svg",
         "alt": "Perspective logo"
       },
       "color": {
         "background": "rgba(34, 34, 34, 0.85)",
-        "foreground": "light",
+        "foreground": "rgb(221, 221, 221)",
         "role": "#d21d33"
       },
       "id": "perspective",
@@ -124,15 +124,15 @@
       ],
       "screenshots": [
         {
-          "src": "images/projects/perspective-site-1.png",
+          "src": "imgs/projects/perspective-site-1.png",
           "alt": "Perspective's homepage screenshot"
         },
         {
-          "src": "images/projects/perspective-site-2.png",
+          "src": "imgs/projects/perspective-site-2.png",
           "alt": "Perspective plugin sample"
         },
         {
-          "src": "images/projects/perspective-site-3.png",
+          "src": "imgs/projects/perspective-site-3.png",
           "alt": "Perspective's dashboard screenshot"
         }
       ],
@@ -185,12 +185,12 @@
       "title": "stockbot",
       "role": "developer / maintainer",
       "image": {
-        "src": "images/projects/robinhood-logo.png",
+        "src": "imgs/projects/robinhood-logo.png",
         "alt": "Robinhood logo - the trading platform for stockbot"
       },
       "color": {
         "background": "rgba(4, 13, 20, 0.85)",
-        "foreground": "light",
+        "foreground": "rgb(221, 221, 221)",
         "role": "#30cd9a"
       },
       "id": "stockbot",
