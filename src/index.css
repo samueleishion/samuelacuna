@@ -59,12 +59,15 @@ p {
 
 a {
   color: var(--sa-text-color);
+  outline: none; 
 }
 
 a:hover,
 a:focus-visible {
   color: var(--sa-surface-1);
   background-color: var(--sa-text-color); 
+  outline: 1px dotted var(--sa-text-color); 
+  outline-offset: 2px; 
 }
 
 .sa-surface-1 {

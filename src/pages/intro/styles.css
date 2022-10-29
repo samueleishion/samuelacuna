@@ -17,6 +17,28 @@ body,
   z-index: 999;
 }
 
+.sa-skip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.sa-skip:focus-visible {
+  clip: unset;
+  clip-path: unset;
+  height: auto; 
+  overflow: unset; 
+  position: static; 
+  width: auto; 
+}
+
 .sa-nav .sa-link {
   display: inline-block;
   padding: 0.5rem; 
