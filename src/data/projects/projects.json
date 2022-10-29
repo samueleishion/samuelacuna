@@ -2,7 +2,7 @@
   "projects": [
     {
       "title": "Visa Product Design System",
-      "role": "Lead Developer",
+      "role": "Sr Staff Design Engineer",
       "image": {
         "src": "imgs/projects/visa-logo.svg",
         "alt": "Visa logo"
@@ -191,7 +191,7 @@
       "color": {
         "background": "rgba(4, 13, 20, 0.85)",
         "foreground": "rgb(221, 221, 221)",
-        "role": "#30cd9a"
+        "role": "#22a87d"
       },
       "id": "stockbot",
       "description": [

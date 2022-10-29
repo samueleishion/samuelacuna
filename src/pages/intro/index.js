@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 import { Container, Row, Col } from 'react-grid';
 import { Helmet } from 'react-helmet'; 
-import { animateScroll as scroll, scroller} from 'react-scroll';
+import { scroller} from 'react-scroll';
 
 import { IMAGES } from '../../data/static'; 
 import projects from '../../data/projects'; 
@@ -118,7 +118,7 @@ function App() {
             />
           ))}
         </main>
-        <footer className="sa-footer sa-surface-2">
+        <footer className="sa-footer sa-surface-1-alt">
           <Container>
             <Row>
               <Col>

@@ -40,7 +40,7 @@ const Project = ({
           <Col lg="6" md="8" sm="10" offset={{sm:1,md:2,lg:3}}>
             <img className="sa-project-logo" src={imageAsset} alt={imageAlt} />
             <h3 className="sa-project-title">{title}</h3>
-            <span className="sa-project-role">{role}</span>
+            <span className="sa-project-role" style={{color: colorRole}}>{role}</span>
           </Col>
         </Row>
         <Row>

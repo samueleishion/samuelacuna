@@ -15,6 +15,7 @@
 }
 
 .sa-project-role {
+  background-color: var(--sa-project-text-color); 
   font-family: HelveticaNeue;
   font-weight: 700;
   letter-spacing: 2px;

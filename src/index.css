@@ -78,6 +78,11 @@ a:focus-visible {
   padding: 12px; 
 }
 
+.sa-surface-1-alt {
+  background-color: var(--sa-surface-1-alt); 
+  padding: 12px; 
+}
+
 .sa-surface-2 {
   background-color: var(--sa-surface-2); 
   padding: 12px; 
