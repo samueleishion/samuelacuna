@@ -122,7 +122,7 @@ function App() {
           <Container>
             <Row>
               <Col>
-                &copy; 2022
+                <small>&copy; {new Date().getFullYear()}</small>
               </Col>
             </Row>
           </Container>
