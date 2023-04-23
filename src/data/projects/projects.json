@@ -2,20 +2,21 @@
   "projects": [
     {
       "title": "Visa Product Design System",
-      "role": "Sr Staff Design Engineer",
+      "role": "Senior Staff Design Engineer",
       "image": {
         "src": "imgs/projects/visa-logo.svg",
         "alt": "Visa logo"
       },
       "color": {
-        "background": "rgba(21, 25, 90, 0.85)",
+        "background": "rgba(21, 25, 90, 0.87)",
         "foreground": "rgb(221, 221, 221)",
         "role": "#15195a"
       },
       "id": "visa",
       "description": [
-        "The Visa Product Design System (VPDS) is an internal design system focused on serving applications with Visa-ready design mocks, design patterns, styles, and components. We've divided VPDS into different tracks to support multiple technologies and methods of consumption. These tracks include Design, Web (html + css), Angular, React, and React Native. The project was also set up as an internally open-sourced project, in which many designers and developers across the company could contribute to the design system.",
-        "My role on this projects was to lead the Web library, which included pixel-perfect styles implemented via SASS from the design mocks. We'd also provide documentation with accessible HTML snippets for markup reference. In a way, this worked like an internal bootstrap with responsive behavior and with fully accessibility (a11y) testing across browsers, screen readers, and other assistive technologies. The styles exported by the Web library was consumed by server-side rendered applications, AEM sites (like <a href=\"https://developer.visa.com/\" target=\"_blank\">Visa Developer Center</a>), our Angular library, our React library, and other Javascript based applications across the company.", "My involvement on the project started since before it was fully chartered, by developing a library of basic components that could be themed, modified, extended, and/or forked to produce other component libraries for multiple projects across Visa. We would provide a default Visa theme, that would then turn into the VPDS design and code libraries. These libraries would also follow Visa's General A11y Guidelines (<a href=\"https://developer.visa.com/pages/accessibility\" target=\"_blank\">VGAR</a>) to ensure our components where usable and accessible across the board."
+        "The Visa Product Design System (VPDS) is an internal design system focused on serving applications with Visa-ready design mocks, design patterns, styles, and components. We've divided VPDS into different tracks to support multiple technologies and methods of consumption. These tracks include Design, Web (HTML + CSS), Angular, React, and Flutter. The project was also set up as an internally open-sourced project, in which many designers and developers across the company could contribute to the design system.",
+        "My role on this projects was to lead the Web library, and architect the CSS library. These responsibilities included pixel-perfect styles implemention and enabling easy theming with optional high customization. We also provide documentation with accessible HTML snippets for markup reference and customization guidance. In a way, this worked like an internal bootstrap and tailwind library with responsive behavior and with accessibility (a11y) testing across browsers and screen readers. The styles exported by have more than 290,000 internal installs consumed by server-side rendered applications, AEM sites (like <a href=\"https://developer.visa.com/\" target=\"_blank\">Visa Developer Center</a>) as well as Angular, React, and other Javascript based applications across the company. All our libraries have been installed more than 615,000 times internally across technologies and versions.", 
+        "My involvement on the project started since before it was fully chartered, by developing a library of basic components that could be themed, modified, extended, and/or forked to produce other component libraries for multiple projects across Visa. We would provide a default Visa theme, that would then turn into the VPDS design and code libraries. These libraries would also follow Visa's General A11y Guidelines (<a href=\"https://developer.visa.com/pages/accessibility\" target=\"_blank\">VGAR</a>) to ensure our components where usable and accessible across the board."
       ],
       "screenshots": [],
       "videos": [
@@ -195,7 +196,7 @@
       },
       "id": "stockbot",
       "description": [
-        "As the name implies, this is a bot to automate stock trading. This bot analyses current market status, evaluates individual performing stocks, and determines when to buy/sell stocks.",
+        "As the name implies, this is a bot to automate stock trading. This bot analyzes current market status, evaluates individual performing stocks, and determines when to buy/sell stocks.",
         "Currently, this bot uses several data science, applied statistics, and applied probability techniques to evaluate stock performance and predict outcome based on a set of parameters. These techniquest have been derived from my Machine Learning and Natural Language Processing CS courses."
       ],
       "screenshots": [],

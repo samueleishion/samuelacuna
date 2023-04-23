@@ -35,6 +35,10 @@
   text-align: left;
 }
 
+.sa-project-description > a {
+  color: var(--sa-project-text-color); 
+}
+
 .sa-project-links {
   font-size: .85rem;
 }

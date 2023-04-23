@@ -24,7 +24,7 @@ const Project = ({
 
   useEffect(() => {
     projectContainerRef.current.style.setProperty(
-      '--sa-project-text-color',
+      '--sa-text-color',
       colorForeground
     ); 
     projectContainerRef.current.style.setProperty(
@@ -54,10 +54,10 @@ const Project = ({
             <div className="sa-project-links">
               {links 
                 ? links.map((a, i) => (
-                  <>
+                  <React.Fragment key={i}>
                     <a href={a.href} target="_blank" rel="noopener noreferrer" key={i}>{a.label} &raquo;</a>
                     {(i < links.length - 1) ? "|" : null}
-                  </>
+                  </React.Fragment>
                 ))
                 : null 
               }
@@ -85,7 +85,7 @@ const Project = ({
             <Col lg="6" md="8" sm="10" offset={{sm:1,md:2,lg:3}}>
               <div className="sa-project-pics">
                 {screenshots.map((s, i) => (
-                  <img className="sa-project-pic" src={s.asset} alt={s.alt} />
+                  <img className="sa-project-pic" src={s.asset} alt={s.alt} key={i} />
                 ))}
               </div>
             </Col>

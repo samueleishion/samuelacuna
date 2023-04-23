@@ -1,4 +1,4 @@
-# Samuel Acu&nilde;a
+# Samuel Acu&ntilde;a
 
 Repo for my portfolio site: [samuelacuna.com](http://samuelacuna.com)
 

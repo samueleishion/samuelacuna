@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'; 
+import React, { useState } from 'react'; 
 import { Container, Row, Col } from 'react-grid';
 import { Helmet } from 'react-helmet'; 
 import { scroller} from 'react-scroll';
@@ -34,10 +34,6 @@ function App() {
   const scrollProjects = (e) => {
     scrollTo(e, 'projects'); 
   }; 
-
-  useEffect(() => {
-    console.log(projects); 
-  }, []); 
 
   return (
     <>
