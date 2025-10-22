@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-grid';
 import { Helmet } from 'react-helmet'; 
 import { scroller} from 'react-scroll';
+import ReactGA from 'react-ga4';
 
 import { IMAGES } from '../../data/static'; 
 import projects from '../../data/projects'; 
@@ -12,6 +13,8 @@ import Project from '../../shared/project';
 import Resume from '../../assets/files/samuelacuna-resume.pdf'; 
 
 import './styles.css';
+
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
 
 function App() {
 
