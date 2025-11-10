@@ -73,7 +73,7 @@ const Project = ({
             <ul className="sa-pills">
               {tags 
                 ? tags.map((t, i) => (
-                  <li className="sa-pill" key={i}>#{t}</li>
+                  <li className="sa-pill" key={i}>{t}</li>
                 ))
                 : null 
               }

@@ -1,6 +1,65 @@
 {
   "projects": [
     {
+      "title": "Visa Design AI Enablement",
+      "role": "Senior Staff Design Engineer",
+      "image": {
+        "src": "imgs/projects/visa-logo.svg",
+        "alt": "Visa logo"
+      },
+      "color": {
+        "background": "rgba(10, 28, 128, 0.85)",
+        "foreground": "rgb(221, 221, 221)",
+        "role": "#15195a"
+      },
+      "id": "visa",
+      "description": [
+        "The <strong>Visa Design AI Enablement platform</strong> is an internal tool that empowers Visa designers and developers to integrate <strong>Generative AI (GenAI)</strong> into their daily workflows. It offers a suite of tools and integrations that generate code snippets, design assets, and documentation using state-of-the-art AI models. By embedding these capabilities into Visa’s existing design and development pipelines, the platform enhances productivity, accelerates experimentation, and streamlines project delivery across the organization.",
+        "As the <strong>lead for backend architecture</strong> and development, I designed and implemented the platform’s scalable infrastructure using <strong>Express.js</strong>, <strong>MongoDB</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong>. My work focused on integrating multiple AI models and services, enabling seamless frontend–backend communication, and implementing <strong>vector search</strong> for fast, context-aware retrieval of AI-generated content. I also partnered closely with the frontend and design system teams to deliver a unified user experience and collaborated with stakeholders to align the platform with Visa’s strategic goals. The system now supports a range of applications—from <strong>code and documentation generation</strong> to <strong>chatbot and agent development</strong> — integrating with our <strong>VPDS (Visa Product Design System) MCP Server (Model Context Protocol)</strong> to provide context-aware AI interactions that tailor results to each project’s design system.",
+        "I joined the initiative <strong>before it was formally chartered</strong>, starting with data curation and building early backend prototypes that enabled remote consumption of documentation for the <strong>Visa Design portal</strong> (<a href=\"https://design.visa.com/\" target=\"_blank\">https://design.visa.com</a>). Through multiple prototype iterations, user testing, and feedback cycles, we evolved the solution into a generalized platform for all Visa design assets, spanning <strong>Design Guidelines, Content Standards, Accessibility Requirements, and Code Libraries across Angular, React, HTML/CSS, Flutter, and Data Visualization components</strong>. This foundation has become a key enabler of AI-powered design and development efficiency at Visa."
+      ],
+      "screenshots": [],
+      "videos": [],
+      "tags": [
+        "development",
+        "design",
+        "AI",
+        "artificial intelligence",
+        "GenAI",
+        "generative AI",
+        "RAG",
+        "Retrieval Augmented Generation",
+        "design systems",
+        "components",
+        "guidelines",
+        "html",
+        "css",
+        "react",
+        "angular",
+        "flutter",
+        "data visualization",
+        "javascript",
+        "typescript",
+        "python",
+        "backend",
+        "express",
+        "mongodb",
+        "postgresql",
+        "vector search",
+        "code generation",
+        "automated documentation",
+        "chatbots",
+        "machine learning",
+        "ML",
+        "clustering",
+        "k-means",
+        "personas",
+        "market research",
+        "MCP server",
+        "Model Context Protocol"
+      ]
+    },
+    {
       "title": "Visa Product Design System",
       "role": "Senior Staff Design Engineer",
       "image": {
@@ -14,13 +73,22 @@
       },
       "id": "visa",
       "description": [
-        "The Visa Product Design System (VPDS) is an internal design system focused on serving applications with Visa-ready design mocks, design patterns, styles, and components. We've divided VPDS into different tracks to support multiple technologies and methods of consumption. These tracks include Design, Web (HTML + CSS), Angular, React, and Flutter. The project was also set up as an internally open-sourced project, in which many designers and developers across the company could contribute to the design system.",
-        "My role on this projects was to lead the Web library, and architect the CSS library. These responsibilities included pixel-perfect styles implemention and enabling easy theming with optional high customization. We also provide documentation with accessible HTML snippets for markup reference and customization guidance. In a way, this worked like an internal bootstrap and tailwind library with responsive behavior and with accessibility (a11y) testing across browsers and screen readers. The styles exported by have more than 290,000 internal installs consumed by server-side rendered applications, AEM sites (like <a href=\"https://developer.visa.com/\" target=\"_blank\">Visa Developer Center</a>) as well as Angular, React, and other Javascript based applications across the company. All our libraries have been installed more than 615,000 times internally across technologies and versions.", 
-        "My involvement on the project started since before it was fully chartered, by developing a library of basic components that could be themed, modified, extended, and/or forked to produce other component libraries for multiple projects across Visa. We would provide a default Visa theme, that would then turn into the VPDS design and code libraries. These libraries would also follow Visa's General A11y Guidelines (<a href=\"https://developer.visa.com/pages/accessibility\" target=\"_blank\">VGAR</a>) to ensure our components where usable and accessible across the board."
+        "The <a href=\"https://design.visa.com/\" target=\"_blank\">Visa Product Design System (VPDS)</a> is a public design system focused on serving applications with Visa-ready design mocks, design patterns, styles, and components. We've divided VPDS into different tracks to support multiple technologies and methods of consumption. These tracks include Design, Web (HTML + CSS), Angular, React, and Flutter, Accessibility, and Content. The project was also set up as an internally open-sourced project, in which many designers and developers across the company could contribute to the design system.",
+        "My role on this project was to lead the Web libraries, and architect the CSS library. These responsibilities included pixel-perfect styles implementation and enabling configurable theming with high customization options. We also provide documentation with accessible HTML snippets for markup reference and customization guidance. In a way, this worked like an internal bootstrap and tailwind library with responsive behavior and with accessibility (a11y) testing across browsers and screen readers. The styles exported by have more than 290,000 internal installs consumed by server-side rendered applications, AEM sites (like <a href=\"https://developer.visa.com/\" target=\"_blank\">Visa Developer Center</a>) as well as Angular, React, and other Javascript based applications across the company, including <a href=\"https://www.cybersource.com/en-us.html\" target=\"_blank\">CyberSource</a> and <a href=\"https://www.authorize.net/\" target=\"_blank\">Authorize.NET</a>. All our libraries have been installed more than 615,000 times internally across technologies and versions.", 
+        "My involvement on the project started since before it was fully chartered, by developing a library of basic components that could be themed, modified, extended, and/or forked to produce other component libraries for multiple projects across Visa. We would provide a default Visa theme, that would then turn into the VPDS design and code libraries. These libraries would also follow Visa's General A11y Guidelines (<a href=\"https://developer.visa.com/pages/accessibility\" target=\"_blank\">VGAR</a>) to ensure our components where usable and accessible across the board.<br />I was the initial developer of the library, and the team has grown to include multiple engineers, designers, accessibility experts, and content designers across Visa in the span of 8+ years."
       ],
       "screenshots": [],
       "videos": [
         "Vu6HRpiGP7Y"
+      ],
+      "links": [
+        {
+          "label": "Visa Product Design System",
+          "href": "https://design.visa.com/"
+        }
+      ],
+      "code": [
+        "npm install @visa/nova-styles"
       ],
       "tags": [
         "development",
@@ -85,7 +153,7 @@
         }
       ],
       "code": [
-        "$ npm install --save-dev gulp-axe-cli"
+        "npm install --save-dev gulp-axe-cli"
       ],
       "screenshots": [],
       "tags": [
@@ -180,41 +248,6 @@
         "design",
         "sketch",
         "invision"
-      ]
-    },
-    {
-      "title": "stockbot",
-      "role": "developer / maintainer",
-      "image": {
-        "src": "imgs/projects/robinhood-logo.png",
-        "alt": "Robinhood logo - the trading platform for stockbot"
-      },
-      "color": {
-        "background": "rgba(4, 13, 20, 0.85)",
-        "foreground": "rgb(221, 221, 221)",
-        "role": "#22a87d"
-      },
-      "id": "stockbot",
-      "description": [
-        "As the name implies, this is a bot to automate stock trading. This bot analyzes current market status, evaluates individual performing stocks, and determines when to buy/sell stocks.",
-        "Currently, this bot uses several data science, applied statistics, and applied probability techniques to evaluate stock performance and predict outcome based on a set of parameters. These techniquest have been derived from my Machine Learning and Natural Language Processing CS courses."
-      ],
-      "screenshots": [],
-      "tags": [
-        "stocks",
-        "bots",
-        "automation",
-        "statistics",
-        "probability",
-        "bayes",
-        "bayesian",
-        "machine learning",
-        "natural language processing",
-        "ml",
-        "nlp",
-        "ngrams",
-        "linear regression",
-        "data science"
       ]
     }
   ]
