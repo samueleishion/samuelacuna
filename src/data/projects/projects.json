@@ -153,7 +153,7 @@
         }
       ],
       "code": [
-        "npm install gulp-axe-cli"
+        "npm install --save-dev gulp-axe-cli"
       ],
       "screenshots": [],
       "tags": [
