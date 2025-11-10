@@ -4,7 +4,7 @@
       "title": "Visa Product Design System",
       "role": "Lead Developer",
       "image": {
-        "src": "imgs/projects/visa-logo.svg",
+        "src": "images/projects/visa-logo.svg",
         "alt": "Visa logo"
       },
       "color": {
@@ -61,7 +61,7 @@
       "title": "gulp-axe-cli",
       "role": "developer / maintainer",
       "image": {
-        "src": "imgs/projects/gulpaxe-logo.png",
+        "src": "images/projects/gulpaxe-logo.png",
         "alt": "gulp-axe-cli project accessibility icon"
       },
       "color": {
@@ -107,7 +107,7 @@
       "title": "Perspective",
       "role": "Co-Founder & CTO",
       "image": {
-        "src": "imgs/projects/perspective-logo.svg",
+        "src": "images/projects/perspective-logo.svg",
         "alt": "Perspective logo"
       },
       "color": {
@@ -124,15 +124,15 @@
       ],
       "screenshots": [
         {
-          "src": "imgs/projects/perspective-site-1.png",
+          "src": "images/projects/perspective-site-1.png",
           "alt": "Perspective's homepage screenshot"
         },
         {
-          "src": "imgs/projects/perspective-site-2.png",
+          "src": "images/projects/perspective-site-2.png",
           "alt": "Perspective plugin sample"
         },
         {
-          "src": "imgs/projects/perspective-site-3.png",
+          "src": "images/projects/perspective-site-3.png",
           "alt": "Perspective's dashboard screenshot"
         }
       ],
@@ -185,7 +185,7 @@
       "title": "stockbot",
       "role": "developer / maintainer",
       "image": {
-        "src": "imgs/projects/robinhood-logo.png",
+        "src": "images/projects/robinhood-logo.png",
         "alt": "Robinhood logo - the trading platform for stockbot"
       },
       "color": {

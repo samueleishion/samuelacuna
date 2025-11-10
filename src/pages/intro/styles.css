@@ -1,0 +1,83 @@
+body,
+.sa-app {
+  background-attachment: fixed;
+  background-color: var(--sa-surface-1); 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sa-app {
+  width: 100%;
+  min-height: 100vh; 
+}
+
+.sa-nav {
+  position: fixed; 
+  width: 100%; 
+  z-index: 999;
+}
+
+.sa-skip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.sa-skip:focus-visible {
+  clip: unset;
+  clip-path: unset;
+  height: auto; 
+  overflow: unset; 
+  position: static; 
+  width: auto; 
+}
+
+.sa-nav .sa-link {
+  display: inline-block;
+  padding: 0.5rem; 
+}
+
+.sa-nav .sa-link:hover {
+  text-decoration: none; 
+}
+
+.sa-banner {
+  width: 100%; 
+  min-height: 100vh; 
+  text-align: center; 
+}
+
+.sa-main {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sa-divider {
+  text-align: center;
+  padding: 20px;
+}
+
+.sa-divider-label {
+  background-color: var(--sa-text-color); 
+  color: var(--sa-surface-1); 
+  display: inline-block;
+  font-size: 2rem; 
+  font-weight: 300;
+  letter-spacing: 10px; 
+  padding: 10px; 
+  padding-inline-start: 20px;
+}
+
+.sa-footer {
+  text-align: right; 
+}

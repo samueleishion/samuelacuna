@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Noto+Sans+JP&display=swap');
+
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("./assets/fonts/HelveticaNeue.otf");
+  font-weight: 300; 
+}
+
+@font-face {
+  font-family: HelveticaNeue-Medium;
+  src: url("./assets/fonts/HelveticaNeue-Medium.otf");
+  font-weight: 300; 
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("./assets/fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("./assets/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("./assets/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("./assets/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("./assets/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("./assets/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+
+:root {
+  --sa-border: rgb(200, 200, 200); 
+  --sa-surface-1: rgb(255, 255, 255); 
+  --sa-surface-1-alt: rgba(255, 255, 255, 0.8); 
+  --sa-surface-2: rgb(248, 249, 250); 
+  --sa-text-color: rgb(0, 0, 0); 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sa-border: rgb(80, 80, 80); 
+    --sa-surface-1: rgb(17, 17, 17);
+    --sa-surface-1-alt: rgba(17, 17, 17, 0.8); 
+    --sa-surface-2: rgb(25, 26, 27);
+    --sa-text-color: rgb(221, 221, 221); 
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: white;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 1px dotted var(--sa-text-color); 
+  outline-offset: 2px; 
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'HelveticaNeue', 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  color: var(--sa-text-color); 
+  -webkit-font-smoothing: antialiased;
+  margin: 0px; 
+}
+
+p {
+  font-family: 'Noto Sans JP', sans-serif; 
+}
+
+a {
+  color: var(--sa-text-color);
+  outline: none; 
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--sa-surface-1);
+  background-color: var(--sa-text-color); 
+}
+
+.sa-surface-1 {
+  background-color: var(--sa-surface-1); 
+  padding: 12px; 
+}
+
+.sa-surface-1-alt {
+  background-color: var(--sa-surface-1-alt); 
+  padding: 12px; 
+}
+
+.sa-surface-2 {
+  background-color: var(--sa-surface-2); 
+  padding: 12px; 
+}
+
+.sa-link {
+  color: var(--sa-text-color); 
+  text-decoration: underline;
+}
+
+.sa-link:hover,
+.sa-link:focus-visible {
+  background-color: var(--sa-text-color); 
+  color: var(--sa-surface-1); 
+}
+
+.sa-button-group {
+  display: flex; 
+  flex-direction: row;
+  gap: 10px; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.sa-button { 
+  background: transparent; 
+  border: 1px solid var(--sa-text-color);
+  color: var(--sa-text-color); 
+  display: inline-block; 
+  text-decoration: none;
+  padding: 6px 8px; 
+}
+
+.sa-button:hover,
+.sa-button-visible {
+  background: var(--sa-text-color); 
+  color: var(--sa-surface-1); 
+}
+
+.sa-button-small {
+  font-size: .85rem;
+  padding: 5px 7px; 
+}
