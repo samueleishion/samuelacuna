@@ -14,10 +14,17 @@ import Resume from '../../assets/files/samuelacuna-resume.pdf';
 
 import './styles.css';
 
-ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+
 
 function App() {
-
+  React.useEffect(() => {
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    } else {
+      // eslint-disable-next-line no-console
+      console.warn('REACT_APP_GOOGLE_ANALYTICS_ID is not set. Google Analytics will not be initialized.');
+    }
+  }, []);
   const index = Math.round(Math.random() * (IMAGES.length - 1));
   const [background] = useState(IMAGES[index]); 
 
