@@ -92,7 +92,7 @@
 /* %sa-media-frame */
 .sa-project-pic,
 .sa-project-video {
-  border: 2.25rem solid transparent;
+  /* border: 2.25rem solid transparent; */
   border-radius: .25rem;
   outline: 1rem solid #fff; 
 }
