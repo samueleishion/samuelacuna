@@ -30,3 +30,9 @@
   stroke-miterlimit: 10;
   enable-background: new;
 }
+
+@media only screen and (max-width: 767px) { 
+  .sa-logo {
+    max-width: 180px;
+  }
+}

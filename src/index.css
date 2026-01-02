@@ -107,10 +107,39 @@ a:focus-visible {
 
 .sa-button-group {
   display: flex; 
-  flex-direction: row;
-  gap: 10px; 
+  flex-direction: column;
+  gap: 20px; 
   align-items: center; 
   justify-content: center;
+  list-style: none; 
+  padding: 0;
+}
+
+.sa-button-group li {
+  display: flex;
+  margin: 0;
+  flex-grow: 1; 
+  inline-size: 100%;
+}
+
+.sa-button-group li .sa-button {
+  display: inline-flex; 
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 767px) {
+  .sa-button-group {
+    /* justify-content: flex-start;  */
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .sa-button-group li {
+    inline-size: auto;
+    flex-grow: 0; 
+  }
 }
 
 .sa-button { 
@@ -129,6 +158,13 @@ a:focus-visible {
 }
 
 .sa-button-small {
-  font-size: .85rem;
-  padding: 5px 7px; 
+  font-size: 1rem;
+  padding: 7px 10px; 
+}
+@media only screen and (min-width: 767px) {
+  .sa-button-small {
+    font-size: .85rem;
+    padding: 5px 7px; 
+    inline-size: 100%;
+  }
 }

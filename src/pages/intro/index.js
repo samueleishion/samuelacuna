@@ -63,41 +63,39 @@ function App() {
             </Row>
           </Container>
         </nav>
-        <header className="sa-main sa-banner sa-project" id="home">
-          <Container>
+        <header className="sa-header sa-banner sa-project" id="home">
+          <Container className="sa-content">
             <Row>
               <Col md="6" sm="10" offset={{sm:1,md:3}}>
                 <Logo />
               </Col>
             </Row>
-            <br />
-            <Row>
-              <Col md="6" sm="10" offset={{sm:1,md:3}}>
-                <p>
-                  hello. i am a design engineer working on applications, libraries, tools, and experiences for optimal product development.
-                </p>
-              </Col>
-            </Row>
-            <br />
-            <Row>
-              <Col md="6" sm="10" offset={{sm:1,md:3}}>
-                <div className="sa-button-group">
-                  <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
-                    <i className="fa fa-file-text-o"></i>&nbsp;
-                    resume
-                  </a>
-                  <a href="https://www.linkedin.com/in/samuelacuna" target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
-                    <i className="fa fa-linkedin"></i>&nbsp;
-                    linkedin
-                  </a>
-                  <a href="http://github.com/samueleishion" target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
-                    <i className="fa fa-github-alt"></i>&nbsp;
-                    github
-                  </a>
-                </div>
-              </Col>
-            </Row>
           </Container>
+          <div class="sa-project-description sa-content">
+            <p>
+              hello. i am a design engineer working on applications, libraries, tools, and experiences for optimal product development.
+            </p>
+          </div>
+          <ul className="sa-button-group sa-content">
+            <li>
+              <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
+                <i className="fa fa-file-text-o"></i>&nbsp;
+                resume
+              </a>
+            </li>
+            <li>
+              <a href="http://github.com/samueleishion" target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
+                <i className="fa fa-github-alt"></i>&nbsp;
+                github
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/samuelacuna" target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
+                <i className="fa fa-linkedin"></i>&nbsp;
+                linkedin
+              </a>
+            </li>
+          </ul>
         </header>
         <main id="projects">
           <div className="sa-divider sa-surface-1">
