@@ -73,9 +73,31 @@
 }
 
 .sa-code code::before {
-  content: "> ";
-  color: #0f0;
+  content: "$ ";
+  /* color: #0f0; */
   font-weight: 700;
+}
+
+@media (prefers-color-scheme: light) {
+  .sa-code code {
+    --sa-surface-2: rgb(248, 249, 250); 
+    --sa-text-color: rgb(0, 0, 0); 
+  }
+
+  .sa-code code::before {
+    color: #aaa;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .sa-code code {
+    --sa-surface-2: rgb(25, 26, 27);
+    --sa-text-color: rgb(221, 221, 221); 
+  }
+
+  .sa-code code::before {
+    color: #0f0;
+  }
 }
 
 .sa-pills {
