@@ -71,6 +71,9 @@ p {
 a {
   color: var(--sa-text-color);
   outline: none; 
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-style: dotted;
 }
 
 a:hover,
@@ -97,6 +100,7 @@ a:focus-visible {
 .sa-link {
   color: var(--sa-text-color); 
   text-decoration: underline;
+  /* text-underline-position: under; */
 }
 
 .sa-link:hover,

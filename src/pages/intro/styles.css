@@ -43,10 +43,13 @@ body,
 .sa-nav .sa-link {
   display: inline-block;
   padding: 0.5rem; 
+  text-decoration-style: dotted;
+  text-decoration-color: color-mix(in srgb, var(--sa-text-color) 65%, transparent);
 }
 
-.sa-nav .sa-link:hover {
-  text-decoration: none; 
+.sa-nav .sa-link:hover,
+.sa-nav .sa-link:focus-visible {
+  text-decoration-color: color-mix(in srgb, var(--sa-surface-1) 65%, transparent);
 }
 
 .sa-banner {
@@ -98,4 +101,10 @@ body,
 
 .sa-footer {
   text-align: right; 
+}
+
+.sa-footer-year {
+  font-size: 0.85rem;
+  color: var(--sa-text-color);
+  font-family: monospace;
 }

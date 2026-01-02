@@ -65,10 +65,17 @@
   background-color: var(--sa-surface-2);
   color: var(--sa-text-color); 
   display: block;
+  font-family: monospace;
   font-weight: 500;
   margin: 3rem 0rem;
   padding: .5rem;
   text-align: left;
+}
+
+.sa-code code::before {
+  content: "> ";
+  color: #0f0;
+  font-weight: 700;
 }
 
 .sa-pills {
@@ -78,11 +85,12 @@
 }
 
 .sa-pill {
+  font-family: monospace;
   font-size: .85rem;
   font-weight: 600;
   text-transform: lowercase;
   background-color: transparent;
-  padding: .25rem .5rem;
+  padding: .3rem .6rem;
   margin: .2rem;
   border-radius: 1rem;
   color: var(--sa-project-text-color);

@@ -126,7 +126,7 @@ function App() {
           <Container>
             <Row>
               <Col>
-                <small>&copy; {new Date().getFullYear()}</small>
+                <small className="sa-footer-year">&copy; {new Date().getFullYear()}</small>
               </Col>
             </Row>
           </Container>
