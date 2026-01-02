@@ -56,9 +56,9 @@ function App() {
             <Row>
               <Col>
                 <a href="#home" className="sa-link sa-skip">skip to content</a>
-                <a href="./" className="sa-link" onClick={scrollHome}>home</a>
+                <a href="./" className="sa-link" onClick={scrollHome}>hello</a>
                 <a href="./" className="sa-link" onClick={scrollProjects}>projects</a>
-                <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-link">resume</a>
+                <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-link">r&eacute;sum&eacute;</a>
               </Col>
             </Row>
           </Container>
@@ -80,7 +80,7 @@ function App() {
             <li>
               <a href={Resume} target="_blank" rel="noopener noreferrer" className="sa-button sa-button-small">
                 <i className="fa fa-file-text-o"></i>&nbsp;
-                resume
+                r&eacute;sum&eacute;
               </a>
             </li>
             <li>
